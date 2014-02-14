@@ -19,25 +19,52 @@
 -->
 <html>
     <head>
+        <script type="text/javascript" src="cordova.js"></script>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" href="lib/jquery.mobile-1.3.0-beta.1.min.css" /> 
+	<script src="lib/jquery-1.10.2.min.js"></script> 
+	<script src="lib/jquery.mobile-1.3.2.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Nacional Rock</title>
     </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
+    <body id="body">
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/player.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
+<div data-role="page" id="one"> 
+ 
+	<div data-role="content" >
+
+		<div id="content">
+			<div id="player"><a href="#" onclick="playAudio()"><img id="play" src="img/play.png"></a></div>
+			<div id="program-info">
+				<div id="program-name">Programa <span id="name"></span></div>
+				<div id="program-presenter">Conduce <span id="presenter"></span></div>
+				<br />
+				<img id="program-image">
+			</div>
+
+			<div id="logo">
+				<img src="img/logo.png" height="80">
+			</div>
+
+			<div id="social-buttons">
+				<a href="#" onClick="window.open('fb://profile/239488842805946', '_system', 'location=yes');"><img src="img/facebook.png" class="social-button"></a>
+				<a href="#" onClick="window.open('twitter://twitter.com/nacionalrock937', '_system', 'location=yes');"><img src="img/twitter.png" class="social-button"></a>
+				<a href="#" onClick="window.open('http://nacionalrock.com/', '_system', 'location=yes');"><img src="img/web.png" class="social-button"></a>
+				<a href="#" onClick="window.open('http://nacionalrock.com/contacto/', '_system', 'location=yes');"><img src="img/mail.png" class="social-button"></a>
+			</div>
+ 
+		<!--
+		<p><a href="#two" data-role="button" data-transition="turn">Programación</a></p>	
+		-->
+		</div>
+	</div><!-- /content --> 
+	
+</div><!-- /page one --> 
     </body>
 </html>

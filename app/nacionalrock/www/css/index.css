@@ -24,30 +24,16 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
-    height:100%;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
-    width:100%;
+    background: #000;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -57,17 +43,14 @@ body {
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
+    background:#fff;
 }
 
 /* Landscape layout (with min-width) */
+/*
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
 }
+*/
 
 h1 {
     font-size:24px;
@@ -112,4 +95,160 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+
+#program-info {
+        bottom: 100%;
+        visibility: hidden;
+}
+
+#program-name,
+#program-presenter,
+#program-image {
+        visibility: hidden;
+}
+
+span#name,
+span#presenter
+{
+	font-weight: bold;
+}
+
+#program-name,
+#program-presenter {
+        background: #fff;
+        padding: 3px;
+        color: #000;
+}
+
+/*
+#program-info .name,
+#program-info .presenter
+{
+	font-weight: bold;
+}
+*/
+
+.program-table {
+        color: #FED501;
+        color: #FED501;
+        padding: 8px;
+}
+
+/*.ui-page { -webkit-backface-visibility: hidden; } */
+
+
+#one {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    /* background: #000 url(../img/back.jpg) no-repeat center center fixed; */
+    background: #000 no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+div#content {
+	text-align: center;
+}
+
+div#player {
+	margin-top: 8%;
+}
+
+div#logo {
+        margin-top: 10%;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+
+div#social-buttons {
+        margin-top: 5%;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+
+#program-image
+{
+	height: 120px;
+	width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+}
+
+/*
+div#social-buttons {
+        position: absolute;
+        bottom: 0;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+*/
+
+
+.ui-content {
+border-width: 0px;
+overflow-x: hidden;
+overflow: visible;
+padding: 0;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
+div#player {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+div#logo {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div#logo {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+
+body,
+#one {
+    height: 100%;
+}
+
+div#player {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div#logo {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+div#social-buttons {
+        margin-top: 5%;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+
+.social-button {
+	height: 50px;
+}
+
 }
