@@ -20,7 +20,7 @@ function pad2(number) {
 	return (number < 10 ? '0' : '') + number
 }
 
-var myaudioURL = 'http://stream.4zzzfm.org.au:789/;';
+var myaudioURL = 'http://37.59.19.104:8162/;stream.nsv';
 var myaudio = new Audio(myaudioURL);
 var isPlaying = false;
 
@@ -29,6 +29,7 @@ var html5audio = {
 	{
 		isPlaying = true;
 		myaudio.play();
+		document.getElementById('playButton').src = "img/pause.png";
 	
 		myaudio.addEventListener("error", function() {
 			 console.log('myaudio ERROR');
@@ -43,7 +44,7 @@ var html5audio = {
 		myaudio.addEventListener("playing", function() {
 			 isPlaying = true;
 			 //stopButton.style.display = 'block';
-			 playButton.src = "img/pause.png";
+			 document.getElementById('playButton').src = "img/pause.png";
 
 		}, false);
 		myaudio.addEventListener("ended", function() {
@@ -63,12 +64,12 @@ var html5audio = {
 	},
 	pause: function() {
 		isPlaying = false;
-		playButton.src = "img/play.png";
+		document.getElementById('playButton').src = "img/play.png";
 		myaudio.pause();
 	},
 	stop: function() {
 		isPlaying = false;
-		playButton.src = "img/play.png";
+		document.getElementById('playButton').src = "img/play.png";
 		myaudio.pause();
 		myaudio = null;
 		myaudio = new Audio(myaudioURL);
