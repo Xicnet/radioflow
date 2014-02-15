@@ -161,7 +161,7 @@ div#content {
 	text-align: center;
 }
 
-div#player {
+div#playcontrols {
 	margin-top: 8%;
 }
 
@@ -207,7 +207,7 @@ padding: 0;
 
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
 
-div#player {
+div#playcontrols {
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
@@ -230,7 +230,7 @@ body,
     height: 100%;
 }
 
-div#player {
+div#playcontrols {
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
