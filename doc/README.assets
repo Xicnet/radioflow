@@ -1,0 +1,28 @@
+# icon iOS
+./platforms/ios/HellWorld/Resources/icons/
+icon-40.png:       PNG image data, 40 x 40, 8-bit/color RGBA, non-interlaced
+icon-40@2x.png:    PNG image data, 80 x 80, 8-bit/color RGBA, non-interlaced
+icon-50.png:       PNG image data, 50 x 50, 8-bit/color RGBA, non-interlaced
+icon-50@2x.png:    PNG image data, 100 x 100, 8-bit/color RGBA, non-interlaced
+icon-60.png:       PNG image data, 60 x 60, 8-bit/color RGBA, non-interlaced
+icon-60@2x.png:    PNG image data, 120 x 120, 8-bit/color RGBA, non-interlaced
+icon-72.png:       PNG image data, 72 x 72, 8-bit/color RGB, non-interlaced
+icon-72@2x.png:    PNG image data, 144 x 144, 8-bit/color RGBA, non-interlaced
+icon-76.png:       PNG image data, 76 x 76, 8-bit/color RGBA, non-interlaced
+icon-76@2x.png:    PNG image data, 152 x 152, 8-bit/color RGBA, non-interlaced
+icon-small.png:    PNG image data, 29 x 29, 8-bit/color RGBA, non-interlaced
+icon-small@2x.png: PNG image data, 58 x 58, 8-bit/color RGBA, non-interlaced
+icon.png:          PNG image data, 57 x 57, 8-bit/color RGBA, interlaced
+icon@2x.png:       PNG image data, 114 x 114, 8-bit/color RGBA, interlaced
+
+
+# splash iOS
+./platforms/ios/HellWorld/Resources/splash/
+Default-568h@2x~iphone.png:    PNG image data, 640 x 1136, 8-bit/color RGB, non-interlaced
+Default-Landscape@2x~ipad.png: PNG image data, 2048 x 1496, 8-bit/color RGB, non-interlaced
+Default-Landscape~ipad.png:    PNG image data, 1024 x 748, 8-bit/color RGB, non-interlaced
+Default-Portrait@2x~ipad.png:  PNG image data, 1536 x 2008, 8-bit/color RGB, non-interlaced
+Default-Portrait~ipad.png:     PNG image data, 768 x 1004, 8-bit/color RGB, non-interlaced
+Default@2x~iphone.png:         PNG image data, 640 x 960, 8-bit/color RGB, non-interlaced
+Default~iphone.png:            PNG image data, 320 x 480, 8-bit/color RGB, non-interlaced
+
