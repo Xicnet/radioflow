@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.devgirl.statusbarnotification"
+      version="0.1.0">
+    <name>StatusBarNotification</name>
+    <description>Sample PhoneGap StatusBarNotification Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,statusbarnotification</keywords>
+
+
+    <js-module src="www/statusbarnotification.js" name="StatusBarNotification">
+        <clobbers target="window.statusbarnotification" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="StatusBarNotification">
+                <param name="android-package" value="org.devgirl.statusbarnotification.StatusBarNotification"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/StatusBarNotification.java" target-dir="src/org/devgirl/statusbarnotification" />
+        <source-file src="src/android/StatusNotificationIntent.java" target-dir="src/org/devgirl/statusbarnotification" />
+     </platform>          
+</plugin>

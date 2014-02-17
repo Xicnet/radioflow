@@ -1,0 +1,254 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    background: #000;
+}
+
+/* Portrait layout (default) */
+.app {
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+    background:#fff;
+}
+
+/* Landscape layout (with min-width) */
+/*
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+}
+*/
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
+#program-info {
+        bottom: 100%;
+        visibility: hidden;
+}
+
+#program-name,
+#program-presenter,
+#program-image {
+        visibility: hidden;
+}
+
+span#name,
+span#presenter
+{
+	font-weight: bold;
+}
+
+#program-name,
+#program-presenter {
+        background: #fff;
+        padding: 3px;
+        color: #000;
+}
+
+/*
+#program-info .name,
+#program-info .presenter
+{
+	font-weight: bold;
+}
+*/
+
+.program-table {
+        color: #FED501;
+        color: #FED501;
+        padding: 8px;
+}
+
+/*.ui-page { -webkit-backface-visibility: hidden; } */
+
+
+#one {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    background: #000 url(../img/back.jpg) no-repeat center center fixed;
+    background: #000 no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+div#content {
+	text-align: center;
+}
+
+div#playcontrols {
+	margin-top: 8%;
+}
+
+div#logo {
+        margin-top: 5%;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+
+div#social-buttons {
+        margin-top: 5%;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+
+#program-image
+{
+	height: 120px;
+	width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+}
+
+/*
+div#social-buttons {
+        position: absolute;
+        bottom: 0;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+*/
+
+
+.ui-content {
+border-width: 0px;
+overflow-x: hidden;
+overflow: visible;
+padding: 0;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
+div#playcontrols {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+div#logo {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div#logo {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+
+body,
+#one {
+    height: 100%;
+}
+
+div#playcontrols {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div#logo {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+div#social-buttons {
+        margin-top: 5%;
+        margin-left:auto;
+        margin-right:auto;
+        width: 100%;
+}
+
+.social-button {
+	height: 50px;
+}
+
+}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.xicnet.nacionalrock" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Nacional Rock</name>
+    <description>
+        FM 93.7 Radio Nacional Rock (Argentina)
+    </description>
+    <author email="mobile@xicnet.com" href="http://xicnet.com/">
+        devs @ Xicnet
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
