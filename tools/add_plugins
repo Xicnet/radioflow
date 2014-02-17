@@ -1,0 +1,7 @@
+cordova plugins add org.apache.cordova.device
+cordova plugins add org.apache.cordova.dialogs
+cordova plugins add org.apache.cordova.file
+cordova plugins add org.apache.cordova.file-transfer
+cordova plugins add org.apache.cordova.inappbrowser
+cordova plugins add org.apache.cordova.media
+

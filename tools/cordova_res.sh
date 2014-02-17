@@ -6,7 +6,7 @@ APP_DIR=$2
 APP_ROOT=$3
 RES_SRC=$4
 
-APP_NAME="NacionalRock"
+APP_NAME="Nacional Rock"
 APP_SHORTNAME="nacionalrock"
 APP_DIR="/Users/rama/Desktop/dev/radioflow/app/$APP_SHORTNAME"
 APP_RES="$APP_DIR/platforms/ios/$APP_NAME/Resources"
