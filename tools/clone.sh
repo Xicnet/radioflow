@@ -15,7 +15,7 @@ TPL_SHORTNAME="nacionalrock"
 TPL_BASEDIR="`pwd`/../app/$TPL_SHORTNAME"
 TPL_BUNDLE_NAME="com.xicnet.$TPL_SHORTNAME"
 TPL_APP_NAME="NacionalRock"
-TPL_STREAM_URL="http://37.59.19.104:8162/;stream.nsv"
+TPL_STREAM_URL="http://5.9.56.134:8162/;stream.nsv"
 TPL_FB_URL="fb://profile/239488842805946"
 TPL_TW_URL="twitter://twitter.com/nacionalrock937"
 TPL_WEB_URL="http://nacionalrock.com/"
@@ -63,7 +63,7 @@ cordova plugin add org.apache.cordova.file
 cordova plugin add org.apache.cordova.file-transfer
 if [ "$PLATFORM" == "android" ]
 then
-	cordova plugin add /home/rama/dev/my-phonegap-plugins/statusbarnotification/
+	cordova plugin add /home/rama/dev/radioflow/plugins/statusbarnotification/
 fi
 
 
@@ -74,7 +74,7 @@ then
 
 	BUNDLE_NAME="com.xicnet.nacionalclasica"
 	APP_NAME="NacionalClasica"
-	STREAM_URL="http://37.59.19.104:8154/;stream.nsv"
+	STREAM_URL="http://5.9.56.134:8154/;stream.nsv"
 	FB_URL="fb://profile/118404581585464"
 	TW_URL="twitter://twitter.com/NacionalClasica"
 	WEB_URL="http://clasica.radionacional.com.ar/"
@@ -89,7 +89,7 @@ then
 
 	BUNDLE_NAME="com.xicnet.radionacionalam870"
 	APP_NAME="RadioNacionalAM870"
-	STREAM_URL="http://37.59.19.104:8010/;stream.nsv"
+	STREAM_URL="http://5.9.56.134:8010/;stream.nsv"
 	FB_URL="fb://profile/119044662705"
 	TW_URL="twitter://twitter.com/laradiopublica"
 	WEB_URL="http://radionacional.com.ar/"
@@ -104,7 +104,7 @@ then
 
 	BUNDLE_NAME="com.xicnet.rae"
 	APP_NAME="RAE"
-	STREAM_URL="http://37.59.19.104:8146/;stream.nsv"
+	STREAM_URL="http://5.9.56.134:8146/;stream.nsv"
 	FB_URL="fb://profile/220909701364358"
 	TW_URL="twitter://twitter.com/conexionrae"
 	WEB_URL="http://rae.radionacional.com.ar/"
@@ -119,7 +119,7 @@ then
 
 	BUNDLE_NAME="com.xicnet.nacionalfolklorica"
 	APP_NAME="NacionalFolklorica"
-	STREAM_URL="http://37.59.19.104:8158/;stream.nsv"
+	STREAM_URL="http://5.9.56.134:8158/;stream.nsv"
 	FB_URL="fb://profile/111836772243537"
 	TW_URL="twitter://twitter.com/lafolklorica"
 	WEB_URL="http://folklorica.radionacional.com.ar/"
