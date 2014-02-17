@@ -38,7 +38,7 @@ var app = {
 	//app.addToCal();
        	//navigator.splashscreen.hide();
       //downloadFile();  
-      getBackground();  
+      //getBackground();  
 
 	document.addEventListener("backbutton", ShowExitDialog, false);
 
@@ -145,15 +145,15 @@ function downloadBackground(fileURL){
 	                    fileSystem.root.getFile(  
                                 targetFile, {create: true, exclusive: false},  
                                 function gotFileEntry(fileEntry){  
-	                                var sPath = fileEntry.toURL.replace(targetFile,"");  
+	                                var sPath = fileEntry.fullPath.replace(targetFile,"");  
 	                                var fileTransfer = new FileTransfer();  
 	                                fileEntry.remove();  
 	                                fileTransfer.download(  
                                            fileURL,
                                            sPath + targetFile,  
                                            function(theFile) {  
-						//alert("download complete: " + theFile.toURL());  
-						updateBackground(theFile.toURL());  
+						//alert("download complete: " + theFile.fullPath());  
+						updateBackground(theFile.fullPath());  
                                            },  
                                            function(error) {  
 						alert("download error source " + error.source);  
