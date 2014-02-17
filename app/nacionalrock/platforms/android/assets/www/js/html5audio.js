@@ -3,7 +3,6 @@
 var progressTimer;
 
 var playButton;
-var textPosition;
 
 function onError(error) 
 {
@@ -30,7 +29,12 @@ var html5audio = {
 		isPlaying = true;
 		myaudio.play();
 		document.getElementById('playButton').src = "img/pause.png";
-	
+		if(device.platform == "Android") {
+			app.addToCal();
+		}
+
+		getProgramInfo();
+
 		myaudio.addEventListener("error", function() {
 			 console.log('myaudio ERROR');
 		}, false);
@@ -73,6 +77,9 @@ var html5audio = {
 		myaudio.pause();
 		myaudio = null;
 		myaudio = new Audio(myaudioURL);
-		textPosition.innerHTML = '';
+		if(device.platform == "Android") {
+			app.removeNoti();
+		}
+		hideProgramInfo();
 	}
 };
