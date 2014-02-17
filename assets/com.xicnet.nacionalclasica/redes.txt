@@ -1,0 +1,51 @@
+RAE
+
+Facebook:  /conexionrae
+twitter:   @conexionrae
+mail rae:  conexionrae@radionacional.gov.ar
+blog:      rae.radionacional.com.ar
+
+stream: http://37.59.19.104:8146/;stream.nsv
+
+*************************
+CLASICA
+
+Correo electrónico: clasicalra1@radionacional.gov.ar
+
+Facebook: Radio Nacional Clásica 96.7
+
+Twitter: @NacionalClasica
+
+Blog: clasica.radionacional.com.ar
+
+
+stream: http://37.59.19.104:8154/;stream.nsv
+
+
+****************************
+
+NACIONAL AM870
+http://radionacional.com.ar/
+Facebook     /laradiopublica
+twitter      @laradiopublica
+mail: portal@radionacional.gov.ar
+
+stream: http://37.59.19.104:8010/;stream.nsv
+
+****************************
+
+folklorica:
+
+
+http://folklorica.radionacional.com.ar/
+
+
+https://www.facebook.com/folklorica.nacional
+
+
+twitter: @lafolklorica
+
+stream: http://37.59.19.104:8158/;stream.nsv
+
+
+
