@@ -111,7 +111,7 @@ then
 	MAIL="mailto:conexionrae@radionacional.gov.ar"
 	PACKAGE_DESCRIPTION="Radiodifusion Argentina al Exterior"
 	STATION_NAME="Radiodifusion Argentina al Exterior"
-	STATION_NAME_LONG="Radio Nacional AM 870"
+	STATION_NAME_LONG="Radiodifusion Argentina al Exterior"
 fi
 
 if [ "$STATION" == "nacionalfolklorica" ]
@@ -138,6 +138,7 @@ fi
 
 rm -rf $TARGET_BASEDIR/www
 cp -pr $TPL_BASEDIR/www $TARGET_BASEDIR
+cp -pr $TPL_BASEDIR/config.xml $TARGET_BASEDIR
 
 FILES=`grep -r -i nacional.*rock * -l | grep -v binar | grep -v .swp$ | grep -v "platforms/android/bin/"`
 
