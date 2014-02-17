@@ -38,7 +38,7 @@ var app = {
 	//app.addToCal();
        	//navigator.splashscreen.hide();
       //downloadFile();  
-      getBackground();  
+      //getBackground();  
 
 	document.addEventListener("backbutton", ShowExitDialog, false);
 
