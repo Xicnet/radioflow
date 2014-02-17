@@ -1,4 +1,6 @@
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes.dex : \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/devgirl/statusbarnotification/StatusNotificationIntent.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/devgirl/statusbarnotification/StatusBarNotification.class \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/apache/cordova/device/Device.class \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/apache/cordova/media/FileHelper.class \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/apache/cordova/media/AudioPlayer$1.class \
@@ -91,11 +93,11 @@
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$InAppBrowserClient.class \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/R$xml.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/R.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/R$attr.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/NacionalRock.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/R$drawable.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/R$string.class \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/com/BuildConfig.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/R$xml.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/R.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/R$attr.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/NacionalRock.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/R$drawable.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/R$string.class \
+/home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/classes/com/xicnet/nacionalrock/BuildConfig.class \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/bin/dexedLibs/classes-bb67af4b7471874ee273076a7be5c24c.jar \
