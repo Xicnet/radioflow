@@ -1,0 +1,1 @@
+- check for events like "pause" to detect pause from device's controls and sync with our app GUI
