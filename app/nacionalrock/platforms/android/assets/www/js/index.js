@@ -91,7 +91,7 @@ var app = {
 function getProgramInfo()
 {
 	var server = "http://rnadmin.xicnet.com";
-	if(playing) {
+	if(isPlaying) {
         	var url = server + "/" + stationName + "/now_playing.json?"+Math.random();
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
