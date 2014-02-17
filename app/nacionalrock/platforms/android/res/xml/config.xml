@@ -23,6 +23,9 @@
     <feature name="Media">
         <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
     </feature>
+    <feature name="StatusBarNotification">
+        <param name="android-package" value="org.devgirl.statusbarnotification.StatusBarNotification" />
+    </feature>
     <name>NacionalRock</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
