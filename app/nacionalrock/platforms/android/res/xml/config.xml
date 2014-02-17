@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.xicnet.nacionalrock" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.xicnet.nacionalrock" version="2.1.0" versionCode="15" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Hello Cordova</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
     <preference name="loglevel" value="DEBUG" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
@@ -28,10 +31,10 @@
     </feature>
     <name>Nacional Rock</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        FM 93.7 Radio Nacional Rock (Argentina)
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="mobile@xicnet.com" href="http://xicnet.com/">
+        devs @ Xicnet
     </author>
     <content src="index.html" />
     <access origin="*" />
