@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2B82C439-ADB5-4DED-A170-E556F140C758</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Nacional Rock</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>47C44784-25A5-455D-B3C8-53F0F459BBC5</key>
+		<string>ssh://quad/~git/radioflow.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>app/nacionalrock/platforms/ios/Nacional Rock.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>47C44784-25A5-455D-B3C8-53F0F459BBC5</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://quad/~git/radioflow.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>47C44784-25A5-455D-B3C8-53F0F459BBC5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47C44784-25A5-455D-B3C8-53F0F459BBC5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>radioflow</string>
+		</dict>
+	</array>
+</dict>
+</plist>
