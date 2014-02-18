@@ -30,6 +30,8 @@
 
 #import <Cordova/CDVPlugin.h>
 
+#import <AVFoundation/AVFoundation.h>
+
 @implementation AppDelegate
 
 @synthesize window, viewController;
@@ -87,6 +89,12 @@
 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    BOOL ok;
+    NSError *setCategoryError = nil;
+    ok = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+
 
     return YES;
 }
