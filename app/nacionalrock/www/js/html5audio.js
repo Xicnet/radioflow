@@ -19,7 +19,7 @@ function pad2(number) {
 	return (number < 10 ? '0' : '') + number
 }
 
-var myaudioURL = 'http://37.59.19.104:8162/;stream.nsv';
+var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
 var myaudio = new Audio(myaudioURL);
 var isPlaying = false;
 
