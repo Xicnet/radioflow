@@ -45,14 +45,14 @@ copy_rae:
 copy_radionacionalam870:
 	cp /home/rama/dev/radionacionalam870/platforms/android/bin/RadioNacionalAM870-$(RELEASE).apk /var/www/mov
 
-copy_nacionalclasica:
-	cp /home/rama/dev/nacionalclasica/platforms/android/bin/NacionalClasica-$(RELEASE).apk /var/www/mov
+copy_nacionalrock:
+	cp /home/rama/dev/nacionalrock/platforms/android/bin/NacionalRock-$(RELEASE).apk /var/www/mov
 
 copy_nacionalfolklorica:
 	cp /home/rama/dev/nacionalfolklorica/platforms/android/bin/NacionalFolklorica-$(RELEASE).apk /var/www/mov
 
-copy_nacionalrock:
-	cp /home/rama/dev/nacionalrock/platforms/android/bin/NacionalRock-$(RELEASE).apk /var/www/mov
+copy_nacionalclasica:
+	cp /home/rama/dev/nacionalclasica/platforms/android/bin/NacionalClasica-$(RELEASE).apk /var/www/mov
 
 copy_all:
 	make copy_rae $(RELEASE)

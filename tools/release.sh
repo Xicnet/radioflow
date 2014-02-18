@@ -6,5 +6,5 @@ platforms/android/cordova/build --release
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /home/rama/keystore/xicnet-release-key.keystore $UNSIGNED Xicnet_Release && \
 
-$ZIPALIGN -v 4 $UNSIGNED platforms/android/bin/NacionalRock-release-signed-aligned.apk
+$ZIPALIGN -v 4 $UNSIGNED platforms/android/bin/NacionalRock-release.apk
 
