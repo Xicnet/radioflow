@@ -9,6 +9,10 @@ function onError(error)
 	console.log(error.message);
 }
 
+function retryPlay(button) {
+	html5audio.stop();
+	html5audio.play();
+}
 function onConfirmRetry(button) {
 	if (button == 1) {
 		html5audio.play();
@@ -53,7 +57,7 @@ var html5audio = {
 		}, false);
 		myaudio.addEventListener("ended", function() {
 			 //console.log('myaudio ENDED');
-			 html5audio.stop();
+			 //html5audio.stop();
 			 // navigator.notification.alert('Streaming failed. Possibly due to a network error.', null, 'Stream error', 'OK');
 			 // navigator.notification.confirm(
 			 //	'Streaming failed. Possibly due to a network error.', // message
@@ -61,8 +65,9 @@ var html5audio = {
 			 //	'Stream error',	// title
 			 //	'Retry,OK'		// buttonLabels
 			 // );
-			 if (window.confirm('Streaming failed. Possibly due to a network error. Retry?')) {
-			 	onConfirmRetry();
+			 if (window.confirm('Hay problemas con tu conexión a Internet. Intentar nuevamente?')) {
+			 	//onConfirmRetry();
+				retryPlay();
 			 }
 		}, false);
 	},
@@ -83,3 +88,12 @@ var html5audio = {
 		hideProgramInfo();
 	}
 };
+
+function audioToggle() {
+	if(isPlaying) {
+		html5audio.stop();
+	} else {
+		html5audio.play();
+	}
+}
+
