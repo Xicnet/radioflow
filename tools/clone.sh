@@ -188,11 +188,12 @@ fi
 if [ "$PLATFORM" == "ios" ]
 then
 	cordova prepare ios
-	cp -v $SRC_BASEDIR/res/drawable-hdpi/splash.png "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/splash/Default~iphone.png"
-	cp -v $SRC_BASEDIR/res/drawable-hdpi/splash.png "$TARGET_BASEDIR/www/res/screen/ios/screen-iphone-portrait.png"
-	cp -v $SRC_BASEDIR/res/drawable-hdpi/icon.png "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/icons/icon.png"
-	cp -v "$TPL_BASEDIR/platforms/ios/Nacional Rock/Classes/AppDelegate.m" "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Classes/AppDelegate.m"
-	cp -v "$TPL_BASEDIR/platforms/ios/Nacional Rock/Nacional Rock-Info.plist" "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/$STATION_NAME-Info.plist"
+	#cp -v $SRC_BASEDIR/res/drawable-hdpi/splash.png "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/splash/Default~iphone.png"
+	#cp -v $SRC_BASEDIR/res/drawable-hdpi/splash.png "$TARGET_BASEDIR/www/res/screen/ios/screen-iphone-portrait.png"
+	#cp -v $SRC_BASEDIR/res/drawable-hdpi/icon.png "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/icons/icon.png"
+	#cp -v "$TPL_BASEDIR/platforms/ios/Nacional Rock/Classes/AppDelegate.m" "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Classes/AppDelegate.m"
+	#cp -v "$TPL_BASEDIR/platforms/ios/Nacional Rock/Nacional Rock-Info.plist" "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/$STATION_NAME-Info.plist"
+	rsync -vr $SRC_BASEDIR/ios/* "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/"
 	cordova prepare ios
 fi
 
