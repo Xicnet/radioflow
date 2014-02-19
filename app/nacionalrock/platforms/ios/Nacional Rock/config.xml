@@ -34,9 +34,6 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
-    <feature name="Media">
-        <param name="ios-package" value="CDVSound" />
-    </feature>
     <name>Nacional Rock</name>
     <description>
         FM 93.7 Radio Nacional Rock (Argentina)
@@ -46,4 +43,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="Media">
+        <param name="ios-package" value="CDVSound" />
+    </feature>
 </widget>

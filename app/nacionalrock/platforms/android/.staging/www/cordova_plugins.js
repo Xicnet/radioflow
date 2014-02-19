@@ -172,6 +172,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.devgirl.statusbarnotification/www/statusbarnotification.js",
+        "id": "org.devgirl.statusbarnotification.StatusBarNotification",
+        "clobbers": [
+            "window.statusbarnotification"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.media/www/MediaError.js",
         "id": "org.apache.cordova.media.MediaError",
         "clobbers": [
@@ -184,13 +191,6 @@ module.exports = [
         "clobbers": [
             "window.Media"
         ]
-    },
-    {
-        "file": "plugins/org.devgirl.statusbarnotification/www/statusbarnotification.js",
-        "id": "org.devgirl.statusbarnotification.StatusBarNotification",
-        "clobbers": [
-            "window.statusbarnotification"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -201,8 +201,8 @@ module.exports.metadata =
     "org.apache.cordova.file": "1.0.0",
     "org.apache.cordova.file-transfer": "0.4.1",
     "org.apache.cordova.inappbrowser": "0.3.1",
-    "org.apache.cordova.media": "0.2.8",
-    "org.devgirl.statusbarnotification": "0.1.0"
+    "org.devgirl.statusbarnotification": "0.1.0",
+    "org.apache.cordova.media": "0.2.8"
 }
 // BOTTOM OF METADATA
 });
