@@ -4,33 +4,27 @@
        
 	function audioToggle() {
 		if (!isPlaying) {
-			var streamURL = "http://5.9.56.134:8162/;stream.nsv";
-			if(device.platform == "Android") {
-				myMedia = new Media(streamURL, stopAudio, mediaError, mediaStatus);
-				console.log(myMedia);
-				app.addToCal();
-			} else {
-				myMedia = new Audio(streamURL, stopAudio, null);
-			}
-			myMedia.play();     
-			document.getElementById('playButton').src = "img/pause.png";
-			isPlaying = true; 
-			getProgramInfo();
+			playAudio();
 		} else {
-			/*
-			hideProgramInfo();
-			if(device.platform == "Android") {
-				app.removeNoti();
-			}
-			myMedia.pause();
-			myMedia.release();
-			document.getElementById('play').src = "img/play.png";   
-			isPlaying = false;
-			*/
 			stopAudio();
 		}
 	}
  
+	function playAudio() {
+		var streamURL = "http://5.9.56.134:8162/;stream.nsv";
+		if(device.platform == "Android") {
+			myMedia = new Media(streamURL, stopAudio, mediaError, mediaStatus);
+			console.log(myMedia);
+			app.addToCal();
+		} else {
+			myMedia = new Audio(streamURL, stopAudio, null);
+		}
+		myMedia.play();     
+		document.getElementById('playButton').src = "img/pause.png";
+		isPlaying = true; 
+		getProgramInfo();
+	}
+
 	function stopAudio() {
 		if(device.platform == "Android") {
 			app.removeNoti();
