@@ -44,7 +44,6 @@
 		8EE433B1B7B14A67A65E0354 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E8FC58F1A49BA986B6965 /* CDVFileTransfer.m */; };
 		959AF44AACC94B1686BE4E55 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B6832747C4080B137125B /* CDVInAppBrowser.m */; };
 		9BC95EA6B7B746BC8F8C9F95 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 658FD749B6254C71BA345256 /* CDVDevice.m */; };
-		BD185860017E4A119EDF1719 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B1875006594806A79EF40A /* CDVSound.m */; };
 		BD3E127B869D40468A292CAC /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD351894004C23B4727687 /* CDVFile.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		D7DE6EC1396A47FEA2F06995 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FC6620C5AD48A38B2A67A8 /* CDVLocalFilesystem.m */; };
@@ -463,7 +462,6 @@
 				3FA07ED6D856490BAACA9B7D /* CDVAssetLibraryFilesystem.m in Sources */,
 				8EE433B1B7B14A67A65E0354 /* CDVFileTransfer.m in Sources */,
 				959AF44AACC94B1686BE4E55 /* CDVInAppBrowser.m in Sources */,
-				BD185860017E4A119EDF1719 /* CDVSound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
