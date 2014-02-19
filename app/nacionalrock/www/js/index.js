@@ -119,6 +119,7 @@ function getBackground()
         $.getJSON(url, function(data) {
                 //downloadBackground(data.image);
                 streamURL = data.streamurl;
+		$("#one").css({'background-image':"url('"+data.image+"')"});
         });
 }
 
@@ -152,7 +153,6 @@ function downloadBackground(fileURL){
                                            fileURL,
                                            sPath + targetFile,  
                                            function(theFile) {  
-						//alert("download complete: " + theFile.toURL());  
 						updateBackground(theFile.toURL());  
                                            },  
                                            function(error) {  
