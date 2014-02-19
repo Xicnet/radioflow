@@ -42,7 +42,7 @@
 
 		<div id="content">
 			<div id="playcontrols">
-				<a href="#" onclick="playToggle();return false;"><img id="playButton" src="img/play.png"></a>
+				<a href="#" onclick="audioToggle();return false;"><img id="playButton" src="img/play.png"></a>
 			</div>
 			<div id="program-info">
 				<div id="program-name">Programa <span id="name"></span></div>
@@ -69,17 +69,6 @@
 	</div><!-- /content --> 
 	
 </div><!-- /page one --> 
-
-        <script type="text/javascript">
-         function playToggle() {
-                 if(isPlaying) {
-                         html5audio.stop();
-                 } else {
-                         html5audio.play();
-                 }
-         }
-        </script>
-
 
     </body>
 </html>
