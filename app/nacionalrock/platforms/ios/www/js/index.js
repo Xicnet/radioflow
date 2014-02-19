@@ -38,7 +38,7 @@ var app = {
 	//app.addToCal();
        	//navigator.splashscreen.hide();
       //downloadFile();  
-      //getBackground();  
+      getBackground();  
 
 	document.addEventListener("backbutton", ShowExitDialog, false);
 
@@ -117,7 +117,7 @@ function getBackground()
 	var server = "http://rnadmin.xicnet.com";
        	var url = server + "/" + stationName + "/config.json?"+Math.random();
         $.getJSON(url, function(data) {
-                downloadBackground(data.image);
+                //downloadBackground(data.image);
                 streamURL = data.streamurl;
         });
 }
