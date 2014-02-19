@@ -119,6 +119,10 @@ function getBackground()
         $.getJSON(url, function(data) {
                 //downloadBackground(data.image);
                 streamURL = data.streamurl;
+		//document.getElementById('one').background = data.image;
+		//alert(data.image);
+		//document.getElementById('one').css('background-image', 'url(' + data.image + ')');
+		$("#one").css({'background-image':"url('"+data.image+"')"});
         });
 }
 
@@ -138,13 +142,16 @@ function hideProgramInfo()
 
 
 function downloadBackground(fileURL){  
+	alert("downloading background");  
        window.requestFileSystem(  
                     LocalFileSystem.PERSISTENT, 0,  
                     function onFileSystemSuccess(fileSystem) {
+	alert("downloading background 2");  
                     	var targetFile = "background.jpg"
 	                    fileSystem.root.getFile(  
                                 targetFile, {create: true, exclusive: false},  
                                 function gotFileEntry(fileEntry){  
+	alert("downloading background 3");  
 	                                var sPath = fileEntry.toURL.replace(targetFile,"");  
 	                                var fileTransfer = new FileTransfer();  
 	                                fileEntry.remove();  
@@ -152,7 +159,7 @@ function downloadBackground(fileURL){
                                            fileURL,
                                            sPath + targetFile,  
                                            function(theFile) {  
-						//alert("download complete: " + theFile.toURL());  
+						alert("download complete: " + theFile.toURL());  
 						updateBackground(theFile.toURL());  
                                            },  
                                            function(error) {  
@@ -167,6 +174,7 @@ function downloadBackground(fileURL){
 }
   
      function updateBackground(url){  
+	alert("UPDATING background");  
        $("#one").css({'background-image':"url('"+url+"')"});
      }  
      function fail(evt) {  

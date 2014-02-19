@@ -148,8 +148,8 @@ span#presenter
     margin:0px;
     padding:0px;
     text-transform:uppercase;
-    background: #000 url(../img/back.jpg) no-repeat center center fixed;
-    /* background: #000 no-repeat center center fixed; */
+    /* background: #000 url(../img/back.jpg) no-repeat center center fixed; */
+    background: #000 no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
