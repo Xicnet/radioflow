@@ -54,13 +54,13 @@ cordova create $TARGET_BASEDIR com.xicnet.$STATION "$STATION_NAME"
 cd $TARGET_BASEDIR
 
 cordova platform add $PLATFORM
-cordova plugin add org.apache.cordova.dialogs
-cordova plugin add org.apache.cordova.inappbrowser
-cordova plugin add org.apache.cordova.media
 cordova plugin add org.apache.cordova.device
-cordova plugin add org.apache.cordova.splashscreen
+cordova plugin add org.apache.cordova.dialogs
 cordova plugin add org.apache.cordova.file
 cordova plugin add org.apache.cordova.file-transfer
+cordova plugin add org.apache.cordova.inappbrowser
+cordova plugin add org.apache.cordova.media
+cordova plugin add org.apache.cordova.splashscreen
 if [ "$PLATFORM" == "android" ]
 then
 	cordova plugin add /home/rama/dev/radioflow/plugins/statusbarnotification/
@@ -127,6 +127,21 @@ then
 	PACKAGE_DESCRIPTION="Nacional Folklorica FM 98.7 (Argentina)"
 	STATION_NAME="Nacional Folklorica FM 98.7"
 	STATION_NAME_LONG="Nacional Folklorica FM 98.7"
+fi
+
+if [ "$STATION" == "radiodesalon" ]
+then
+
+	BUNDLE_NAME="com.xicnet.radiodesalon"
+	APP_NAME="RadioDeSalon"
+	STREAM_URL="http://stream.xicnet.com:2323/radiodesalon.mp3"
+	FB_URL="fb://profile/123992934310457"
+	TW_URL="twitter://twitter.com/radiodesalon"
+	WEB_URL="http://radiodesalon.com/"
+	MAIL="mailto:contacto@radiodesalon.com"
+	PACKAGE_DESCRIPTION="Radio de Salon"
+	STATION_NAME="Radio de Salon"
+	STATION_NAME_LONG="Radio de Salon"
 fi
 
 if [ "$PLATFORM" == "android" ]
