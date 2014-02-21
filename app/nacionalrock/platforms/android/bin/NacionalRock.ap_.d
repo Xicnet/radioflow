@@ -89,7 +89,6 @@
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/css/index.css \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/lib/jquery.mobile-1.3.0-beta.1.min.js \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/lib/jquery.mobile-1.4.1.min.js \
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/lib/jquery.mobile-1.4.1.css \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/lib/jquery-1.8.3.min.js \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/lib/jquery.mobile-1.3.2.min.js \
 /home/rama/dev/radioflow/app/nacionalrock/platforms/android/assets/www/lib/jquery.mobile-1.3.0-beta.1.min.css \
