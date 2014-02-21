@@ -75,12 +75,3 @@ var html5audio = {
 		this.stop()
 	}
 };
-
-function audioToggle() {
-	if(isPlaying) {
-		html5audio.stop();
-	} else {
-		html5audio.play();
-	}
-}
-

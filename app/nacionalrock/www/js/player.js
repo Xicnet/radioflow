@@ -4,7 +4,7 @@ var isPlaying = false;
 var streamURL;
        
  
-var mediaPlayer = {
+var mediaAudio = {
 	play: function() {
 		var streamURL = "http://5.9.56.134:8162/;stream.nsv";
 		myMedia = new Media(streamURL, this.stop, mediaError, mediaStatus);
@@ -30,12 +30,4 @@ function mediaStatus(e){
 
 function mediaError(error){
 	console.log("RNA Media Error: "+ error);
-}
-
-function audioToggle() {
-	if (isPlaying) {
-		mediaPlayer.stop();
-	} else {
-		mediaPlayer.play();
-	}
 }
