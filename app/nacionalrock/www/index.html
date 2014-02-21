@@ -70,6 +70,20 @@
 
         <script type="text/javascript">
 		var playButton = document.getElementById('playButton');
+		var player;
+
+		function audioToggle() {
+                if(device.platform == "Android") {
+                        player = mediaAudio;
+		} else {
+                        player = html5audio;
+                }
+			if (isPlaying) {
+				player.stop();
+			} else {
+				player.play();
+			}   
+		}
         </script>
 	
 </div><!-- /page one --> 
