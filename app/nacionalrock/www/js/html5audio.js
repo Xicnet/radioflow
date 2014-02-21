@@ -1,8 +1,9 @@
 
-
-var progressTimer;
-
 var playButton;
+var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
+var myaudio    = new Audio(myaudioURL);
+var isPlaying  = false;
+
 
 function onError(error) 
 {
@@ -13,26 +14,19 @@ function retryPlay(button) {
 	html5audio.stop();
 	html5audio.play();
 }
+
 function onConfirmRetry(button) {
 	if (button == 1) {
 		html5audio.play();
 	}
 }
 
-function pad2(number) {
-	return (number < 10 ? '0' : '') + number
-}
-
-var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
-var myaudio = new Audio(myaudioURL);
-var isPlaying = false;
-
 var html5audio = {
 	play: function()
 	{
 		isPlaying = true;
 		myaudio.play();
-		document.getElementById('playButton').src = "img/pause.png";
+		playButton.src = "img/pause.png";
 		if(device.platform == "Android") {
 			app.addToCal();
 		}
@@ -52,33 +46,22 @@ var html5audio = {
 		myaudio.addEventListener("playing", function() {
 			 isPlaying = true;
 			 //stopButton.style.display = 'block';
-			 document.getElementById('playButton').src = "img/pause.png";
+			 playButton.src = "img/pause.png";
 
 		}, false);
 		myaudio.addEventListener("ended", function() {
-			 //console.log('myaudio ENDED');
-			 //html5audio.stop();
-			 // navigator.notification.alert('Streaming failed. Possibly due to a network error.', null, 'Stream error', 'OK');
-			 // navigator.notification.confirm(
-			 //	'Streaming failed. Possibly due to a network error.', // message
-			 //	onConfirmRetry,	// callback to invoke with index of button pressed
-			 //	'Stream error',	// title
-			 //	'Retry,OK'		// buttonLabels
-			 // );
-			 if (window.confirm('Hay problemas con tu conexión a Internet. Intentar nuevamente?')) {
-			 	//onConfirmRetry();
-				retryPlay();
-			 }
+			 navigator.notification.alert('Hay problemas con tu conexión a Internet.\nIntentá nuevamente.', this.onEnded, 'Desconectado', 'OK');
+
 		}, false);
 	},
 	pause: function() {
 		isPlaying = false;
-		document.getElementById('playButton').src = "img/play.png";
+		playButton.src = "img/play.png";
 		myaudio.pause();
 	},
 	stop: function() {
 		isPlaying = false;
-		document.getElementById('playButton').src = "img/play.png";
+		playButton.src = "img/play.png";
 		myaudio.pause();
 		myaudio = null;
 		myaudio = new Audio(myaudioURL);
@@ -86,6 +69,10 @@ var html5audio = {
 			app.removeNoti();
 		}
 		hideProgramInfo();
+	},
+	onEnded: function() {
+		alert("JAJA");
+		this.stop()
 	}
 };
 
