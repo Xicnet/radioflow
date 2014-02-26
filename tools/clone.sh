@@ -63,7 +63,7 @@ cordova plugin add org.apache.cordova.media
 cordova plugin add org.apache.cordova.splashscreen
 if [ "$PLATFORM" == "android" ]
 then
-	cordova plugin add /home/rama/dev/radioflow/plugins/statusbarnotification/
+	cordova plugin add ../../plugins/statusbarnotification/
 fi
 
 
