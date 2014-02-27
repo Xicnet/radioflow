@@ -17,6 +17,7 @@
  * under the License.
  */
 stationName = "nacionalrock";
+var streamURL;
 
 var app = {
     // Application Constructor
@@ -35,15 +36,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-	//app.addToCal();
-       	//navigator.splashscreen.hide();
-      //downloadFile();  
-      getBackground();  
 
+	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
 
 	// Dialog box when back button is pressed
-
 	function ShowExitDialog() {
 		navigator.notification.confirm(
 			("Desea salir?"), // message
@@ -60,6 +57,31 @@ var app = {
 	            //device.exitApp();
 	            navigator.app.exitApp();
         	}
+	}
+
+	// Server to fetch config (background image and streamURL) from
+	var server = "http://rnadmin.xicnet.com";
+	var server = "http://xere:8000";
+	var url = server + "/" + stationName + "/config.json?"+Math.random();
+	console.log(url);
+
+	// Fetch the config
+	data = $.ajax({
+		url: url,
+		global: false,
+		type: "GET",
+		dataType: "json",
+		async:false,
+		success: function(data) {
+				// Set streamURL as a global variable to be used by player
+				window.streamURL = data.streamurl;
+				setBackgroundImage(data.image);
+			}
+		});
+	
+	// Set background image
+	function setBackgroundImage(url) {
+		$("#one").css({'background-image':"url('"+url+"')"});
 	}
     },
     // Update DOM on a Received Event
@@ -84,7 +106,22 @@ var app = {
 	var success = function(message) { console.log("Remove noti"); };
 	var error = function(message) { console.log("Oopsie! " + message); };
        	statusbarnotification.removeNotification(success, error);
-    }
+    },
+    audioToggle: function() {
+                if(device.platform == "iOS") {
+                        player = html5audio;
+                        console.log("html5audio PLAYER:::::::::::::::"+window.streamURL);
+                } else {
+                        player = mediaAudio;
+                        console.log("mediaPlugin PLAYER:::::::::::::::"+window.streamURL);
+                }
+                        if (isPlaying) {
+                                player.stop();
+                        } else {
+                                player.play();
+                        }   
+                }
+
 };
 
 
@@ -112,17 +149,7 @@ function getProgramInfo()
 	}
 }
 
-function getBackground()
-{
-	var server = "http://rnadmin.xicnet.com";
-       	var url = server + "/" + stationName + "/config.json?"+Math.random();
-        $.getJSON(url, function(data) {
-                //downloadBackground(data.image);
-                streamURL = data.streamurl;
-		$("#one").css({'background-image':"url('"+data.image+"')"});
-        });
-}
-
+// Check for program info changes
 var checkInterval = 5;
 var interval = setInterval(getProgramInfo, 60000 * checkInterval);
 
@@ -134,9 +161,6 @@ function hideProgramInfo()
 		$("#program-image").css("visibility", "hidden");
 
 }
-
-
-
 
 function downloadBackground(fileURL){  
        window.requestFileSystem(  
@@ -166,9 +190,6 @@ function downloadBackground(fileURL){
                     fail);  
 }
   
-     function updateBackground(url){  
-       $("#one").css({'background-image':"url('"+url+"')"});
-     }  
      function fail(evt) {  
        alert(evt.target.error.code);  
      }  

@@ -42,7 +42,7 @@
 
 		<div id="content">
 			<div id="playcontrols">
-				<a href="#" onclick="audioToggle();return false;"><img id="playButton" src="img/play.png"></a>
+				<a href="#" onclick="app.audioToggle();return false;"><img id="playButton" src="img/play.png"></a>
 			</div>
 			<div id="program-info">
 				<div id="program-name">Programa <span id="name"></span></div>
@@ -70,20 +70,6 @@
 
         <script type="text/javascript">
 		var playButton = document.getElementById('playButton');
-		var player;
-
-		function audioToggle() {
-                if(device.platform == "Android") {
-                        player = mediaAudio;
-		} else {
-                        player = html5audio;
-                }
-			if (isPlaying) {
-				player.stop();
-			} else {
-				player.play();
-			}   
-		}
         </script>
 	
 </div><!-- /page one --> 

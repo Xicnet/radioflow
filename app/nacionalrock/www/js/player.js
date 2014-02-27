@@ -1,13 +1,12 @@
 var playButton;
 var myMedia   = null;
 var isPlaying = false;
-var streamURL;
-       
  
 var mediaAudio = {
 	play: function() {
-		var streamURL = "http://5.9.56.134:8162/;stream.nsv";
-		myMedia = new Media(streamURL, this.stop, mediaError, mediaStatus);
+		//var streamURL = "http://5.9.56.134:8162/;stream.nsv";
+		console.log("URLLLLLLLLLLLLLLLLLL : " + window.streamURL);
+		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
 		isPlaying = true; 
 		playButton.src = "img/pause.png";

@@ -1,7 +1,7 @@
 
 var playButton;
-var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
-var myaudio    = new Audio(myaudioURL);
+//var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
+var myaudio    = new Audio(window.streamURL);
 var isPlaying  = false;
 
 
@@ -64,7 +64,7 @@ var html5audio = {
 		playButton.src = "img/play.png";
 		myaudio.pause();
 		myaudio = null;
-		myaudio = new Audio(myaudioURL);
+		myaudio = new Audio(window.streamURL);
 		if(device.platform == "Android") {
 			app.removeNoti();
 		}
