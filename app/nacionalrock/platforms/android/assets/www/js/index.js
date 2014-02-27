@@ -58,10 +58,8 @@ var app = {
         	}
 	}
 
-	console.log("SERVER: " + server);
 	// Server to fetch config (background image and streamURL) from
-	var url = server + "/" + stationName + "/config.json?"+Math.random();
-	console.log(url);
+	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
 
 	// Fetch the config
 	data = $.ajax({
@@ -106,28 +104,27 @@ var app = {
        	statusbarnotification.removeNotification(success, error);
     },
     audioToggle: function() {
-                if(device.platform == "iOS") {
-                        player = html5audio;
-                        console.log("html5audio PLAYER:::::::::::::::"+window.streamURL);
-                } else {
-                        player = mediaAudio;
-                        console.log("mediaPlugin PLAYER:::::::::::::::"+window.streamURL);
-                }
-                        if (isPlaying) {
-                                player.stop();
-                        } else {
-                                player.play();
-                        }   
-                }
+	if(device.platform == "iOS") {
+		player = html5audio;
+		console.log("html5audio PLAYER:::::::::::::::"+window.streamURL);
+	} else {
+		player = mediaAudio;
+		console.log("mediaPlugin PLAYER:::::::::::::::"+window.streamURL);
+	}
+	if (isPlaying) {
+		player.stop();
+	} else {
+		player.play();
+	}   
+    }
 
 };
 
 
 function getProgramInfo()
 {
-	var server = "http://rnadmin.xicnet.com";
 	if(isPlaying) {
-        	var url = server + "/" + stationName + "/now_playing.json?"+Math.random();
+        	var url = window.server + "/" + stationName + "/now_playing.json?"+Math.random();
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
@@ -159,35 +156,3 @@ function hideProgramInfo()
 		$("#program-image").css("visibility", "hidden");
 
 }
-
-function downloadBackground(fileURL){  
-       window.requestFileSystem(  
-                    LocalFileSystem.PERSISTENT, 0,  
-                    function onFileSystemSuccess(fileSystem) {
-                    	var targetFile = "background.jpg"
-	                    fileSystem.root.getFile(  
-                                targetFile, {create: true, exclusive: false},  
-                                function gotFileEntry(fileEntry){  
-	                                var sPath = fileEntry.toURL.replace(targetFile,"");  
-	                                var fileTransfer = new FileTransfer();  
-	                                fileEntry.remove();  
-	                                fileTransfer.download(  
-                                           fileURL,
-                                           sPath + targetFile,  
-                                           function(theFile) {  
-						updateBackground(theFile.toURL());  
-                                           },  
-                                           function(error) {  
-						alert("download error source " + error.source);  
-						alert("download error target " + error.target);  
-						alert("upload error code: " + error.code);  
-                                           });  
-                                },  
-                                fail);  
-                    },  
-                    fail);  
-}
-  
-     function fail(evt) {  
-       alert(evt.target.error.code);  
-     }  
