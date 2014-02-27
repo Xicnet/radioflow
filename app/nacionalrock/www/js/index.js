@@ -17,7 +17,6 @@
  * under the License.
  */
 stationName = "nacionalrock";
-var streamURL;
 
 var app = {
     // Application Constructor
@@ -60,10 +59,7 @@ var app = {
 	}
 
 	// Server to fetch config (background image and streamURL) from
-	var server = "http://rnadmin.xicnet.com";
-	var server = "http://xere:8000";
 	var url = server + "/" + stationName + "/config.json?"+Math.random();
-	console.log(url);
 
 	// Fetch the config
 	data = $.ajax({
