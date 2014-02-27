@@ -70,7 +70,9 @@ var app = {
 		async:false,
 		success: function(data) {
 				// Set streamURL as a global variable to be used by player
-				window.streamURL = data.streamurl;
+				if (data.streamurl) {
+					window.streamURL = data.streamurl;
+				}
 				setBackgroundImage(data.image);
 			}
 		});
@@ -125,6 +127,7 @@ function getProgramInfo()
 {
 	if(isPlaying) {
         	var url = window.server + "/" + stationName + "/now_playing.json?"+Math.random();
+        	console.log("getProgramInfo url : " + url);
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
@@ -135,7 +138,7 @@ function getProgramInfo()
 		                $("#program-presenter").css("visibility", "visible");
 			}
 	                if(data.image.length > 0) {
-	                	var image = "http://rnadmin.xicnet.com" + data.image;
+	                	var image = window.server + data.image;
 	                	document.getElementById('program-image').src = image;
 	                	$("#program-image").css("visibility", "visible");
 			}
