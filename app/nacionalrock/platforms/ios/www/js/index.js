@@ -35,15 +35,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-	//app.addToCal();
-       	//navigator.splashscreen.hide();
-      //downloadFile();  
-      getBackground();  
 
+	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
 
 	// Dialog box when back button is pressed
-
 	function ShowExitDialog() {
 		navigator.notification.confirm(
 			("Desea salir?"), // message
@@ -60,6 +56,30 @@ var app = {
 	            //device.exitApp();
 	            navigator.app.exitApp();
         	}
+	}
+
+	// Server to fetch config (background image and streamURL) from
+	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
+
+	// Fetch the config
+	data = $.ajax({
+		url: url,
+		global: false,
+		type: "GET",
+		dataType: "json",
+		async:false,
+		success: function(data) {
+				// Set streamURL as a global variable to be used by player
+				if (data.streamurl) {
+					window.streamURL = data.streamurl;
+				}
+				setBackgroundImage(data.image);
+			}
+		});
+	
+	// Set background image
+	function setBackgroundImage(url) {
+		$("#one").css({'background-image':"url('"+url+"')"});
 	}
     },
     // Update DOM on a Received Event
@@ -84,15 +104,30 @@ var app = {
 	var success = function(message) { console.log("Remove noti"); };
 	var error = function(message) { console.log("Oopsie! " + message); };
        	statusbarnotification.removeNotification(success, error);
+    },
+    audioToggle: function() {
+	if(device.platform == "iOS") {
+		player = html5audio;
+		console.log("html5audio PLAYER: " + window.streamURL);
+	} else {
+		player = mediaAudio;
+		console.log("mediaPlugin PLAYER: " + window.streamURL);
+	}
+	if (isPlaying) {
+		player.stop();
+	} else {
+		player.play();
+	}   
     }
+
 };
 
 
 function getProgramInfo()
 {
-	var server = "http://rnadmin.xicnet.com";
 	if(isPlaying) {
-        	var url = server + "/" + stationName + "/now_playing.json?"+Math.random();
+        	var url = window.server + "/" + stationName + "/now_playing.json?"+Math.random();
+        	console.log("getProgramInfo url : " + url);
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
@@ -103,7 +138,7 @@ function getProgramInfo()
 		                $("#program-presenter").css("visibility", "visible");
 			}
 	                if(data.image.length > 0) {
-	                	var image = "http://rnadmin.xicnet.com" + data.image;
+	                	var image = window.server + data.image;
 	                	document.getElementById('program-image').src = image;
 	                	$("#program-image").css("visibility", "visible");
 			}
@@ -112,17 +147,7 @@ function getProgramInfo()
 	}
 }
 
-function getBackground()
-{
-	var server = "http://rnadmin.xicnet.com";
-       	var url = server + "/" + stationName + "/config.json?"+Math.random();
-        $.getJSON(url, function(data) {
-                //downloadBackground(data.image);
-                streamURL = data.streamurl;
-		$("#one").css({'background-image':"url('"+data.image+"')"});
-        });
-}
-
+// Check for program info changes
 var checkInterval = 5;
 var interval = setInterval(getProgramInfo, 60000 * checkInterval);
 
@@ -134,41 +159,3 @@ function hideProgramInfo()
 		$("#program-image").css("visibility", "hidden");
 
 }
-
-
-
-
-function downloadBackground(fileURL){  
-       window.requestFileSystem(  
-                    LocalFileSystem.PERSISTENT, 0,  
-                    function onFileSystemSuccess(fileSystem) {
-                    	var targetFile = "background.jpg"
-	                    fileSystem.root.getFile(  
-                                targetFile, {create: true, exclusive: false},  
-                                function gotFileEntry(fileEntry){  
-	                                var sPath = fileEntry.toURL.replace(targetFile,"");  
-	                                var fileTransfer = new FileTransfer();  
-	                                fileEntry.remove();  
-	                                fileTransfer.download(  
-                                           fileURL,
-                                           sPath + targetFile,  
-                                           function(theFile) {  
-						updateBackground(theFile.toURL());  
-                                           },  
-                                           function(error) {  
-						alert("download error source " + error.source);  
-						alert("download error target " + error.target);  
-						alert("upload error code: " + error.code);  
-                                           });  
-                                },  
-                                fail);  
-                    },  
-                    fail);  
-}
-  
-     function updateBackground(url){  
-       $("#one").css({'background-image':"url('"+url+"')"});
-     }  
-     function fail(evt) {  
-       alert(evt.target.error.code);  
-     }  

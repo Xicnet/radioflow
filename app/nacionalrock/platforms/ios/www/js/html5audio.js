@@ -1,8 +1,9 @@
 
-
-var progressTimer;
-
 var playButton;
+//var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
+var myaudio   = null;
+var isPlaying = false;
+var isWaiting = false;
 
 function onError(error) 
 {
@@ -13,31 +14,27 @@ function retryPlay(button) {
 	html5audio.stop();
 	html5audio.play();
 }
+
 function onConfirmRetry(button) {
 	if (button == 1) {
 		html5audio.play();
 	}
 }
 
-function pad2(number) {
-	return (number < 10 ? '0' : '') + number
-}
-
-var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
-var myaudio = new Audio(myaudioURL);
-var isPlaying = false;
-
 var html5audio = {
 	play: function()
 	{
-		isPlaying = true;
+		if(isWaiting) {
+			myaudio.stop()
+			return;
+		}
+		myaudio = null;
+		myaudio = new Audio(window.streamURL);
 		myaudio.play();
-		document.getElementById('playButton').src = "img/pause.png";
+		playButton.src = "img/pause.png";
 		if(device.platform == "Android") {
 			app.addToCal();
 		}
-
-		getProgramInfo();
 
 		myaudio.addEventListener("error", function() {
 			 console.log('myaudio ERROR');
@@ -48,52 +45,38 @@ var html5audio = {
 		myaudio.addEventListener("waiting", function() {
 			 //console.log('myaudio WAITING');
 			 isPlaying = false;
+			 isWaiting = true;
 		}, false);
 		myaudio.addEventListener("playing", function() {
 			 isPlaying = true;
+			 isWaiting = false;
 			 //stopButton.style.display = 'block';
-			 document.getElementById('playButton').src = "img/pause.png";
-
+			 playButton.src = "img/pause.png";
+			getProgramInfo();
 		}, false);
 		myaudio.addEventListener("ended", function() {
-			 //console.log('myaudio ENDED');
-			 //html5audio.stop();
-			 // navigator.notification.alert('Streaming failed. Possibly due to a network error.', null, 'Stream error', 'OK');
-			 // navigator.notification.confirm(
-			 //	'Streaming failed. Possibly due to a network error.', // message
-			 //	onConfirmRetry,	// callback to invoke with index of button pressed
-			 //	'Stream error',	// title
-			 //	'Retry,OK'		// buttonLabels
-			 // );
-			 if (window.confirm('Hay problemas con tu conexión a Internet. Intentar nuevamente?')) {
-			 	//onConfirmRetry();
-				retryPlay();
-			 }
+			 navigator.notification.alert('Hay problemas con tu conexión a Internet.\nIntentá nuevamente.', this.onEnded, 'Desconectado', 'OK');
+
 		}, false);
 	},
 	pause: function() {
 		isPlaying = false;
-		document.getElementById('playButton').src = "img/play.png";
+		playButton.src = "img/play.png";
 		myaudio.pause();
 	},
 	stop: function() {
 		isPlaying = false;
-		document.getElementById('playButton').src = "img/play.png";
+		playButton.src = "img/play.png";
 		myaudio.pause();
 		myaudio = null;
-		myaudio = new Audio(myaudioURL);
+		myaudio = new Audio(window.streamURL);
 		if(device.platform == "Android") {
 			app.removeNoti();
 		}
 		hideProgramInfo();
+	},
+	onEnded: function() {
+		alert("JAJA");
+		this.stop()
 	}
 };
-
-function audioToggle() {
-	if(isPlaying) {
-		html5audio.stop();
-	} else {
-		html5audio.play();
-	}
-}
-
