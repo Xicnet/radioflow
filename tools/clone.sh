@@ -34,11 +34,11 @@ function sign_align {
 		fi
 
 		ZIPALIGN="/home/rama/android/adt-bundle-linux/sdk/tools/zipalign"
-		UNSIGNED="$TARGET_BASEDIR/platforms/android/bin/$1-release-unsigned.apk"
+		UNSIGNED="$TARGET_BASEDIR/platforms/android/ant-build/$1-release-unsigned.apk"
 
 		cordova build --release
 		jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /home/rama/keystore/xicnet-release-key.keystore $UNSIGNED Xicnet_Release && \
-		$ZIPALIGN -v 4 $UNSIGNED platforms/android/bin/$1-release.apk
+		$ZIPALIGN -v 4 $UNSIGNED platforms/android/ant-build/$1-release.apk
 	fi
 	if [ "$PLATFORM" == "ios" ]
 	then
