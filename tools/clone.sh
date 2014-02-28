@@ -46,6 +46,7 @@ function sign_align {
 	fi
 }
 
+sudo chmod -R 775 $SRC_BASEDIR
 
 rm -rf $TARGET_BASEDIR
 
