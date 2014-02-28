@@ -1,9 +1,9 @@
 
 var playButton;
 //var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
-var myaudio    = new Audio(window.streamURL);
-var isPlaying  = false;
-
+var myaudio   = null;
+var isPlaying = false;
+var isWaiting = false;
 
 function onError(error) 
 {
@@ -24,14 +24,17 @@ function onConfirmRetry(button) {
 var html5audio = {
 	play: function()
 	{
-		isPlaying = true;
+		if(isWaiting) {
+			myaudio.stop()
+			return;
+		}
+		myaudio = null;
+		myaudio = new Audio(window.streamURL);
 		myaudio.play();
 		playButton.src = "img/pause.png";
 		if(device.platform == "Android") {
 			app.addToCal();
 		}
-
-		getProgramInfo();
 
 		myaudio.addEventListener("error", function() {
 			 console.log('myaudio ERROR');
@@ -42,12 +45,14 @@ var html5audio = {
 		myaudio.addEventListener("waiting", function() {
 			 //console.log('myaudio WAITING');
 			 isPlaying = false;
+			 isWaiting = true;
 		}, false);
 		myaudio.addEventListener("playing", function() {
 			 isPlaying = true;
+			 isWaiting = false;
 			 //stopButton.style.display = 'block';
 			 playButton.src = "img/pause.png";
-
+			getProgramInfo();
 		}, false);
 		myaudio.addEventListener("ended", function() {
 			 navigator.notification.alert('Hay problemas con tu conexión a Internet.\nIntentá nuevamente.', this.onEnded, 'Desconectado', 'OK');

@@ -108,10 +108,10 @@ var app = {
     audioToggle: function() {
 	if(device.platform == "iOS") {
 		player = html5audio;
-		console.log("html5audio PLAYER:::::::::::::::"+window.streamURL);
+		console.log("html5audio PLAYER: " + window.streamURL);
 	} else {
 		player = mediaAudio;
-		console.log("mediaPlugin PLAYER:::::::::::::::"+window.streamURL);
+		console.log("mediaPlugin PLAYER: " + window.streamURL);
 	}
 	if (isPlaying) {
 		player.stop();
