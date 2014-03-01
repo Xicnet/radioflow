@@ -138,7 +138,7 @@ function getProgramInfo()
 		                $("#program-presenter").css("visibility", "visible");
 			}
 	                if(data.image.length > 0) {
-	                	var image = window.server + data.image;
+	                	var image = data.image;
 	                	document.getElementById('program-image').src = image;
 	                	$("#program-image").css("visibility", "visible");
 			}
