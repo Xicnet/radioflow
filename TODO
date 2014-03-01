@@ -1,4 +1,7 @@
-URGENT: rebuild all iOS app to 2.3.1 (which includes background audio) and re-publish!!
+
+- generate config.js from station template
+
+- auto-generate android icons
 
 - check for events like "pause" to detect pause from device's controls and sync with our app GUI
 
