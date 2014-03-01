@@ -28,6 +28,10 @@
 	<script src="lib/jquery.mobile-1.4.1.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Nacional Rock</title>
+        <link href='css/scroller.css' type='text/css' rel='stylesheet' />
+        <script type='text/javascript' src='js/jquery.scrollTo-min.js'></script>
+        <script type='text/javascript' src='js/jquery.serialScroll-min.js'></script>
+        <script type='text/javascript' src='js/init.js'></script>
     </head>
     <body id="body">
         <script type="text/javascript" src="js/config.js"></script>
@@ -45,12 +49,28 @@
 			<div id="playcontrols">
 				<a href="#" onclick="app.audioToggle();return false;"><img id="playButton" src="img/play.png"></a>
 			</div>
+			<!--
 			<div id="program-info">
 				<div id="program-name">Programa <span id="name"></span></div>
 				<div id="program-presenter">Conduce <span id="presenter"></span></div>
 				<br />
 				<img id="program-image">
 			</div>
+			-->
+
+        <div id="ticker-container">
+                <div id="news-ticker">
+                        <div class="first">
+                                <span class="presenter-label">Programa</span>
+                                <span class="presenter">No tan distintos pero tampoco iguales</p>
+                        </div>
+                        <div>
+                                <span class="presenter-label">Conductor</span>
+                                <span class="presenter">Ramirovich Cosentinsky xxxxxx xxxXXXxxx XXXxxxXXX. si hay mas conductores que pasaria?</span>
+                        </div>
+                </div>
+        </div>
+
 
 			<div id="logo">
 				<img src="img/logo.png" height="80">

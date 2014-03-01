@@ -1,0 +1,36 @@
+#news-ticker{
+	width:100%;
+	height:40px;
+	background-color:white;
+	overflow:hidden;
+}
+	#news-ticker div{
+		height:22px;
+		width:95%;
+		border:0;
+		padding:8px;
+		margin-top:-1px;
+	}
+		#news-ticker div.first{
+			margin-top:0;
+		}
+		
+#ticker-container{
+	position:relative;
+	padding-top:15px;
+}
+
+.presenter-label {
+	color: black;
+	text-shadow: none;
+	font-weight: bold;
+	text-align: left;
+	display:inline;
+}
+
+.presenter {
+	color: black;
+	text-shadow: none;
+	text-align: right;
+	display:inline;
+}
