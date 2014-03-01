@@ -1,5 +1,17 @@
 
-- auto-generate android icons
+!!! - implement info-panel 'hijack' feature. ie: broadcast a specific message to every device playing our stream in place of 'program name & presenters'
+---> same thing for the program pic
+
+- sync up info-panel info & icecast metadata (have a centralized web control interface to broadcast the info)
+
+- improve notifications: should include 'program/presenter' info and obviously implement 'hijacked broadcast'
 
 - check for events like "pause" to detect pause from device's controls and sync with our app GUI
+
+
+
+  DONE
+______________________
+
+DONE - auto-generate android icons
 
