@@ -4,7 +4,6 @@ var isPlaying = false;
  
 var mediaAudio = {
 	play: function() {
-		//var streamURL = "http://5.9.56.134:8162/;stream.nsv";
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     

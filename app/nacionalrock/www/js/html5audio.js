@@ -1,6 +1,5 @@
 
 var playButton;
-//var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
 var myaudio   = null;
 var isPlaying = false;
 var isWaiting = false;

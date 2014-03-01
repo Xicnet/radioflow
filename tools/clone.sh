@@ -23,6 +23,7 @@ TPL_MAIL="http://nacionalrock.com/contacto/"
 TPL_PACKAGE_DESCRIPTION="FM 93.7 Radio Nacional Rock (Argentina)"
 TPL_STATION_NAME="Nacional Rock"
 TPL_STATION_NAME_LONG="Nacional Rock 93.7"
+TPL_CONTENT_SERVER="http://rnadmin.xicnet.com"
 
 function sign_align {
 	if [ "$PLATFORM" == "android" ]
@@ -83,6 +84,7 @@ then
 	PACKAGE_DESCRIPTION="Radio Nacional Clásica (Argentina)"
 	STATION_NAME="Nacional Clasica 96.7"
 	STATION_NAME_LONG="Nacional Clasica 96.7"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "radionacionalam870" ]
@@ -98,6 +100,7 @@ then
 	PACKAGE_DESCRIPTION="Radio Nacional AM 870 (Argentina)"
 	STATION_NAME="Radio Nacional AM 870"
 	STATION_NAME_LONG="Radio Nacional AM 870"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "rae" ]
@@ -113,6 +116,7 @@ then
 	PACKAGE_DESCRIPTION="Radiodifusion Argentina al Exterior"
 	STATION_NAME="Radiodifusion Argentina al Exterior"
 	STATION_NAME_LONG="Radiodifusion Argentina al Exterior"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "nacionalfolklorica" ]
@@ -128,6 +132,7 @@ then
 	PACKAGE_DESCRIPTION="Nacional Folklorica FM 98.7 (Argentina)"
 	STATION_NAME="Nacional Folklorica FM 98.7"
 	STATION_NAME_LONG="Nacional Folklorica FM 98.7"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "radiodesalon" ]
@@ -143,6 +148,7 @@ then
 	PACKAGE_DESCRIPTION="Radio de Salon"
 	STATION_NAME="Radio de Salon"
 	STATION_NAME_LONG="Radio de Salon"
+	CONTENT_SERVER="http://xere:8000"
 fi
 
 if [ "$PLATFORM" == "android" ]
@@ -155,6 +161,7 @@ fi
 rm -rf $TARGET_BASEDIR/www
 cp -pr $TPL_BASEDIR/www $TARGET_BASEDIR
 cp -pr $TPL_BASEDIR/config.xml $TARGET_BASEDIR
+
 
 FILES=`grep -r -i nacional.*rock * -l | grep -v binar | grep -v .swp$ | grep -v "platforms/android/bin/"`
 
@@ -174,13 +181,12 @@ do
 	mv -v $i.tmp $i
 done
 
-FILES=`grep -r $TPL_STREAM_URL * -l | grep -v binar | grep -v .swp$ | grep -v "platforms/*/bin"`
-for i in $FILES
-do
-	echo "PROCESSING: $i"
-	sed "s#$TPL_STREAM_URL#$STREAM_URL#g" $i > $i.tmp
-	mv -v $i.tmp $i
-done
+# Create station-specific config.js
+APP_CONFIG="www/js/config.js"
+echo "PROCESSING: $APP_CONFIG"
+sed "s#$TPL_STREAM_URL#$STREAM_URL#g" $APP_CONFIG \
+| sed "s#$TPL_CONTENT_SERVER#$CONTENT_SERVER#g" > $APP_CONFIG.tmp
+mv -v $APP_CONFIG.tmp $APP_CONFIG
 
 
 #cp $SRC_BASEDIR/res/icon/android/icon-36-ldpi.png $TARGET_BASEDIR/platforms/android/res/drawable-ldpi/icon.png
