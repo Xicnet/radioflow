@@ -6,7 +6,7 @@ app/radionacionalam870
 app/radiodesalon
 app/nacionalrock/platforms/android/bin/
 app/nacionalrock/platforms/android/ant-build/
-app/nacionalrock/platforms/android/CordovaLib
+app/nacionalrock/platforms/android/ant-gen/
 app/nacionalrock/platforms/android/CordovaLib
 app/nacionalrock/platforms/android/gen/
 app/nacionalrock/platforms/android/assets/www/
