@@ -60,7 +60,7 @@ cordova plugin add org.apache.cordova.device
 cordova plugin add org.apache.cordova.dialogs
 cordova plugin add org.apache.cordova.file
 cordova plugin add org.apache.cordova.file-transfer
-cordova plugin add org.apache.cordova.inappbrowser
+cordova plugin add org.apache.cordova.inappbrowser@0.3.1
 cordova plugin add org.apache.cordova.media
 cordova plugin add org.apache.cordova.splashscreen
 if [ "$PLATFORM" == "android" ]
@@ -148,7 +148,23 @@ then
 	PACKAGE_DESCRIPTION="Radio de Salon"
 	STATION_NAME="Radio de Salon"
 	STATION_NAME_LONG="Radio de Salon"
-	CONTENT_SERVER="http://xere:8000"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
+if [ "$STATION" == "rockandpop" ]
+then
+
+	BUNDLE_NAME="com.xicnet.rockandpop"
+	APP_NAME="RockAndPop"
+	STREAM_URL="http://5.9.56.134:8162/;stream.nsv"
+	FB_URL="fb://profile/132462208309"
+	TW_URL="twitter://twitter.com/rock_and_pop"
+	WEB_URL="http://www.fmrockandpop.com/home/"
+	MAIL="http://www.fmrockandpop.com/contacto/"
+	PACKAGE_DESCRIPTION="Rock and Pop"
+	STATION_NAME="Rock and Pop"
+	STATION_NAME_LONG="Rock and Pop"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$PLATFORM" == "android" ]
