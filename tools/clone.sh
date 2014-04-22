@@ -167,6 +167,22 @@ then
 	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
+if [ "$STATION" == "lmf" ]
+then
+
+	BUNDLE_NAME="com.xicnet.lmf"
+	APP_NAME="LMF"
+	STREAM_URL="http://stream.xicnet.com:2323/radiodesalon.mp3"
+	FB_URL="fb://profile/47434686894"
+	TW_URL="twitter://twitter.com/LMF_oficial"
+	WEB_URL="http://lasmanosdefilippi.com/"
+	MAIL="http://lasmanosdefilippi.com/contacto.html"
+	PACKAGE_DESCRIPTION="Las Manos de Filippi"
+	STATION_NAME="Las Manos de Filippi"
+	STATION_NAME_LONG="Las Manos de Filippi"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
 if [ "$PLATFORM" == "android" ]
 then
 	cp -pr $TPL_BASEDIR/platforms/android/res/xml/config.xml $TARGET_BASEDIR/platforms/android/res/xml/config.xml
