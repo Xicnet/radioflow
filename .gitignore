@@ -1,9 +1,12 @@
 *.swp
+assets/com.xicnet.rockandpop/
 app/nacionalclasica
 app/rae
 app/nacionalfolklorica
 app/radionacionalam870
 app/radiodesalon
+app/lmf
+app/rockandpop
 app/nacionalrock/platforms/android/bin/
 app/nacionalrock/platforms/android/ant-build/
 app/nacionalrock/platforms/android/ant-gen/
