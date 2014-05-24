@@ -141,6 +141,9 @@ var app = {
 
 function getProgramInfo()
 {
+	if(window.isPlaying == false) {
+		return;
+	}
 	if(isPlaying) {
         	var url = window.server + "/" + stationName + "/now_playing.json?"+Math.random();
         	console.log("getProgramInfo url : " + url);
@@ -164,8 +167,10 @@ function getProgramInfo()
 }
 
 // Check for program info changes
-var checkInterval = 5;
-var interval = setInterval(getProgramInfo, 60000 * checkInterval);
+var checkInterval = 1;
+var timerUnit = 60000;
+var timerUnit = 6000;
+var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
 {

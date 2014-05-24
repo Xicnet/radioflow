@@ -101,7 +101,6 @@ h1 {
 
 #program-info {
         bottom: 100%;
-        visibility: hidden;
         text-shadow: none;
 }
 
@@ -148,8 +147,12 @@ span#presenter
 }
 
 #buffering {
-	color: red;
 	display: none;
+        background: #fff;
+        padding: 3px;
+        color: #000;
+        text-shadow: none;
+        bottom: 100%;
 }
 
 #one {

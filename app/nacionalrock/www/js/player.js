@@ -7,7 +7,6 @@ var mediaAudio = {
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
-		isPlaying = true; 
 		playButton.src = "img/pause.png";
 		getProgramInfo();
 		app.addToCal();
@@ -32,13 +31,26 @@ function mediaStatus(e){
 	*/
 	console.log("RNA Media Status: "+ e);
 	if(e==1) {
+		window.isPlaying = false;
+		isPlaying = false;
 		$("#buffering").css("display", "block");
+		return;
 	}
 	if(e==2) {
 		$("#buffering").css("display", "none");
+		isPlaying = true; 
+		window.isPlaying = true; 
+		getProgramInfo();
+		return;
 	}
+	window.isPlaying = false;
+	$("#buffering").css("display", "none");
+	return;
 }
 
 function mediaError(error){
 	console.log("RNA Media Error: "+ error);
+	window.isPlaying = false;
+	$("#buffering").css("display", "none");
+	return;
 }
