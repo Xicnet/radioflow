@@ -62,6 +62,7 @@ var app = {
 	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
 
 	// Fetch the config
+	/*
 	data = $.ajax({
 		url: url,
 		global: false,
@@ -74,12 +75,27 @@ var app = {
 					window.streamURL = data.streamurl;
 				}
 				setBackgroundImage(data.image);
+	                	//$("#loading").css("display", "none");
+	                	$(".controls").css("display", "block");
 			}
 		});
-	
+	*/
+
+	data = $.get( url, { name: "John", time: "2pm" } )
+			.done(function( data ) {
+				setBackgroundImage(data.image);
+				setStreamURL(data.streamurl);
+	                	$(".controls").css("display", "block");
+			});
+
 	// Set background image
 	function setBackgroundImage(url) {
 		$("#one").css({'background-image':"url('"+url+"')"});
+	}
+	function setStreamURL(url) {
+		if (url) {
+			window.streamURL = url;
+		}
 	}
     },
     // Update DOM on a Received Event

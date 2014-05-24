@@ -143,6 +143,10 @@ span#presenter
 /*.ui-page { -webkit-backface-visibility: hidden; } */
 
 
+.controls {
+	display: none;
+}
+
 #one {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
