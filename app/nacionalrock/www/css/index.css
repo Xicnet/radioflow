@@ -147,6 +147,11 @@ span#presenter
 	display: none;
 }
 
+#buffering {
+	color: red;
+	display: none;
+}
+
 #one {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
