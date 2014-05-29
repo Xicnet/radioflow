@@ -62,6 +62,7 @@ var app = {
 	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
 
 	// Fetch the config
+	/*
 	data = $.ajax({
 		url: url,
 		global: false,
@@ -74,12 +75,27 @@ var app = {
 					window.streamURL = data.streamurl;
 				}
 				setBackgroundImage(data.image);
+	                	//$("#loading").css("display", "none");
+	                	$(".controls").css("display", "block");
 			}
 		});
-	
+	*/
+
+	data = $.get( url, { name: "John", time: "2pm" } )
+			.done(function( data ) {
+				setBackgroundImage(data.image);
+				setStreamURL(data.streamurl);
+	                	$(".controls").css("display", "block");
+			});
+
 	// Set background image
 	function setBackgroundImage(url) {
 		$("#one").css({'background-image':"url('"+url+"')"});
+	}
+	function setStreamURL(url) {
+		if (url) {
+			window.streamURL = url;
+		}
 	}
     },
     // Update DOM on a Received Event
@@ -106,6 +122,7 @@ var app = {
        	statusbarnotification.removeNotification(success, error);
     },
     audioToggle: function() {
+	console.log("............ in audioToggle()");
 	if(device.platform == "iOS") {
 		player = html5audio;
 		console.log("html5audio PLAYER: " + window.streamURL);
@@ -113,7 +130,7 @@ var app = {
 		player = mediaAudio;
 		console.log("mediaPlugin PLAYER: " + window.streamURL);
 	}
-	if (isPlaying) {
+	if (isPlaying || isStarting) {
 		player.stop();
 	} else {
 		player.play();
@@ -125,6 +142,9 @@ var app = {
 
 function getProgramInfo()
 {
+	if(window.isPlaying == false) {
+		return;
+	}
 	if(isPlaying) {
         	var url = window.server + "/" + stationName + "/now_playing.json?"+Math.random();
         	console.log("getProgramInfo url : " + url);
@@ -148,8 +168,10 @@ function getProgramInfo()
 }
 
 // Check for program info changes
-var checkInterval = 5;
-var interval = setInterval(getProgramInfo, 60000 * checkInterval);
+var checkInterval = 1;
+var timerUnit = 60000;
+var timerUnit = 6000;
+var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
 {

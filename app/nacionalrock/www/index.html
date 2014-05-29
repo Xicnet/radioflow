@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en-US">
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -23,13 +24,42 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-	<link rel="stylesheet" href="lib/jquery.mobile-1.3.0-beta.1.min.css" /> 
-	<script src="lib/jquery-1.11.0.min.js"></script> 
-	<script src="lib/jquery.mobile-1.4.1.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Nacional Rock</title>
     </head>
-    <body id="body">
+	 <body>
+	<div id="wrapper">
+		<header class="main-container-header">
+				<div class="player-container"></div>
+		</header>
+		<section class="main-container-main-content">
+			<div class="program-info-container">
+				<div class="connecting-and-program-info-container">
+					<div class="connecting"></div>
+					<div class="program-info"></div>
+				</div>
+			</div>
+			<div class="program-info-image-container">
+				<img src="" alt="Imagen de Portada de XXXXXX"/>
+			</div>
+		</section>
+		<section class="main-container-brand">
+			<div class="brand-container">
+				<img src="" alt="Imagen de XXXXX"/>
+			</div>
+		</section>
+		<section class="main-container-footer">
+			<div class="links-container">
+				<div class="links link1">a</div>
+				<div class="links link2">b</div>
+				<div class="links link3">c</div>
+				<div class="links link4">d</div>
+			</div>
+		</section>
+	</div>
+
+
+
         <script type="text/javascript" src="js/config.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/player.js"></script>
@@ -37,43 +67,6 @@
         <script type="text/javascript">
             app.initialize();
         </script>
-<div data-role="page" id="one"> 
- 
-	<div data-role="content" >
-
-		<div id="content">
-			<div id="playcontrols">
-				<a href="#" onclick="app.audioToggle();return false;"><img id="playButton" src="img/play.png"></a>
-			</div>
-			<div id="program-info">
-				<div id="program-name">Programa <span id="name"></span></div>
-				<div id="program-presenter">Conduce <span id="presenter"></span></div>
-				<br />
-				<img id="program-image">
-			</div>
-
-			<div id="logo">
-				<img src="img/logo.png" height="80">
-			</div>
-
-			<div id="social-buttons">
-				<a href="#" onClick="window.open('fb://profile/239488842805946', '_system', 'location=yes');"><img src="img/facebook.png" class="social-button"></a>
-				<a href="#" onClick="window.open('twitter://twitter.com/nacionalrock937', '_system', 'location=yes');"><img src="img/twitter.png" class="social-button"></a>
-				<a href="#" onClick="window.open('http://nacionalrock.com/', '_system', 'location=yes');"><img src="img/web.png" class="social-button"></a>
-				<a href="#" onClick="window.open('http://nacionalrock.com/contacto/', '_system', 'location=yes');"><img src="img/mail.png" class="social-button"></a>
-			</div>
- 
-		<!--
-		<p><a href="#two" data-role="button" data-transition="turn">Programación</a></p>	
-		-->
-		</div>
-	</div><!-- /content --> 
-
-        <script type="text/javascript">
-		var playButton = document.getElementById('playButton');
-        </script>
-	
-</div><!-- /page one --> 
 
     </body>
 </html>
