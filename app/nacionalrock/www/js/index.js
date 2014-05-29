@@ -159,7 +159,7 @@ function getProgramInfo()
 			}
 	                if(data.image.length > 0) {
 	                	var image = data.image_url;
-	                	//document.getElementById('program-image').src = image;
+	                	document.getElementById('program-image').src = image;
 	                	$("#program-image").css("visibility", "visible");
 			}
 	                $("#program-info").css("visibility", "visible");
@@ -181,3 +181,14 @@ function hideProgramInfo()
 		$("#program-image").css("visibility", "hidden");
 
 }
+
+$('a').on('touchstart', function(e){
+	    $(this).addClass('tapped');
+	    alert("pepe");
+});
+ 
+$('a').on('touchend', function(e){
+	    $(this).removeClass('tapped');
+	    alert("pipo");
+});
+

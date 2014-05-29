@@ -139,6 +139,10 @@ body div#wrapper {
 	width: 100%;
 }
 
+.program-info-image-container img {
+	width: 100%;
+}
+
 .brand-container {
 	background-color: grey;
 	width: 60%;
@@ -146,8 +150,7 @@ body div#wrapper {
 	margin: 0 auto;
 }
 .brand-container img {
-	width: 95%;
-	margin-left: 2.5%;
+	width: 100%;
 }
 
 .links-container {
@@ -239,8 +242,10 @@ body div#wrapper {
     -moz-border-radius: 50%; 
     -webkit-border-radius: 50%; 
     border-radius: 50%;
+    margin-left: 25%;
 }
 .circle-text i {
+    margin-left: 29%;
     float:left;
     width:100%;
     padding-top:50%;
@@ -249,3 +254,4 @@ body div#wrapper {
     text-align:center;
     color:white;
 }
+
