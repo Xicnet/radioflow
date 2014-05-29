@@ -8,12 +8,12 @@ var mediaAudio = {
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
-		playButton.src = "img/pause.png";
+		$(".player-control").removeClass("fa-play").addClass("fa-pause").addClass("smaller").removeClass("bigger");
 		getProgramInfo();
 		app.addToCal();
 	},
 	stop: function() {
-		playButton.src = "img/play.png";
+		$(".player-control").removeClass("fa-pause").addClass("fa-play").addClass("bigger").removeClass("smaller");
 		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
@@ -53,7 +53,7 @@ function mediaStatus(e){
 }
 
 function mediaError(error){
-	playButton.src = "img/play.png";   
+	$(".player-control").removeClass("fa-pause").addClass("fa-play");
 	console.log("RNA Media Error: "+ error.message);
 	window.isPlaying = false;
 	isStarting = false;
