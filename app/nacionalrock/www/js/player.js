@@ -8,12 +8,14 @@ var mediaAudio = {
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
-		$(".player-control").removeClass("fa-play").addClass("fa-pause").addClass("smaller").removeClass("bigger");
+		$(".player-control").removeClass("fa-play").addClass("fa-pause");
 		getProgramInfo();
 		app.addToCal();
 	},
 	stop: function() {
-		$(".player-control").removeClass("fa-pause").addClass("fa-play").addClass("bigger").removeClass("smaller");
+		$(".player-control").removeClass("fa-pause").addClass("fa-play");
+		$(".connecting").css("display", "none");
+		$(".program-info").css("display", "none");
 		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
@@ -35,20 +37,21 @@ function mediaStatus(e){
 		window.isPlaying = false;
 		isPlaying = false;
 		isStarting = true;
-		$("#program-info").css("visibility", "visible");
-		$("#buffering").css("visibility", "visible");
+		$(".connecting").css("display", "block");
 		return;
 	}
 	if(e==2) {
-		$("#buffering").css("visibility", "hidden");
+		$(".connecting").css("display", "none");
 		isPlaying = true; 
 		isStarting = false;
 		window.isPlaying = true; 
 		getProgramInfo();
 		return;
 	}
+	if(e==4) {
+		$(".program-info").css("display", "none");
+	}
 	window.isPlaying = false;
-	$("#buffering").css("visibility", "hidden");
 	return;
 }
 
@@ -57,6 +60,6 @@ function mediaError(error){
 	console.log("RNA Media Error: "+ error.message);
 	window.isPlaying = false;
 	isStarting = false;
-	$("#buffering").css("visibility", "hidden");
+	$("#buffering").css("display", "none");
 	return;
 }

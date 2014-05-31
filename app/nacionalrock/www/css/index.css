@@ -35,7 +35,7 @@ body {
     margin:0;
     padding:0;
     height: 100%;
-    background-color: orange;
+	background-color: #000;
 }
 
 
@@ -77,12 +77,14 @@ body div#wrapper {
 	margin: 0 auto;
 	position: absolute;
 	padding: 0;
-	background-color: black;
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
 	top: 0;
 	bottom: 0;
+	background-position: center bottom;
+	background-size: cover;
+	background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg');
 }
 
 .main-container-header,
@@ -109,17 +111,13 @@ body div#wrapper {
 
 
 .main-container-header {
-	background-color: red;
 	text-align: center;
 }
 .main-container-main-content {
-	background-color: green;
 }
 .main-container-brand {
-	background-color: blue;
 }
 .main-container-footer {
-	background-color: yellow;
 }
 
 .infopanel-wrapper {
@@ -129,12 +127,10 @@ body div#wrapper {
 }
 
 .infopanel-container {
-	background-color: gold;
 	height: 25%;
 	width: 100%;
 }
 .program-info-image-container {
-	background-color: cyan;
 	height: 75%;
 	width: 100%;
 }
@@ -144,7 +140,6 @@ body div#wrapper {
 }
 
 .brand-container {
-	background-color: grey;
 	width: 60%;
 	height: 100%;
 	margin: 0 auto;
@@ -154,7 +149,6 @@ body div#wrapper {
 }
 
 .links-container {
-	background-color: silver;
 	width: 60%;
 	margin: 0 auto;
 	height: 100%;
@@ -194,23 +188,18 @@ body div#wrapper {
 	clear: both;
 }
 .link1 {
-	background-color: red;
 }
 .link2 {
-	background-color: green;
 }
 .link3 {
-	background-color: blue;
 }
 .link4 {
-	background-color: black;
 	margin-right: 0!important;
 }
 
 .player-container {
 	width: 35%;
 	height: 100%;
-	background-color: magenta;
 	margin: 0 auto;
 	padding-top: 8%;
 }
@@ -220,8 +209,7 @@ body div#wrapper {
 }
 
 .bigger {
-	font-size: 3.5em;
-	margin-left: 7%;
+	font-size: 3em;
 }
 @media screen and (max-width:320px) {
 	.bigger {
@@ -233,17 +221,26 @@ body div#wrapper {
     width:70%;
 }
 .circle-text:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height:0;
-    padding-bottom: 100%;
-    background: #4679BD; 
-    -moz-border-radius: 50%; 
-    -webkit-border-radius: 50%; 
-    border-radius: 50%;
-    margin-left: 25%;
+	content: "";
+	display: block;
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+	-moz-border-radius: 50%; 
+	-webkit-border-radius: 50%; 
+	border-radius: 50%;
+	margin-left: 25%;
+
+	background: #7d7e7d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 }
+
 .circle-text i {
     margin-left: 29%;
     float:left;
@@ -255,3 +252,32 @@ body div#wrapper {
     color:white;
 }
 
+.circle-text.circle-play:after {
+	border: 2px solid white;	
+}
+
+.circle-text.circle-links:after {
+	border: 2px solid black;
+}
+
+.circle-links {
+	border: none;
+}
+
+.www-button-text {
+	color: white;
+}
+
+.connecting {
+	display: none;
+}
+.program-info {
+	display: none;
+}
+.program-image {
+	display: none;
+}
+
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+}

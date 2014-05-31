@@ -90,7 +90,7 @@ var app = {
 
 	// Set background image
 	function setBackgroundImage(url) {
-		$("#one").css({'background-image':"url('"+url+"')"});
+		$("div#wrapper").css({'background-image':"url('"+url+"')"});
 	}
 	function setStreamURL(url) {
 		if (url) {
@@ -151,18 +151,16 @@ function getProgramInfo()
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
-		                $("#program-name").css("visibility", "visible");
 			}
 	                if(data.presenter) {
 	                	$('#presenter').html(data.presenter);
-		                $("#program-presenter").css("visibility", "visible");
 			}
 	                if(data.image.length > 0) {
 	                	var image = data.image_url;
-	                	document.getElementById('program-image').src = image;
-	                	$("#program-image").css("visibility", "visible");
+				$(".program-image").attr("src", image);
+	                	$(".program-image").css("display", "block");
 			}
-	                $("#program-info").css("visibility", "visible");
+	                $(".program-info").css("display", "block");
 	        });
 	}
 }
@@ -175,10 +173,10 @@ var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
 {
-                $("#program-info").css("visibility", "hidden");
-		$("#program-name").css("visibility", "hidden");
-		$("#program-presenter").css("visibility", "hidden");
-		$("#program-image").css("visibility", "hidden");
+                $(".program-info").css("display", "none");
+		//$("#program-name").css("display", "none");
+		//$("#program-presenter").css("display", "none");
+		$(".program-image").css("display", "none");
 
 }
 

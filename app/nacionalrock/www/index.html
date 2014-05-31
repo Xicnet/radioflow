@@ -26,7 +26,7 @@
         <!--
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 			-->
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 			<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="lib/jquery-1.11.0.min.js"></script> 
@@ -44,13 +44,22 @@
 	<div id="wrapper">
 		<header class="main-container-header">
 				<div class="player-container" onclick="app.audioToggle();return false;">
-<div class="circle-text"><i class="player-control fa fa-play bigger"></i></div>
+					<div class="circle-text circle-play"><i class="player-control fa fa-play bigger"></i></div>
+					<div id="container_button">
+						<div id="hole">
+							<div id="button">
+								<div id="triangle"></div>
+								<div id="lighter_triangle"></div>
+								<div id="darker_triangle"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 		</header>
 		<section class="main-container-main-content">
 			<div class="infopanel-wrapper">
 				<div class="infopanel-container">
-						<div class="connecting"></div>
+						<div class="connecting">Conectando...</div>
 						<div class="program-info">
 							<div id="program-name">Programa <span id="name"></span></div>
 							<div id="program-presenter">Conduce <span id="presenter"></span></div>
@@ -58,7 +67,7 @@
 						</div>
 				</div>
 				<div class="program-info-image-container">
-							<img src="" id="program-image" alt="Program Image">
+							<img src="" class="program-image">
 				</div>
 			</div>
 		</section>
@@ -70,10 +79,18 @@
 		<section class="main-container-footer">
 			<div class="links-container">
 				<div class="links-wrapper">
-					<div class="links link1"><a href="#" onClick="window.open('fb://profile/239488842805946', '_system', 'location=yes');"><img src="img/facebook.png" class="social-button"></a></div>
-					<div class="links link2"><a href="#" onClick="window.open('twitter://twitter.com/nacionalrock937', '_system', 'location=yes');"><img src="img/twitter.png" class="social-button"></a></div>
-					<div class="links link3"><a href="#" onClick="window.open('http://nacionalrock.com/', '_system', 'location=yes');"><img src="img/web.png" class="social-button"></a></div>
-					<div class="links link4"><a href="#" onClick="window.open('http://nacionalrock.com/contacto/', '_system', 'location=yes');"><img src="img/mail.png" class="social-button"></a></div>
+					<div class="links link1">
+						<div class="circle-text circle-links"><a href="#" onClick="window.open('fb://profile/239488842805946', '_system', 'location=yes');"><i class="player-control fa fa-facebook"></i></a></div>
+					</div>
+					<div class="links link2">
+						<div class="circle-text circle-links"><a href="#" onClick="window.open('twitter://twitter.com/nacionalrock937', '_system', 'location=yes');"><i class="player-control fa fa-twitter"></i></a></div>
+					</div>
+					<div class="links link3">
+						<div class="circle-text circle-links"><a href="#" onClick="window.open('http://nacionalrock.com/', '_system', 'location=yes');"><span class="www-button-text">www</span></a></div>
+					</div>
+					<div class="links link4">
+						<div class="circle-text circle-links"><a href="#" onClick="window.open('http://nacionalrock.com/contacto/', '_system', 'location=yes');"><i class="player-control fa fa-envelope-o"></i></a></div>
+					</div>
 					<div class="clear"></div>
 				</div>
 			</div>
