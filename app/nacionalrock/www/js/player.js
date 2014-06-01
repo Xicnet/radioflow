@@ -8,12 +8,12 @@ var mediaAudio = {
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
-		$(".player-control").removeClass("fa-play").addClass("fa-pause");
+		$("#triangle i").removeClass("fa-play").addClass("fa-pause");
 		getProgramInfo();
 		app.addToCal();
 	},
 	stop: function() {
-		$(".player-control").removeClass("fa-pause").addClass("fa-play");
+		$("#triangle i").removeClass("fa-pause").addClass("fa-play");
 		$(".connecting").css("display", "none");
 		$(".program-info").css("display", "none");
 		isPlaying = false;
