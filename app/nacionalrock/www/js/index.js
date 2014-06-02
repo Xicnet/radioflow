@@ -161,9 +161,9 @@ function getProgramInfo()
 	                if(data.image.length > 0) {
 	                	var image = data.image_url;
 				$(".program-image").attr("src", image);
-	                	$(".program-image").css("display", "block");
+	                	$(".program-image").css("visibility", "visible");
 			}
-	                $(".program-info").css("display", "block");
+	                $(".program-info").css("visibility", "visible");
 	        });
 	}
 }
@@ -176,20 +176,11 @@ var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
 {
-                $(".program-info").css("display", "none");
+                $(".infopanel-container").css("visibility", "hidden");
+                $(".program-info").css("visibility", "hidden");
 		//$("#program-name").css("display", "none");
 		//$("#program-presenter").css("display", "none");
-		$(".program-image").css("display", "none");
+		$(".program-image").css("visibility", "hidden");
 
 }
-
-$('a').on('touchstart', function(e){
-	    $(this).addClass('tapped');
-	    alert("pepe");
-});
- 
-$('a').on('touchend', function(e){
-	    $(this).removeClass('tapped');
-	    alert("pipo");
-});
 

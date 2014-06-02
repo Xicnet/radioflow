@@ -14,8 +14,7 @@ var mediaAudio = {
 	},
 	stop: function() {
 		$("#triangle i").removeClass("fa-pause").addClass("fa-play");
-		$(".connecting").css("display", "none");
-		$(".program-info").css("display", "none");
+		$(".connecting").css("visibility", "hidden");
 		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
@@ -42,6 +41,7 @@ function mediaStatus(e){
 		return;
 	}
 	if(e==2) {
+		$(".infopanel-container").css("visibility", "visible");
 		$(".connecting").css("visibility", "hidden");
 		isPlaying = true; 
 		isStarting = false;
@@ -50,7 +50,7 @@ function mediaStatus(e){
 		return;
 	}
 	if(e==4) {
-		$(".program-info").css("display", "none");
+		$(".program-info").css("visibility", "hidden");
 	}
 	window.isPlaying = false;
 	return;

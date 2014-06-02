@@ -130,7 +130,7 @@ body div#wrapper {
 .infopanel-container {
 text-transform: uppercase;
 height: 27%;
-width: 90%;
+width: 100%;
 background-color: white;
 padding-right: 5%;
 padding-left: 5%;
@@ -323,7 +323,7 @@ visibility: hidden;
 }
 .program-image {
 	display: block;
-	background-color: red;
+	visibility: hidden;
 }
 
 div#program-name, div#program-presenter {
