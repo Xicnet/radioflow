@@ -126,6 +126,9 @@ body div#wrapper {
 .infopanel-container {
 	height: 25%;
 	width: 100%;
+	/* background-color: white;
+*/
+	
 }
 .program-info-image-container {
 	height: 75%;
@@ -134,6 +137,14 @@ body div#wrapper {
 
 .program-info-image-container img {
 	width: 100%;
+}
+
+#program-name #name {
+	font-weight: bold;
+}
+
+#program-presenter #presenter {
+	font-weight: bold;
 }
 
 .brand-container {
@@ -289,9 +300,9 @@ a, a:hover, a:visited, a:active {
 /*
 #container_button,#hole,#triangle,#lighter_triangle,#darker_triangle {overflow:hidden;}
 */
-#container_button {overflow:hidden;}
+.container_button {overflow:hidden;}
 
-#container_button {
+.container_button {
     z-index: 300;
     background-color: #252525;
     width: 80%;
@@ -307,13 +318,13 @@ a, a:hover, a:visited, a:active {
     -moz-box-shadow: inset 0px 2px 0px #585858, 1px 1px 0px #000, 2px 2px 5px #000;
     box-shadow: inset 0px 2px 0px #585858, 1px 1px 0px #000, 2px 2px 5px #000;
 }
-#hole {
+.hole {
     background-color: #151515;
     width: 90%;
     height: 90%;
     margin-left: auto;
     margin-right: auto;
-    top: 5%;
+    top: 5.5%;
     position: relative;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -323,7 +334,7 @@ a, a:hover, a:visited, a:active {
     box-shadow: 1px 1px 0px #5d5d5d;
     z-index: 100;
 }
-#button {
+.button {
     z-index: 200;
     width: 100%;
     height: 100%;
@@ -331,7 +342,7 @@ a, a:hover, a:visited, a:active {
     margin-right: auto;
     overflow:visible!important;
     cursor: pointer;
-    top: -1%;
+    top: -2%;
     position: absolute;
     background-image: linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
     background-image: -o-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
@@ -350,15 +361,18 @@ a, a:hover, a:visited, a:active {
     -moz-transition: all .2s;
     transition: all .2s;
 }
-#button:active {
-    top: 3%;
+.button:active {
+    top: 1%;
+    -webkit-transition: top .2s;
+    -moz-transition: top .2s;
+    transition: top .2s;
 /*
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: inset 0px 2px 0px #a8a8a8;
 */
 }
-#triangle {
+.triangle {
     z-index: 1000;
     margin: 0 auto;
     text-align: center;
@@ -371,7 +385,7 @@ a, a:hover, a:visited, a:active {
 
 
 }
-#triangle i {
+.triangle i {
 display:table-cell;
 vertical-align:middle;
 color:#eee;
@@ -379,17 +393,20 @@ color:#eee;
 -moz-transition: color .5s;
 transition: color .5s;
 }
-#button:hover #triangle i{ 
+.button:hover .triangle i{ 
 color:#fff;
 -webkit-transition: color .5s;
 -moz-transition: color .5s;
 transition: color .5s;
 }
-#button:active #triangle i{ 
+.button:active > .triangle i{ 
 color:#d8d8d8;
 -webkit-transition: color .5s;
 -moz-transition: color .5s;
 transition: color .5s;
+-webkit-transition: top .5s;
+-moz-transition: top .5s;
+transition: top .5s;
 }
 
 .links-wrapper {

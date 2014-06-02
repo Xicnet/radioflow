@@ -135,6 +135,9 @@ var app = {
 	} else {
 		player.play();
 	}   
+    },
+    socialLink: function() {
+	    alert($(this));
     }
 
 };
