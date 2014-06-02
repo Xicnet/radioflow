@@ -89,21 +89,25 @@ body div#wrapper {
 .main-container-brand,
 .main-container-footer {
 	position: relative;
-	width: 90%;
-	margin: 0 5%;
+	width: 100%;
+	margin: 0;
 }
 
 .main-container-header {
 	height: 20%;
 }
 .main-container-main-content {
-	height: 45%;
+	height: 35%;
+	padding-bottom: 5%;
+	padding-top: 5%;
 }
 .main-container-brand {
-	height: 20%;
+	height: 15%;
+	padding-top: 5%;
 }
 .main-container-footer {
 	height: 15%;
+	position: relative;
 }
 
 
@@ -124,14 +128,19 @@ body div#wrapper {
 }
 
 .infopanel-container {
-	height: 25%;
-	width: 100%;
-	/* background-color: white;
-*/
-	
+text-transform: uppercase;
+height: 27%;
+width: 90%;
+background-color: white;
+padding-right: 5%;
+padding-left: 5%;
+position: relative;
+display: table;
+font-family: Arial, Helvetica;
+visibility: hidden;
 }
 .program-info-image-container {
-	height: 75%;
+	height: 73%;
 	width: 100%;
 }
 
@@ -139,10 +148,18 @@ body div#wrapper {
 	width: 100%;
 }
 
-#program-name #name {
-	font-weight: bold;
+.display-table {
+display: table;
+height: auto;
+min-height: 100%;
 }
 
+.display-table p {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#program-name #name,
 #program-presenter #presenter {
 	font-weight: bold;
 }
@@ -157,9 +174,9 @@ body div#wrapper {
 }
 
 .links-container {
-	width: 60%;
+	width: 100%;
 	margin: 0 auto;
-	height: 100%;
+	height: 50%;
 	position: relative;
 }
 
@@ -183,7 +200,7 @@ body div#wrapper {
 .links {
 	width: 25%;
 	margin: 0!important;
-	height: 50%;
+	height: 175%;
 	float: left;
 	border: none;
 	padding: 0;
@@ -213,7 +230,7 @@ body div#wrapper {
 }
 
 .smaller {
-	font-size: 2em;
+	font-size: 1.7em;
 }
 
 .fa-play.bigger {
@@ -278,19 +295,42 @@ padding-top: 0.1em;
 }
 
 .www-button-text {
-	color: white;
+	font-weight: 700!important;
 }
 
 .connecting {
-	display: none;
-}
-.program-info {
-	display: none;
-}
-.program-image {
-	display: none;
+display: table;
+position: absolute;
+height: 100%;
+width: 100%;
+text-align: center;
+line-height: 100%;
+visibility: hidden;
 }
 
+.connecting p {
+margin: 0;
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+}
+
+.program-info {
+display: block;
+height: 100%;
+position: relative;
+visibility: hidden;
+}
+.program-image {
+	display: block;
+	background-color: red;
+}
+
+div#program-name, div#program-presenter {
+display: block;
+height: 50%;
+vertical-align: middle;
+}
 a, a:hover, a:visited, a:active {
 	text-decoration: none;
 }
@@ -328,7 +368,7 @@ a, a:hover, a:visited, a:active {
     position: relative;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    border-radius: 50%;
+    bordernks-container-radius: 50%;
     -webkit-box-shadow: 1px 1px 0px #5d5d5d;
     -moz-box-shadow: 1px 1px 0px #5d5d5d;
     box-shadow: 1px 1px 0px #5d5d5d;
@@ -442,3 +482,4 @@ transition: top .5s;
 @media screen and (min-width:2500px) {
 	html { font-size: 500%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 }
+

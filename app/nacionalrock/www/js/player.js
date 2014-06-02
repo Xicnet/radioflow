@@ -37,11 +37,12 @@ function mediaStatus(e){
 		window.isPlaying = false;
 		isPlaying = false;
 		isStarting = true;
-		$(".connecting").css("display", "block");
+		$(".infopanel-container").css("visibility", "visible");
+		$(".connecting").css("visibility", "visible");
 		return;
 	}
 	if(e==2) {
-		$(".connecting").css("display", "none");
+		$(".connecting").css("visibility", "hidden");
 		isPlaying = true; 
 		isStarting = false;
 		window.isPlaying = true; 
