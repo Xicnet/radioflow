@@ -8,12 +8,11 @@ var mediaAudio = {
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
-		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-pause");
 		getProgramInfo();
 		app.addToCal();
 	},
 	stop: function() {
-		$(".player-container .triangle i").removeClass("fa-pause").addClass("fa-play");
+		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
 		$(".connecting").css("visibility", "hidden");
 		isPlaying = false;
 		app.removeNoti();
@@ -36,11 +35,13 @@ function mediaStatus(e){
 		window.isPlaying = false;
 		isPlaying = false;
 		isStarting = true;
+		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
 		$(".infopanel-container").css("visibility", "visible");
 		$(".connecting").css("visibility", "visible");
 		return;
 	}
 	if(e==2) {
+		$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
 		$(".infopanel-container").css("visibility", "visible");
 		$(".connecting").css("visibility", "hidden");
 		isPlaying = true; 
