@@ -334,6 +334,7 @@ visibility: hidden;
 }
 
 div#program-name, div#program-presenter {
+color: white;
 display: block;
 height: 50%;
 vertical-align: middle;
