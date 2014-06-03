@@ -38,6 +38,17 @@ body {
 	background-color: #000;
 }
 
+#wrapper {
+	display: none;
+}
+
+#loading {
+	color: white;
+	height: 100%;
+	padding-top: 50%;
+	text-align: center;
+	margin: 0 auto;
+}
 
 /* Landscape layout (with min-width) */
 /*
@@ -81,7 +92,7 @@ body div#wrapper {
 	bottom: 0;
 	background-position: center bottom;
 	background-size: cover;
-	background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg');
+	/* background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg'); */
 }
 
 .main-container-header,

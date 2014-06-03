@@ -62,6 +62,41 @@ var app = {
 	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
 
 	// Fetch the config
+
+	$.ajaxSetup({
+		timeout: 3000, 
+		retryAfter:7000
+	});
+
+	function getConfig(){
+		$.ajax({
+			url: url,
+			global: false,
+			type: "GET",
+			dataType: "json",
+			async:true,
+		})
+		.success(function(data){
+			//alert('Ajax request worked');
+			appSetup(data);
+		})
+		.error(function(){
+			setTimeout (getConfig, $.ajaxSetup().retryAfter);
+		});
+	}
+
+	function appSetup(config) {
+		// Set streamURL as a global variable to be used by player
+		if (config.streamurl) {
+			window.streamURL = config.streamurl;
+		}
+		setBackgroundImage(config.image);
+               	$("#wrapper").css("display", "block");
+               	$("#loading").css("display", "none");
+	}
+	getConfig();
+
+
 	/*
 	data = $.ajax({
 		url: url,
@@ -77,17 +112,21 @@ var app = {
 				setBackgroundImage(data.image);
 	                	//$("#loading").css("display", "none");
 	                	$(".controls").css("display", "block");
+		alert("success on first retry!");
 			}
-		});
+	}).retry({times:3, timeout:3000}).then(function(){
+		alert("success on retry!");
+	});  
 	*/
 
+	/*
 	data = $.get( url, { name: "John", time: "2pm" } )
 			.done(function( data ) {
 				setBackgroundImage(data.image);
 				setStreamURL(data.streamurl);
-	                	$(".controls").css("display", "block");
+	                	$("#wrapper").css("display", "block");
 			});
-
+	*/
 	// Set background image
 	function setBackgroundImage(url) {
 		$("div#wrapper").css({'background-image':"url('"+url+"')"});
