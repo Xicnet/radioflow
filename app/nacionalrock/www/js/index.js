@@ -164,6 +164,7 @@ function getProgramInfo()
 	                	$(".program-image").css("visibility", "visible");
 			}
 	                $(".program-info").css("visibility", "visible");
+			$(".infopanel-container").css("visibility", "visible");
 	        });
 	}
 }

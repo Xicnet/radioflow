@@ -13,7 +13,6 @@ var mediaAudio = {
 	},
 	stop: function() {
 		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
-		$(".connecting").css("visibility", "hidden");
 		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
@@ -36,14 +35,10 @@ function mediaStatus(e){
 		isPlaying = false;
 		isStarting = true;
 		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
-		$(".infopanel-container").css("visibility", "visible");
-		$(".connecting").css("visibility", "visible");
 		return;
 	}
 	if(e==2) {
 		$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
-		$(".infopanel-container").css("visibility", "visible");
-		$(".connecting").css("visibility", "hidden");
 		isPlaying = true; 
 		isStarting = false;
 		window.isPlaying = true; 
