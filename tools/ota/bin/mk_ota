@@ -1,0 +1,53 @@
+#!/bin/bash
+
+usage () {
+    echo "usage: $0 ipapath slug" 1>&2
+    exit 2
+}
+
+[[ $# -ne 2 ]] && usage
+
+IPA_PATH="$1"
+SLUG="$2"
+
+# get BundleID, title
+TMP="$SLUG"_tmp
+rm -rf $TMP && mkdir $TMP && cd $TMP || exit 1
+unzip "$IPA_PATH" > /dev/null || exit 1
+SRC_PLIST=`find . -name Info.plist`
+BUNDLE_ID=` /usr/libexec/PlistBuddy -c Print:CFBundleIdentifier $SRC_PLIST`
+APP_TITLE=`/usr/libexec/PlistBuddy -c Print:CFBundleName $SRC_PLIST`
+cd ..
+rm -rf $TMP
+
+
+# maybe I love perl?
+function sub() {
+	perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg'
+}
+
+NAME=$SLUG
+
+
+HOST=rama.xicnet.com
+DST_PATH=/var/www/webspace/rama.xicnet.com/ipa/$SLUG
+URL_BASE=http://$HOST/$SLUG
+
+rm -rf $NAME
+mkdir $NAME || exit 1
+
+cp "$IPA_PATH" $NAME/app.ipa
+
+export APP_TITLE URL_BASE BUNDLE_ID
+for i in tmpl/*
+do
+	sub < $i > $NAME/`basename $i`
+done
+
+find $NAME -name .DS_Store -exec rm {} \;
+
+rsync -varzu --progress --delete -ave ssh $NAME/ xicweb:$DST_PATH || exit 1
+
+# expand ipa for bundleID
+
+echo $URL_BASE
