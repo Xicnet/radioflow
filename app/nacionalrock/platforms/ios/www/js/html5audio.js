@@ -1,6 +1,5 @@
 
 var playButton;
-//var myaudioURL = 'http://5.9.56.134:8162/;stream.nsv';
 var myaudio   = null;
 var isPlaying = false;
 var isWaiting = false;
@@ -24,6 +23,7 @@ function onConfirmRetry(button) {
 var html5audio = {
 	play: function()
 	{
+		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
 		if(isWaiting) {
 			myaudio.stop()
 			return;
@@ -31,7 +31,6 @@ var html5audio = {
 		myaudio = null;
 		myaudio = new Audio(window.streamURL);
 		myaudio.play();
-		playButton.src = "img/pause.png";
 		if(device.platform == "Android") {
 			app.addToCal();
 		}
@@ -48,10 +47,10 @@ var html5audio = {
 			 isWaiting = true;
 		}, false);
 		myaudio.addEventListener("playing", function() {
+			$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
 			 isPlaying = true;
 			 isWaiting = false;
 			 //stopButton.style.display = 'block';
-			 playButton.src = "img/pause.png";
 			getProgramInfo();
 		}, false);
 		myaudio.addEventListener("ended", function() {
@@ -61,12 +60,12 @@ var html5audio = {
 	},
 	pause: function() {
 		isPlaying = false;
-		playButton.src = "img/play.png";
 		myaudio.pause();
+		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
 	},
 	stop: function() {
+		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
 		isPlaying = false;
-		playButton.src = "img/play.png";
 		myaudio.pause();
 		myaudio = null;
 		myaudio = new Audio(window.streamURL);
@@ -76,7 +75,7 @@ var html5audio = {
 		hideProgramInfo();
 	},
 	onEnded: function() {
-		alert("JAJA");
+		console.log("JAJA");
 		this.stop()
 	}
 };

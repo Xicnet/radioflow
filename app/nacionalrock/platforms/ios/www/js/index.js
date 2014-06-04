@@ -62,6 +62,42 @@ var app = {
 	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
 
 	// Fetch the config
+
+	$.ajaxSetup({
+		timeout: 3000, 
+		retryAfter:7000
+	});
+
+	function getConfig(){
+		$.ajax({
+			url: url,
+			global: false,
+			type: "GET",
+			dataType: "json",
+			async:true,
+		})
+		.success(function(data){
+			//alert('Ajax request worked');
+			appSetup(data);
+		})
+		.error(function(){
+			setTimeout (getConfig, $.ajaxSetup().retryAfter);
+		});
+	}
+
+	function appSetup(config) {
+		// Set streamURL as a global variable to be used by player
+		if (config.streamurl) {
+			window.streamURL = config.streamurl;
+		}
+		setBackgroundImage(config.image);
+               	$("#wrapper").css("display", "block");
+               	$("#loading").css("display", "none");
+	}
+	getConfig();
+
+
+	/*
 	data = $.ajax({
 		url: url,
 		global: false,
@@ -74,12 +110,31 @@ var app = {
 					window.streamURL = data.streamurl;
 				}
 				setBackgroundImage(data.image);
+	                	//$("#loading").css("display", "none");
+	                	$(".controls").css("display", "block");
+		alert("success on first retry!");
 			}
-		});
-	
+	}).retry({times:3, timeout:3000}).then(function(){
+		alert("success on retry!");
+	});  
+	*/
+
+	/*
+	data = $.get( url, { name: "John", time: "2pm" } )
+			.done(function( data ) {
+				setBackgroundImage(data.image);
+				setStreamURL(data.streamurl);
+	                	$("#wrapper").css("display", "block");
+			});
+	*/
 	// Set background image
 	function setBackgroundImage(url) {
-		$("#one").css({'background-image':"url('"+url+"')"});
+		$("div#wrapper").css({'background-image':"url('"+url+"')"});
+	}
+	function setStreamURL(url) {
+		if (url) {
+			window.streamURL = url;
+		}
 	}
     },
     // Update DOM on a Received Event
@@ -106,6 +161,7 @@ var app = {
        	statusbarnotification.removeNotification(success, error);
     },
     audioToggle: function() {
+	console.log("............ in audioToggle()");
 	if(device.platform == "iOS") {
 		player = html5audio;
 		console.log("html5audio PLAYER: " + window.streamURL);
@@ -113,11 +169,14 @@ var app = {
 		player = mediaAudio;
 		console.log("mediaPlugin PLAYER: " + window.streamURL);
 	}
-	if (isPlaying) {
+	if (isPlaying || isStarting) {
 		player.stop();
 	} else {
 		player.play();
 	}   
+    },
+    socialLink: function() {
+	    alert($(this));
     }
 
 };
@@ -125,37 +184,43 @@ var app = {
 
 function getProgramInfo()
 {
+	if(window.isPlaying == false) {
+		return;
+	}
 	if(isPlaying) {
         	var url = window.server + "/" + stationName + "/now_playing.json?"+Math.random();
         	console.log("getProgramInfo url : " + url);
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
-		                $("#program-name").css("visibility", "visible");
 			}
 	                if(data.presenter) {
 	                	$('#presenter').html(data.presenter);
-		                $("#program-presenter").css("visibility", "visible");
 			}
 	                if(data.image.length > 0) {
-	                	var image = window.server + data.image;
-	                	document.getElementById('program-image').src = image;
-	                	$("#program-image").css("visibility", "visible");
+	                	var image = data.image_url;
+				$(".program-image").attr("src", image);
+	                	$(".program-image").css("visibility", "visible");
 			}
-	                $("#program-info").css("visibility", "visible");
+	                $(".program-info").css("visibility", "visible");
+			$(".infopanel-container").css("visibility", "visible");
 	        });
 	}
 }
 
 // Check for program info changes
-var checkInterval = 5;
-var interval = setInterval(getProgramInfo, 60000 * checkInterval);
+var checkInterval = 1;
+var timerUnit = 60000;
+var timerUnit = 6000;
+var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
 {
-                $("#program-info").css("visibility", "hidden");
-		$("#program-name").css("visibility", "hidden");
-		$("#program-presenter").css("visibility", "hidden");
-		$("#program-image").css("visibility", "hidden");
+                $(".infopanel-container").css("visibility", "hidden");
+                $(".program-info").css("visibility", "hidden");
+		//$("#program-name").css("display", "none");
+		//$("#program-presenter").css("display", "none");
+		$(".program-image").css("visibility", "hidden");
 
 }
+

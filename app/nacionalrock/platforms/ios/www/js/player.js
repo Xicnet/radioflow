@@ -1,32 +1,62 @@
 var playButton;
 var myMedia   = null;
 var isPlaying = false;
+var isStarting = false;
  
 var mediaAudio = {
 	play: function() {
-		//var streamURL = "http://5.9.56.134:8162/;stream.nsv";
 		console.log("streamURL in media plugin player : " + window.streamURL);
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
-		isPlaying = true; 
-		playButton.src = "img/pause.png";
 		getProgramInfo();
 		app.addToCal();
 	},
 	stop: function() {
+		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
+		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
 		myMedia.pause();
-		isPlaying = false;
-		playButton.src = "img/play.png";   
 		myMedia.release();
 	}
 }
  
 function mediaStatus(e){
+	/*
+	Media.MEDIA_NONE = 0;
+	Media.MEDIA_STARTING = 1;
+	Media.MEDIA_RUNNING = 2;
+	Media.MEDIA_PAUSED = 3;
+	Media.MEDIA_STOPPED = 4;
+	*/
 	console.log("RNA Media Status: "+ e);
+	if(e==1) {
+		window.isPlaying = false;
+		isPlaying = false;
+		isStarting = true;
+		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
+		return;
+	}
+	if(e==2) {
+		$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
+		isPlaying = true; 
+		isStarting = false;
+		window.isPlaying = true; 
+		getProgramInfo();
+		return;
+	}
+	if(e==4) {
+		$(".program-info").css("visibility", "hidden");
+	}
+	window.isPlaying = false;
+	return;
 }
 
 function mediaError(error){
-	console.log("RNA Media Error: "+ error);
+	$(".player-control").removeClass("fa-pause").addClass("fa-play");
+	console.log("RNA Media Error: "+ error.message);
+	window.isPlaying = false;
+	isStarting = false;
+	$("#buffering").css("display", "none");
+	return;
 }
