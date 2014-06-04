@@ -15,8 +15,8 @@ TMP="$SLUG"_tmp
 rm -rf $TMP && mkdir $TMP && cd $TMP || exit 1
 unzip "$IPA_PATH" > /dev/null || exit 1
 SRC_PLIST=`find . -name Info.plist`
-BUNDLE_ID=` /usr/libexec/PlistBuddy -c Print:CFBundleIdentifier $SRC_PLIST`
-APP_TITLE=`/usr/libexec/PlistBuddy -c Print:CFBundleName $SRC_PLIST`
+BUNDLE_ID=` /usr/libexec/PlistBuddy -c Print:CFBundleIdentifier "$SRC_PLIST"`
+APP_TITLE=`/usr/libexec/PlistBuddy -c Print:CFBundleName "$SRC_PLIST"`
 cd ..
 rm -rf $TMP
 
@@ -29,9 +29,9 @@ function sub() {
 NAME=$SLUG
 
 
-HOST=rama.xicnet.com
-DST_PATH=/var/www/webspace/rama.xicnet.com/ipa/$SLUG
-URL_BASE=http://$HOST/$SLUG
+HOST=ssl.xicnet.com
+DST_PATH=/var/www/webspace-ssl/ssl.xicnet.com/ipa/$SLUG
+URL_BASE=https://$HOST/ipa/$SLUG
 
 rm -rf $NAME
 mkdir $NAME || exit 1
@@ -46,7 +46,7 @@ done
 
 find $NAME -name .DS_Store -exec rm {} \;
 
-rsync -varzu --progress --delete -ave ssh $NAME/ xicweb:$DST_PATH || exit 1
+rsync -varzu --progress --delete -e "ssh" $NAME/ xicweb:$DST_PATH || exit 1
 
 # expand ipa for bundleID
 
