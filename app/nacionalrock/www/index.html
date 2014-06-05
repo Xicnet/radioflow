@@ -46,15 +46,13 @@
 	<div id="loading">
 		<img src="img/logo.png" alt="logo">
 		<br />
-		<span class="blink">Cargando datos ...</span>
+		<span class="blink">Cargando datos  ...</span>
 	</div>
 	<div id="wrapper">
 		<header class="main-container-header">
 				<div class="player-container" onclick="app.audioToggle();return false;">
-					<!--
-					<div class="circle-text circle-play"><i class="player-control fa fa-play bigger"></i></div>
-					-->
-					<div class="container_button">
+					<div class="relative-dimensions">
+						<img src="img/transp1.png" alt="" class="transp-play"/>
 						<div class="hole">
 							<div class="button">
 								<div class="triangle"><i class="fa fa-play bigger"></i></div>
@@ -66,7 +64,6 @@
 		<section class="main-container-main-content">
 			<div class="infopanel-wrapper">
 				<div class="infopanel-container">
-						<div class="connecting"><p>Conectando...</p></div>
 						<div class="program-info">
 							<div id="program-name"><div class="display-table"><p>Programa <span id="name">&nbsp;</span></p></div></div>
 							<div id="program-presenter"><div class="display-table"><p>Conduce <span id="presenter">&nbsp;</span></p></div></div>
@@ -84,10 +81,9 @@
 			</div>
 		</section>
 		<section class="main-container-footer">
-			<div class="links-container">
-				<div class="links-wrapper">
 					<div class="links link1">
-						<div class="container_button">
+						<div class="relative-dimensions-icons">
+							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
 									<a href="#" onClick="window.open('fb://profile/239488842805946', '_system', 'location=yes');"><div class="triangle"><i class="fa fa-facebook smaller"></i></div></a>
@@ -96,7 +92,8 @@
 						</div>
 					</div>
 					<div class="links link2">
-						<div class="container_button">
+						<div class="relative-dimensions-icons">
+							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
 									<a href="#" onClick="window.open('twitter://twitter.com/nacionalrock937', '_system', 'location=yes');"><div class="triangle"><i class="fa fa-twitter smaller"></i></div></a>
@@ -105,7 +102,8 @@
 						</div>
 					</div>
 					<div class="links link3">
-						<div class="container_button">
+						<div class="relative-dimensions-icons">
+							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
 									<a href="#" onClick="window.open('http://nacionalrock.com/', '_system', 'location=yes');"><div class="triangle"><i class="fa smaller fa-globe smaller"></i></div></a>
@@ -113,8 +111,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="links link4" onclick="app.socialLinks();return false;">
-						<div class="container_button">
+					<div class="links link4">
+						<div class="relative-dimensions-icons">
+							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
 									<a href="#" onClick="window.open('http://nacionalrock.com/contacto/', '_system', 'location=yes');"><div class="triangle"><i class="fa fa-envelope-o smaller"></i></div></a>
@@ -122,9 +121,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
 		</section>
 	</div>
 
