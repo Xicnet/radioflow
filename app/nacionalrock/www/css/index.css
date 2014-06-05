@@ -108,13 +108,15 @@ body div#wrapper {
 	margin: 0;
 }
 .main-container-footer {
-	position: relative;
 	width: 90%;
 	padding-left:5%;
 	padding-right:5%;
 	margin: 0;
 	height: 15%;
-
+	/* position: relative; */
+	/* dirty hack para pegar el footer al piso */
+	position:absolute;
+	bottom:5%;
 }
 
 
