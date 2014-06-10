@@ -12,7 +12,8 @@ var mediaAudio = {
 		app.addToCal();
 	},
 	stop: function() {
-		$(".player-container .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$("div").removeClass('blink');
 		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
@@ -35,12 +36,13 @@ function mediaStatus(e){
 		isPlaying = false;
 		isStarting = true;
 		//$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
-		$(".player-container .triangle .glyph .glyph-icon").removeClass("glyph-icon flaticon-small31").addClass("glyph-icon flaticon-turn4 fa-spin");
+		//$(".play-button .triangle .glyph .glyph-icon").removeClass("glyph-icon flaticon-small31").addClass("glyph-icon flaticon-turn4 fa-spin");
 		return;
 	}
 	if(e==2) {
 		//$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
-		$(".player-container .triangle .glyph .glyph-icon").removeClass("flaticon-turn4 fa-spin").addClass("flaticon-mute4");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-small31").addClass("flaticon-mute4");
+		$("div").removeClass('blink');
 		isPlaying = true; 
 		isStarting = false;
 		window.isPlaying = true; 
@@ -55,7 +57,8 @@ function mediaStatus(e){
 }
 
 function mediaError(error){
-	$(".player-control").removeClass("flaticon-mute4").addClass("flaticon-small31");
+	$(".play-button").removeClass("flaticon-mute4").addClass("flaticon-small31");
+	$("div").removeClass('blink');
 	console.log("RNA Media Error: "+ error.message);
 	window.isPlaying = false;
 	isStarting = false;
