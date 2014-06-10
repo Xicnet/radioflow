@@ -12,7 +12,7 @@ var mediaAudio = {
 		app.addToCal();
 	},
 	stop: function() {
-		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
+		$(".player-container .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
 		isPlaying = false;
 		app.removeNoti();
 		hideProgramInfo();
@@ -40,7 +40,7 @@ function mediaStatus(e){
 	}
 	if(e==2) {
 		//$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
-		$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("flaticon-mute4");
+		$(".player-container .triangle .glyph .glyph-icon").removeClass("flaticon-turn4 fa-spin").addClass("flaticon-mute4");
 		isPlaying = true; 
 		isStarting = false;
 		window.isPlaying = true; 

@@ -38,6 +38,25 @@ var app = {
 
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
+	$('.links').on('tap', onTapHandler);
+	function onTapHandler() {
+
+		$(this).find('.glyph-icon').addClass('blink');
+		setTimeout(function(){
+		$('div').removeClass('blink');}, 2000);
+
+		//$(this).find('.glyph-icon').toggleClass("blink", 2000, "swing");
+/*
+		  $(this).find('.glyph-icon').animate({
+		    opacity: 0.4
+		  }, 2000, function() {
+		  	//$(this).animate({
+			 //   opacity: 1
+			 // }, 2000});
+			$(this).fadeTo( "slow" , 1);
+		  });
+*/
+	}
 
 	// Dialog box when back button is pressed
 	function ShowExitDialog() {
