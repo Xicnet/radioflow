@@ -12,7 +12,8 @@ var mediaAudio = {
 		app.addToCal();
 	},
 	stop: function() {
-		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		//$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4 flaticon-small31").addClass("flaticon-small31");
+		//$(".play-button").removeClass("flaticon-mute4").removeClass("flaticon-small31").addClass("flaticon-small31");
 		$("div").removeClass('blink');
 		isPlaying = false;
 		app.removeNoti();
@@ -50,14 +51,18 @@ function mediaStatus(e){
 		return;
 	}
 	if(e==4) {
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
 		$(".program-info").css("visibility", "hidden");
+	}
+	if(e==undefined) {
+		$(".play-button").removeClass("blink");
 	}
 	window.isPlaying = false;
 	return;
 }
 
 function mediaError(error){
-	$(".play-button").removeClass("flaticon-mute4").addClass("flaticon-small31");
+	$(".play-button").removeClass("flaticon-mute4").removeClass("flaticon-small31");
 	$("div").removeClass('blink');
 	console.log("RNA Media Error: "+ error.message);
 	window.isPlaying = false;
