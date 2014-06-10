@@ -21,10 +21,12 @@
     border: 0; border-image-width: 0!important;
 }
 
+/*
 @-ms-viewport {
 	width: device-width;
 	height: device-height;
 }
+*/
 html {
 	height: 100%;
 }
@@ -93,7 +95,7 @@ body div#wrapper {
 	bottom: 0;
 	background-position: center bottom;
 	background-size: cover;
-	/* background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg'); */
+	background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg');
 }
 .relative-dimensions{display:inline-block;height: 100%; position: relative;}
 .relative-dimensions-icons { height: auto; width: auto; max-height: 100%;position: relative; } 
@@ -153,7 +155,6 @@ body div#wrapper {
 text-transform: uppercase;
 height: 27%;
 width: 100%;
-background-color: black;
 padding-right: 5%;
 padding-left: 5%;
 position: relative;
@@ -292,9 +293,9 @@ padding-top: 0.1em;
 	width: 100%;
 	height:0;
 	padding-bottom: 100%;
-	-moz-border-radius: 50%; 
-	-webkit-border-radius: 50%; 
-	border-radius: 50%;
+	-moz-border-radius: 9999px; 
+	-webkit-border-radius: 9999px; 
+	border-radius: 9999px;
 	margin-left: 25%;
 
 	background: #7d7e7d; /* Old browsers */
@@ -304,7 +305,6 @@ padding-top: 0.1em;
 	background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 }
 
 .circle-text i {
@@ -389,9 +389,9 @@ a, a:hover, a:visited, a:active {
     margin-right: auto;
     margin-bottom: 0px;
     margin-top: 0px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+    -webkit-border-radius: 9999px;
+    -moz-border-radius: 9999px;
+    border-radius: 9999px;
     -webkit-box-shadow: inset 0px 2px 0px #585858, 1px 1px 0px #000, 2px 2px 5px #000;
     -moz-box-shadow: inset 0px 2px 0px #585858, 1px 1px 0px #000, 2px 2px 5px #000;
     box-shadow: inset 0px 2px 0px #585858, 1px 1px 0px #000, 2px 2px 5px #000;
@@ -408,9 +408,9 @@ height: 100%;
 margin-left: auto;
 margin-right: auto;
 top: 5.5%;
--webkit-border-radius: 50%;
--moz-border-radius: 50%;
-bordernks-container-radius: 50%;
+-webkit-border-radius: 9999px;
+-moz-border-radius: 9999px;
+border-radius: 9999px;
 -webkit-box-shadow: 1px 1px 0px #5d5d5d;
 -moz-box-shadow: 1px 1px 0px #5d5d5d;
 box-shadow: 1px 1px 0px #5d5d5d;
@@ -432,9 +432,9 @@ position: absolute;
     background-image: -moz-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
     background-image: -webkit-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
     background-image: -ms-linear-gradient(bottom, rgb(82,79,82) 0%, rgb(134,134,134) 57%);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+    -webkit-border-radius: 9999px;
+    -moz-border-radius: 9999px;
+    border-radius: 9999px;
 /*
     -webkit-box-shadow: inset 0px 2px 0px #a8a8a8, 0px 2px 0px #2a2a2a, 0px 3px 0px #2a2a2a, 0px 4px 0px #2a2a2a, 0px 5px 0px #2a2a2a, 0px 6px 0px #2a2a2a, 0px 7px 0px #2a2a2a, 0px 8px 0px #2a2a2a, 0px 9px 0px #2a2a2a, 0px 10px 0px #2a2a2a, 10px 20px 10px #000;
     -moz-box-shadow: inset 0px 2px 0px #a8a8a8, 0px 2px 0px #2a2a2a, 0px 3px 0px #2a2a2a, 0px 4px 0px #2a2a2a, 0px 5px 0px #2a2a2a, 0px 6px 0px #2a2a2a, 0px 7px 0px #2a2a2a, 0px 8px 0px #2a2a2a, 0px 9px 0px #2a2a2a, 0px 10px 0px #2a2a2a, 10px 20px 10px #000;
@@ -526,4 +526,143 @@ transition: top .5s;
 	html { font-size: 500%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 }
 
+
+/* flaticons.com */
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+font-family: Flaticon;
+font-style: normal;
+margin-left: 20px;
+}
+.flaticon-earth15:before {
+	content: "\e000";
+}
+.flaticon-email26:before {
+	content: "\e001";
+}
+.flaticon-facebook5:before {
+	content: "\e002";
+}
+.flaticon-mute4:before {
+	content: "\e003";
+}
+.flaticon-small31:before {
+	content: "\e004";
+}
+.flaticon-turn4:before {
+	content: "\e005";
+}
+.flaticon-twitter34:before {
+	content: "\e006";
+}
+
+
+
+#glyphs {
+	clear: both;
+}
+.glyph {
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
+.glyph .glyph-icon {
+	padding: 10px;
+	display: block;
+	font-family:"Flaticon";
+	/* line-height: 1; */
+}
+/* play */
+.glyph .glyph-icon.flaticon-small31:before {
+font-size: 3em;
+color: #eee;
+margin-left: 6px;
+}
+/* loading */
+.glyph .glyph-icon.flaticon-turn4:before {
+	font-size: 3.5em;
+	color: #eee;
+	margin-left: 0;
+}
+/* stop-mute */
+.glyph .glyph-icon.flaticon-mute4:before {
+	font-size: 3em;
+	color: #eee;
+	margin-left: 0;
+}
+.glyph .glyph-icon.glyph-icon-facebook-n-twitter:before {
+	font-size: 2em;
+	color: #eee;
+	margin-left: 0;
+}
+.glyph .glyph-icon.glyph-icon-web-n-envelope:before {
+	font-size: 3em;
+	color: #eee;
+	margin-left: 0;
+}
+
+.glyph > input {
+	display: block;
+	width: 100px;
+	margin: 5px auto;
+	text-align: center;
+	font-size: 12px;
+	cursor: text;
+}
+.glyph > input.icon-input {
+	font-family:"Flaticon";
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.fa-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(359deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(359deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(359deg);
+  }
+  100% {
+    -o-transform: rotate(0deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
 

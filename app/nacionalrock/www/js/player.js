@@ -34,11 +34,13 @@ function mediaStatus(e){
 		window.isPlaying = false;
 		isPlaying = false;
 		isStarting = true;
-		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
+		//$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
+		$(".player-container .triangle .glyph .glyph-icon").removeClass("glyph-icon flaticon-small31").addClass("glyph-icon flaticon-turn4 fa-spin");
 		return;
 	}
 	if(e==2) {
-		$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
+		//$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
+		$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("flaticon-mute4");
 		isPlaying = true; 
 		isStarting = false;
 		window.isPlaying = true; 
@@ -53,7 +55,7 @@ function mediaStatus(e){
 }
 
 function mediaError(error){
-	$(".player-control").removeClass("fa-pause").addClass("fa-play");
+	$(".player-control").removeClass("flaticon-mute4").addClass("flaticon-small31");
 	console.log("RNA Media Error: "+ error.message);
 	window.isPlaying = false;
 	isStarting = false;
