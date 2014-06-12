@@ -23,7 +23,6 @@ function onConfirmRetry(button) {
 var html5audio = {
 	play: function()
 	{
-		$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
 		if(isWaiting) {
 			myaudio.stop()
 			return;
@@ -47,24 +46,30 @@ var html5audio = {
 			 isWaiting = true;
 		}, false);
 		myaudio.addEventListener("playing", function() {
-			$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
 			 isPlaying = true;
 			 isWaiting = false;
-			 //stopButton.style.display = 'block';
+			$("#playicon").removeClass("flaticon-small31").addClass("flaticon-mute4");
+			$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-small31").addClass("flaticon-mute4");
+			$("div").removeClass('blink');
 			getProgramInfo();
 		}, false);
 		myaudio.addEventListener("ended", function() {
 			 navigator.notification.alert('Hay problemas con tu conexión a Internet.\nIntentá nuevamente.', this.onEnded, 'Desconectado', 'OK');
+			$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+			$("div").removeClass('blink');
+			$(".program-info").css("visibility", "hidden");
 
 		}, false);
 	},
 	pause: function() {
 		isPlaying = false;
 		myaudio.pause();
-		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$("div").removeClass('blink');
 	},
 	stop: function() {
-		$(".player-container .triangle i").removeClass("fa-pause").removeClass("fa-circle-o-notch fa-spin").addClass("fa-play");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$("div").removeClass('blink');
 		isPlaying = false;
 		myaudio.pause();
 		myaudio = null;
