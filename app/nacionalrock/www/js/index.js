@@ -113,6 +113,9 @@ var app = {
 			window.email = config.email;
 		}
 		setBackgroundImage(config.image);
+		if (config.logourl) {
+			setLogoImage(config.logourl);
+		}
                	$("#wrapper").css("display", "block");
                	$("#loading").css("display", "none");
 	}
@@ -122,6 +125,9 @@ var app = {
 	// Set background image
 	function setBackgroundImage(url) {
 		$("div#wrapper").css({'background-image':"url('"+url+"')"});
+	}
+	function setLogoImage(url) {
+		$(".logo").attr('src', url);
 	}
 	function setStreamURL(url) {
 		if (url) {
