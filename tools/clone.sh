@@ -60,7 +60,7 @@ cordova plugin add org.apache.cordova.device
 cordova plugin add org.apache.cordova.dialogs
 cordova plugin add org.apache.cordova.file
 cordova plugin add org.apache.cordova.file-transfer
-cordova plugin add org.apache.cordova.inappbrowser@0.3.1
+cordova plugin add org.apache.cordova.inappbrowser
 cordova plugin add org.apache.cordova.media
 cordova plugin add org.apache.cordova.splashscreen
 if [ "$PLATFORM" == "android" ]
@@ -180,6 +180,22 @@ then
 	PACKAGE_DESCRIPTION="Las Manos de Filippi"
 	STATION_NAME="Las Manos de Filippi"
 	STATION_NAME_LONG="Las Manos de Filippi"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
+if [ "$STATION" == "xicnet" ]
+then
+
+	BUNDLE_NAME="com.xicnet.xicnet"
+	APP_NAME="Xicnet"
+	STREAM_URL="http://198.27.81.55:8205/dfm_1"
+	FB_URL="fb://profile/47434686894"
+	TW_URL="twitter://twitter.com/LMF_oficial"
+	WEB_URL="http://lasmanosdefilippi.com/"
+	MAIL="http://lasmanosdefilippi.com/contacto.html"
+	PACKAGE_DESCRIPTION="Xicnet"
+	STATION_NAME="Xicnet"
+	STATION_NAME_LONG="Xicnet"
 	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
