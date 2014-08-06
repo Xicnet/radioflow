@@ -195,6 +195,11 @@ function getProgramInfo()
 	                if(data.presenter) {
 	                	$('#presenter').html(data.presenter);
 			}
+	                if(data.show_labels) {
+	                	$('.infopanel-label').css("display", "inline");
+			} else {
+	                	$('.infopanel-label').css("display", "none");
+			}
 	                if(data.image.length > 0) {
 	                	var image = data.image_url;
 				$(".program-image").attr("src", image);
