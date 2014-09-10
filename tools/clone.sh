@@ -18,7 +18,7 @@ TPL_APP_NAME="NacionalRock"
 TPL_STREAM_URL="http://5.9.56.134:8162/;stream.nsv"
 TPL_FB_URL="fb://profile/239488842805946"
 TPL_TW_URL="twitter://twitter.com/nacionalrock937"
-TPL_WEB_URL="http://nacionalrock.com/"
+TPL_WEB_URL="http://www.nacionalrock.com/"
 TPL_MAIL="contacto@nacionalrock.com"
 TPL_PACKAGE_DESCRIPTION="FM 93.7 Radio Nacional Rock (Argentina)"
 TPL_STATION_NAME="Nacional Rock"
@@ -62,7 +62,7 @@ cordova plugin add org.apache.cordova.file
 cordova plugin add org.apache.cordova.file-transfer
 cordova plugin add org.apache.cordova.inappbrowser
 cordova plugin add org.apache.cordova.media
-cordova plugin add org.apache.cordova.splashscreen
+#cordova plugin add org.apache.cordova.splashscreen
 if [ "$PLATFORM" == "android" ]
 then
 	cordova plugin add ../../plugins/statusbarnotification/
@@ -79,8 +79,8 @@ then
 	STREAM_URL="http://5.9.56.134:8154/;stream.nsv"
 	FB_URL="fb://profile/118404581585464"
 	TW_URL="twitter://twitter.com/NacionalClasica"
-	WEB_URL="http://clasica.radionacional.com.ar/"
-	MAIL="mailto:clasicalra1@radionacional.gov.ar"
+	WEB_URL="http://www.nacionalclasica.com.ar/"
+	MAIL="clasicalra1@radionacional.gov.ar"
 	PACKAGE_DESCRIPTION="Radio Nacional Clásica (Argentina)"
 	STATION_NAME="Nacional Clasica 96.7"
 	STATION_NAME_LONG="Nacional Clasica 96.7"
@@ -96,7 +96,7 @@ then
 	FB_URL="fb://profile/119044662705"
 	TW_URL="twitter://twitter.com/laradiopublica"
 	WEB_URL="http://radionacional.com.ar/"
-	MAIL="mailto:portal@radionacional.gov.ar"
+	MAIL="portal@radionacional.gov.ar"
 	PACKAGE_DESCRIPTION="Radio Nacional AM 870 (Argentina)"
 	STATION_NAME="Radio Nacional AM 870"
 	STATION_NAME_LONG="Radio Nacional AM 870"
@@ -112,7 +112,7 @@ then
 	FB_URL="fb://profile/220909701364358"
 	TW_URL="twitter://twitter.com/conexionrae"
 	WEB_URL="http://rae.radionacional.com.ar/"
-	MAIL="mailto:conexionrae@radionacional.gov.ar"
+	MAIL="conexionrae@radionacional.gov.ar"
 	PACKAGE_DESCRIPTION="Radiodifusion Argentina al Exterior"
 	STATION_NAME="Radiodifusion Argentina al Exterior"
 	STATION_NAME_LONG="Radiodifusion Argentina al Exterior"
@@ -128,7 +128,7 @@ then
 	FB_URL="fb://profile/111836772243537"
 	TW_URL="twitter://twitter.com/lafolklorica"
 	WEB_URL="http://folklorica.radionacional.com.ar/"
-	MAIL="mailto:nacionalfolklorica@radionacional.gov.ar"
+	MAIL="nacionalfolklorica@radionacional.gov.ar"
 	PACKAGE_DESCRIPTION="Nacional Folklorica FM 98.7 (Argentina)"
 	STATION_NAME="Nacional Folklorica FM 98.7"
 	STATION_NAME_LONG="Nacional Folklorica FM 98.7"
@@ -144,7 +144,7 @@ then
 	FB_URL="fb://profile/123992934310457"
 	TW_URL="twitter://twitter.com/radiodesalon"
 	WEB_URL="http://radiodesalon.com/"
-	MAIL="mailto:contacto@radiodesalon.com"
+	MAIL="contacto@radiodesalon.com"
 	PACKAGE_DESCRIPTION="Radio de Salon"
 	STATION_NAME="Radio de Salon"
 	STATION_NAME_LONG="Radio de Salon"
