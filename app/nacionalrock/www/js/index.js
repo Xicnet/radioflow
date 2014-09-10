@@ -225,3 +225,12 @@ function hideProgramInfo()
 
 }
 
+
+function buildContact(contact)
+{
+	if(contact.indexOf("http://") == 0) {
+		return contact;
+	} else {
+		return "mailto:" + contact;
+	}
+}
