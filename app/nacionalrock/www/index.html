@@ -44,25 +44,12 @@
         </script>
 
 	<div id="loading">
-		<img src="img/logo.png" alt="logo">
+		<img src="img/logo.png" alt="logo" class="logo">
 		<br />
 		<span class="blink">Cargando datos  ...</span>
 	</div>
 	<div id="wrapper">
 		<header class="main-container-header">
-				  <!--
-				<div class="player-container" onclick="app.audioToggle();return false;" style="background-color: red">
-					<div class="relative-dimensions">
-						<img src="img/transp1.png" alt="" class="transp-play"/>
-						<div class="hole">
-							<div class="button">
-								<div class="triangle"><div class="glyph"><div class="glyph-icon flaticon-small31"></div></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				</div>
-				-->
 					<div class="play-button" onclick="app.audioToggle();return false;">
 						<div class="relative-dimensions-icons">
 							<img src="img/transp1.png" alt="" class="transp-icons"/>
@@ -78,8 +65,8 @@
 			<div class="infopanel-wrapper">
 				<div class="infopanel-container">
 						<div class="program-info">
-							<div id="program-name"><div class="display-table"><p><span class="reg-font">Programa </span><span id="name">&nbsp;</span></p></div></div>
-							<div id="program-presenter"><div class="display-table"><p><span class="reg-font">Conduce </span><span id="presenter">&nbsp;</span></p></div></div>
+							<div id="program-name"><div class="display-table"><p><span class="infopanel-label reg-font">Programa </span><span id="name">&nbsp;</span></p></div></div>
+							<div id="program-presenter"><div class="display-table"><p><span class="infopanel-label reg-font">Conduce </span><span id="presenter">&nbsp;</span></p></div></div>
 							<br />
 						</div>
 				</div>
@@ -90,7 +77,7 @@
 		</section>
 		<section class="main-container-brand">
 			<div class="brand-container">
-				<img src="img/logo.png" alt="logo">
+				<img src="img/logo.png" alt="logo" class="logo">
 			</div>
 		</section>
 		<section class="main-container-footer">
@@ -99,7 +86,7 @@
 							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
-									<a href="#" onClick="window.open('fb://profile/239488842805946', '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-facebook-n-twitter flaticon-facebook5"></div></div></div></a>
+									<a href="#" onClick="window.open(window.facebook, '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-facebook-n-twitter flaticon-facebook5"></div></div></div></a>
 								</div>
 							</div>
 						</div>
@@ -109,7 +96,7 @@
 							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
-									<a href="#" onClick="window.open('twitter://twitter.com/nacionalrock937', '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-facebook-n-twitter flaticon-twitter34"></div></div></div></a>
+									<a href="#" onClick="window.open(window.twitter, '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-facebook-n-twitter flaticon-twitter34"></div></div></div></a>
 								</div>
 							</div>
 						</div>
@@ -119,7 +106,7 @@
 							<img src="img/transp1.png" alt="" class="transp-icons"/>
 							<div class="hole">
 								<div class="button">
-									<a href="#" onClick="window.open('http://nacionalrock.com/', '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-web-n-envelope flaticon-earth15"></div></div></div></a>
+									<a href="#" onClick="window.open(window.web, '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-web-n-envelope flaticon-earth15"></div></div></div></a>
 								</div>
 							</div>
 						</div>
@@ -130,7 +117,7 @@
 							<div class="hole">
 								<div class="button">
 									<!-- <a href="#" onClick="window.open('http://nacionalrock.com/contacto/', '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-smaller flaticon-at2"></div></div></div></a> -->
-									<a href="mailto:contacto@nacionalrock.com" target="_blank" ><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-web-n-envelope flaticon-email26"></div></div></div></a>
+									<a href="#" onClick="window.open(buildContact(window.email), '_system', 'location=yes');"><div class="triangle"><div class="glyph"><div class="glyph-icon glyph-icon-web-n-envelope flaticon-email26"></div></div></div></a>
 								</div>
 							</div>
 						</div>

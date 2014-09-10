@@ -100,46 +100,34 @@ var app = {
 		if (config.streamurl) {
 			window.streamURL = config.streamurl;
 		}
+		if (config.facebook) {
+			window.facebook = config.facebook;
+		}
+		if (config.twitter) {
+			window.twitter = config.twitter;
+		}
+		if (config.web) {
+			window.web = config.web;
+		}
+		if (config.email) {
+			window.email = config.email;
+		}
 		setBackgroundImage(config.image);
+		if (config.logourl) {
+			setLogoImage(config.logourl);
+		}
                	$("#wrapper").css("display", "block");
                	$("#loading").css("display", "none");
 	}
 	getConfig();
 
 
-	/*
-	data = $.ajax({
-		url: url,
-		global: false,
-		type: "GET",
-		dataType: "json",
-		async:false,
-		success: function(data) {
-				// Set streamURL as a global variable to be used by player
-				if (data.streamurl) {
-					window.streamURL = data.streamurl;
-				}
-				setBackgroundImage(data.image);
-	                	//$("#loading").css("display", "none");
-	                	$(".controls").css("display", "block");
-		alert("success on first retry!");
-			}
-	}).retry({times:3, timeout:3000}).then(function(){
-		alert("success on retry!");
-	});  
-	*/
-
-	/*
-	data = $.get( url, { name: "John", time: "2pm" } )
-			.done(function( data ) {
-				setBackgroundImage(data.image);
-				setStreamURL(data.streamurl);
-	                	$("#wrapper").css("display", "block");
-			});
-	*/
 	// Set background image
 	function setBackgroundImage(url) {
 		$("div#wrapper").css({'background-image':"url('"+url+"')"});
+	}
+	function setLogoImage(url) {
+		$(".logo").attr('src', url);
 	}
 	function setStreamURL(url) {
 		if (url) {
@@ -207,6 +195,11 @@ function getProgramInfo()
 	                if(data.presenter) {
 	                	$('#presenter').html(data.presenter);
 			}
+	                if(data.show_labels) {
+	                	$('.infopanel-label').css("display", "inline");
+			} else {
+	                	$('.infopanel-label').css("display", "none");
+			}
 	                if(data.image.length > 0) {
 	                	var image = data.image_url;
 				$(".program-image").attr("src", image);
@@ -228,9 +221,16 @@ function hideProgramInfo()
 {
                 $(".infopanel-container").css("visibility", "hidden");
                 $(".program-info").css("visibility", "hidden");
-		//$("#program-name").css("display", "none");
-		//$("#program-presenter").css("display", "none");
 		$(".program-image").css("visibility", "hidden");
 
 }
 
+
+function buildContact(contact)
+{
+	if(contact.indexOf("http://") == 0) {
+		return contact;
+	} else {
+		return "mailto:" + contact;
+	}
+}
