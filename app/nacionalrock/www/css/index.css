@@ -129,6 +129,13 @@ top: 0;
 bottom: 0;
 background-position: center bottom;
 background-size: cover;
+/* START Added to fit background in iOS screen */
+background: #000 no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+/* END Added to fit background in iOS screen */
+
 /* background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg'); */
 }
 .relative-dimensions{ 
