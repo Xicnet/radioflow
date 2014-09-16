@@ -35,6 +35,10 @@
                         {
                             "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.statusbar.StatusBar\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -105,6 +109,9 @@
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
         "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
+        "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },

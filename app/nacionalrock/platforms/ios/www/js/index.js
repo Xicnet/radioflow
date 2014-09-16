@@ -36,6 +36,8 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
+	StatusBar.hide();
+
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
 	$('.play-button').on('tap', onTapPlayHandler);

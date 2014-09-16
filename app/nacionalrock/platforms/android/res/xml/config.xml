@@ -37,4 +37,7 @@
     <access origin="*" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <feature name="StatusBar">
+        <param name="android-package" onload="true" value="org.apache.cordova.statusbar.StatusBar" />
+    </feature>
 </widget>

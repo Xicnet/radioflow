@@ -49,6 +49,7 @@
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		D7DE6EC1396A47FEA2F06995 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FC6620C5AD48A38B2A67A8 /* CDVLocalFilesystem.m */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		5CEBFF8B8A0647FCA78917E5 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 018556A1F3B04E19B6189EE0 /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		F29E2C0D42A84AD7B3E42FEA /* CDVInAppBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = org.apache.cordova.inappbrowser/CDVInAppBrowser.h; sourceTree = "<group>"; };
 		F6B1875006594806A79EF40A /* CDVSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSound.m; path = org.apache.cordova.media/CDVSound.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Nacional Rock/config.xml"; sourceTree = "<group>"; };
+		018556A1F3B04E19B6189EE0 /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		718E54A48B37456A948C9A07 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 				B7B3262CC7D24E75BEFA377B /* CDVSound.h */,
 				CC3DDB933D854ECFABB598F3 /* CDVLogger.m */,
 				3D640A73C43749CF8AB5ECF4 /* CDVLogger.h */,
+				018556A1F3B04E19B6189EE0 /* CDVStatusBar.m */,
+				718E54A48B37456A948C9A07 /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "Nacional Rock/Plugins";
@@ -468,6 +473,7 @@
 				8EE433B1B7B14A67A65E0354 /* CDVFileTransfer.m in Sources */,
 				959AF44AACC94B1686BE4E55 /* CDVInAppBrowser.m in Sources */,
 				983A5E2BC1EC45BD850C5DEB /* CDVLogger.m in Sources */,
+				5CEBFF8B8A0647FCA78917E5 /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
