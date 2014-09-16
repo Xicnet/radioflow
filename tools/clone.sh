@@ -63,6 +63,8 @@ cordova plugin add org.apache.cordova.file-transfer
 cordova plugin add org.apache.cordova.inappbrowser
 cordova plugin add org.apache.cordova.media
 #cordova plugin add org.apache.cordova.splashscreen
+cordova plugin add org.apache.cordova.statusbar
+
 if [ "$PLATFORM" == "android" ]
 then
 	cordova plugin add ../../plugins/statusbarnotification/
