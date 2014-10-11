@@ -1,6 +1,20 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/org.apache.cordova.console/www/console-via-logger.js",
+        "id": "org.apache.cordova.console.console",
+        "clobbers": [
+            "console"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.console/www/logger.js",
+        "id": "org.apache.cordova.console.logger",
+        "clobbers": [
+            "cordova.logger"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.device/www/device.js",
         "id": "org.apache.cordova.device.device",
         "clobbers": [
@@ -12,6 +26,27 @@ module.exports = [
         "id": "org.apache.cordova.dialogs.notification",
         "merges": [
             "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
+        "file": "plugins/org.devgirl.statusbarnotification/www/statusbarnotification.js",
+        "id": "org.devgirl.statusbarnotification.StatusBarNotification",
+        "clobbers": [
+            "window.statusbarnotification"
         ]
     },
     {
@@ -123,6 +158,10 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.file/www/fileSystems.js",
+        "id": "org.apache.cordova.file.fileSystems"
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/requestFileSystem.js",
         "id": "org.apache.cordova.file.requestFileSystem",
         "clobbers": [
@@ -137,46 +176,24 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.file/www/ios/Entry.js",
-        "id": "org.apache.cordova.file.iosEntry",
-        "merges": [
-            "window.Entry"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.file/www/ios/FileSystem.js",
         "id": "org.apache.cordova.file.iosFileSystem",
         "merges": [
-            "window.FileSystem"
+            "FileSystem"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.file-transfer/www/FileTransferError.js",
-        "id": "org.apache.cordova.file-transfer.FileTransferError",
-        "clobbers": [
-            "window.FileTransferError"
-        ]
+        "file": "plugins/org.apache.cordova.file/www/fileSystems-roots.js",
+        "id": "org.apache.cordova.file.fileSystems-roots",
+        "runs": true
     },
     {
-        "file": "plugins/org.apache.cordova.file-transfer/www/FileTransfer.js",
-        "id": "org.apache.cordova.file-transfer.FileTransfer",
-        "clobbers": [
-            "window.FileTransfer"
-        ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.inappbrowser/www/InAppBrowser.js",
-        "id": "org.apache.cordova.inappbrowser.InAppBrowser",
-        "clobbers": [
-            "window.open"
-        ]
-    },
-    {
-        "file": "plugins/org.devgirl.statusbarnotification/www/statusbarnotification.js",
-        "id": "org.devgirl.statusbarnotification.StatusBarNotification",
-        "clobbers": [
-            "window.statusbarnotification"
-        ]
+        "file": "plugins/org.apache.cordova.file/www/fileSystemPaths.js",
+        "id": "org.apache.cordova.file.fileSystemPaths",
+        "merges": [
+            "cordova"
+        ],
+        "runs": true
     },
     {
         "file": "plugins/org.apache.cordova.media/www/MediaError.js",
@@ -193,39 +210,32 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.console/www/console-via-logger.js",
-        "id": "org.apache.cordova.console.console",
+        "file": "plugins/org.apache.cordova.file-transfer/www/FileTransferError.js",
+        "id": "org.apache.cordova.file-transfer.FileTransferError",
         "clobbers": [
-            "console"
+            "window.FileTransferError"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.console/www/logger.js",
-        "id": "org.apache.cordova.console.logger",
+        "file": "plugins/org.apache.cordova.file-transfer/www/FileTransfer.js",
+        "id": "org.apache.cordova.file-transfer.FileTransfer",
         "clobbers": [
-            "cordova.logger"
-        ]
-    },
-    {
-        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
-        "id": "org.apache.cordova.statusbar.statusbar",
-        "clobbers": [
-            "window.StatusBar"
+            "window.FileTransfer"
         ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.device": "0.2.8",
-    "org.apache.cordova.dialogs": "0.2.6",
-    "org.apache.cordova.file": "1.0.0",
-    "org.apache.cordova.file-transfer": "0.4.1",
-    "org.apache.cordova.inappbrowser": "0.3.1",
+    "org.apache.cordova.console": "0.2.11",
+    "org.apache.cordova.device": "0.2.12",
+    "org.apache.cordova.dialogs": "0.2.10",
+    "org.apache.cordova.inappbrowser": "0.5.2",
+    "org.apache.cordova.statusbar": "0.1.8",
     "org.devgirl.statusbarnotification": "0.1.0",
-    "org.apache.cordova.media": "0.2.8",
-    "org.apache.cordova.console": "0.2.8",
-    "org.apache.cordova.statusbar": "0.1.7"
+    "org.apache.cordova.file": "1.3.1",
+    "org.apache.cordova.media": "0.2.13",
+    "org.apache.cordova.file-transfer": "0.4.6"
 }
 // BOTTOM OF METADATA
 });

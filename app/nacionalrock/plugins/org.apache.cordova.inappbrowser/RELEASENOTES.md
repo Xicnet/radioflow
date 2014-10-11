@@ -73,3 +73,63 @@
 * CB-5756: Android: Use WebView.evaluateJavascript for script injection on Android 4.4+
 * Remove alive from InAppBrowser.js since it didn't catch the case where the browser is closed by the user.
 * CB-5733 Fix IAB.close() not working if called before show() animation is done
+
+### 0.3.2 (Feb 26, 2014)
+* Validate that callbackId is correctly formed
+* CB-6035 Move js-module so it is not loaded on unsupported platforms
+* Removed some iOS6 Deprecations
+
+### 0.3.3 (Mar 5, 2014)
+* CB-5534 Fix video/audio does not stop playing when browser is closed
+* CB-6172 Fix broken install on case-sensitive file-systems
+
+
+### 0.4.0 (Apr 17, 2014)
+* CB-6360: [ios] Fix for crash on iOS < 6.0 (closes #37)
+* CB-3324: [WP8] Add support for back-button inappbrowser [WP8] if there is no history -> InAppBrowser is closed
+* [WP] await async calls, resolve warnings
+* [WP] Make InAppBrowser work with embedded files, using system behavior
+* CB-6402: [WP8] pass empty string instead of null for [optional] windowFeatures string
+* CB-6422: [windows8] use cordova/exec/proxy
+* CB-6389 CB-3617: Add clearcache and clearsessioncache options to iOS (like Android)
+* Doc update: event name and example param (closes #31)
+* CB-6253: [WP] Add Network Capability to WMAppManifest.xml
+* CB-6212: [iOS] fix warnings compiled under arm64 64-bit
+* CB-6218: Update docs for BB10
+* CB-6460: Update license headers
+
+### 0.5.0 (Jun 05, 2014)
+* CB-6127 Spanish and rench Translations added. Github close #23
+* Clean up whitespace (mainly due to no newline at eof warning)
+* Adding permission info
+* CB-6806 Add license
+* CB-6491 add CONTRIBUTING.md
+* Add necessary capability so the plugin works on its own
+* CB-6474 InAppBrowser. Add data urls support to WP8
+* CB-6482 InAppBrowser calls incorrect callback on WP8
+* Fixed use of iOS 6 deprecated methods
+* CB-6360 - improvement: feature detection instead of iOS version detection
+* CB-5649 - InAppBrowser overrides App's orientation
+* refactoring fixed
+* CB-6396 [Firefox OS] Adding basic support
+
+### 0.5.1 (Aug 06, 2014)
+* ubuntu: support qt 5.2
+* **FFOS** update InAppBrowserProxy.js
+* **FFOS** app needs to be privileged
+* CB-6127 Updated translations for docs
+* CB-6769 ios: Fix statusbar color reset wasn't working on iOS7+
+
+### 0.5.2 (Sep 17, 2014)
+* CB-7471 cordova-plugin-inappbrowser documentation translation: cordova-plugin-inappbrowser
+* CB-7490 Fixes InAppBrowser manual tests crash on windows platform
+* CB-7249 cordova-plugin-inappbrowser documentation translation: cordova-plugin-inappbrowser
+* CB-7424 Wrong docs: anchor tags are not supported by the InAppBrowser
+* CB-7133 clarify that anchor1 doesn't exist
+* CB-7133 more fixup of tests on Android
+* CB-7133 fix up the tests for Android
+* Add just a bit more logging
+* CB-7133 port inappbrowser to plugin-test-framework
+* phonegap events supported for _blank target
+* inappbrowser _blank target position is fixed
+* amazon-fireos related changes.

@@ -84,7 +84,11 @@ public class StatusBarNotification extends CordovaPlugin {
      * Removes all Notifications from the status bar.
      */     
     public void clearAllNotifications() {
-        mNotificationManager.cancelAll();
+	try {   
+		mNotificationManager.cancelAll();
+	} catch (Exception e) {
+		Log.d("StatusBarNotification", "Some error occurred while trying to clear all notifications");
+	}
     }   
 
 

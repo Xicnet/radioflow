@@ -51,6 +51,7 @@ typedef int CDVFileError;
 + (CDVFilesystemURL *)fileSystemURLWithString:(NSString *)strURL;
 + (CDVFilesystemURL *)fileSystemURLWithURL:(NSURL *)URL;
 
+- (NSString *)absoluteURL;
 
 @property (atomic) NSURL *url;
 @property (atomic) NSString *fileSystemName;
@@ -64,9 +65,8 @@ typedef int CDVFileError;
 @protocol CDVFileSystem
 - (CDVPluginResult *)entryForLocalURI:(CDVFilesystemURL *)url;
 - (CDVPluginResult *)getFileForURL:(CDVFilesystemURL *)baseURI requestedPath:(NSString *)requestedPath options:(NSDictionary *)options;
-- (CDVPluginResult*)getParentForURL:(CDVFilesystemURL *)localURI;
-- (void)getMetadataForURL:(CDVFilesystemURL *)url callback:(void (^)(CDVPluginResult *))callback;
-- (CDVPluginResult*)setMetadataForURL:(CDVFilesystemURL *)localURI withObject:(NSDictionary *)options;
+- (CDVPluginResult *)getParentForURL:(CDVFilesystemURL *)localURI;
+- (CDVPluginResult *)setMetadataForURL:(CDVFilesystemURL *)localURI withObject:(NSDictionary *)options;
 - (CDVPluginResult *)removeFileAtURL:(CDVFilesystemURL *)localURI;
 - (CDVPluginResult *)recursiveRemoveFileAtURL:(CDVFilesystemURL *)localURI;
 - (CDVPluginResult *)readEntriesAtURL:(CDVFilesystemURL *)localURI;
@@ -77,6 +77,7 @@ typedef int CDVFileError;
 - (void)getFileMetadataForURL:(CDVFilesystemURL *)localURL callback:(void (^)(CDVPluginResult *))callback;
 
 - (NSDictionary *)makeEntryForLocalURL:(CDVFilesystemURL *)url;
+- (NSDictionary*)makeEntryForPath:(NSString*)fullPath isDirectory:(BOOL)isDir;
 
 @property (nonatomic,strong) NSString *name;
 
@@ -113,7 +114,6 @@ typedef int CDVFileError;
 - (void)getDirectory:(CDVInvokedUrlCommand*)command;
 - (void)getFile:(CDVInvokedUrlCommand*)command;
 - (void)getParent:(CDVInvokedUrlCommand*)command;
-- (void)getMetadata:(CDVInvokedUrlCommand*)command;
 - (void)removeRecursively:(CDVInvokedUrlCommand*)command;
 - (void)remove:(CDVInvokedUrlCommand*)command;
 - (void)copyTo:(CDVInvokedUrlCommand*)command;
@@ -133,6 +133,9 @@ typedef int CDVFileError;
 /* Compatibilty with older File API */
 - (NSString*)getMimeTypeFromPath:(NSString*)fullPath;
 - (NSDictionary *)getDirectoryEntry:(NSString *)target isDirectory:(BOOL)bDirRequest;
+
+/* Conversion between filesystem paths and URLs */
+- (NSString *)filesystemPathForURL:(CDVFilesystemURL *)URL;
 
 /* Internal methods for testing */
 - (void)_getLocalFilesystemPath:(CDVInvokedUrlCommand*)command;

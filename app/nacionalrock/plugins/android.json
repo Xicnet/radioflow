@@ -9,6 +9,10 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
@@ -17,15 +21,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.statusbar.StatusBar\" /></feature>",
                             "count": 1
                         },
                         {
@@ -33,11 +33,15 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.statusbar.StatusBar\" /></feature>",
+                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -87,31 +91,31 @@
         }
     },
     "installed_plugins": {
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
         "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.file": {
-            "PACKAGE_NAME": "com.xicnet.nacionalrock"
-        },
-        "org.apache.cordova.file-transfer": {
-            "PACKAGE_NAME": "com.xicnet.nacionalrock"
-        },
         "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
+        "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
         "org.devgirl.statusbarnotification": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
         "org.apache.cordova.media": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.xicnet.nacionalrock"
-        },
-        "org.apache.cordova.statusbar": {
+        "org.apache.cordova.file-transfer": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },

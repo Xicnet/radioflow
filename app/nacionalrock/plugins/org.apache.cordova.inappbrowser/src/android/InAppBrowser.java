@@ -19,9 +19,8 @@
 package org.apache.cordova.inappbrowser;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
+import org.apache.cordova.inappbrowser.InAppBrowserDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -80,7 +79,7 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String CLEAR_ALL_CACHE = "clearcache";
     private static final String CLEAR_SESSION_CACHE = "clearsessioncache";
 
-    private Dialog dialog;
+    private InAppBrowserDialog dialog;
     private WebView inAppWebView;
     private EditText edittext;
     private CallbackContext callbackContext;
@@ -121,21 +120,24 @@ public class InAppBrowser extends CordovaPlugin {
                         // load in webview
                         if (url.startsWith("file://") || url.startsWith("javascript:") 
                                 || Config.isUrlWhiteListed(url)) {
+                            Log.d(LOG_TAG, "loading in webview");
                             webView.loadUrl(url);
                         }
                         //Load the dialer
                         else if (url.startsWith(WebView.SCHEME_TEL))
                         {
                             try {
+                                Log.d(LOG_TAG, "loading in dialer");
                                 Intent intent = new Intent(Intent.ACTION_DIAL);
                                 intent.setData(Uri.parse(url));
-                               cordova.getActivity().startActivity(intent);
+                                cordova.getActivity().startActivity(intent);
                             } catch (android.content.ActivityNotFoundException e) {
                                 LOG.e(LOG_TAG, "Error dialing " + url + ": " + e.toString());
                             }
                         }
                         // load in InAppBrowser
                         else {
+                            Log.d(LOG_TAG, "loading in InAppBrowser");
                             result = showWebPage(url, features);
                         }
                     }
@@ -337,12 +339,21 @@ public class InAppBrowser extends CordovaPlugin {
         this.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                childView.loadUrl("about:blank");
+                childView.setWebViewClient(new WebViewClient() {
+                    // NB: wait for about:blank before dismissing
+                    public void onPageFinished(WebView view, String url) {
                 if (dialog != null) {
                     dialog.dismiss();
                 }
             }
         });
+                // NB: From SDK 19: "If you call methods on WebView from any thread 
+                // other than your app's UI thread, it can cause unexpected results."
+                // http://developer.android.com/guide/webapps/migrating.html#Threads
+                childView.loadUrl("about:blank");
+            }
+        });
+
         try {
             JSONObject obj = new JSONObject();
             obj.put("type", EXIT_EVENT);
@@ -350,7 +361,6 @@ public class InAppBrowser extends CordovaPlugin {
         } catch (JSONException ex) {
             Log.d(LOG_TAG, "Should never happen");
         }
-        
     }
 
     /**
@@ -396,6 +406,10 @@ public class InAppBrowser extends CordovaPlugin {
      */
     private boolean getShowLocationBar() {
         return this.showLocationBar;
+    }
+
+    private InAppBrowser getInAppBrowser(){
+        return this;
     }
 
     /**
@@ -448,15 +462,11 @@ public class InAppBrowser extends CordovaPlugin {
 
             public void run() {
                 // Let's create the main dialog
-                dialog = new Dialog(cordova.getActivity(), android.R.style.Theme_NoTitleBar);
+                dialog = new InAppBrowserDialog(cordova.getActivity(), android.R.style.Theme_NoTitleBar);
                 dialog.getWindow().getAttributes().windowAnimations = android.R.style.Animation_Dialog;
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setCancelable(true);
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                        public void onDismiss(DialogInterface dialog) {
-                            closeDialog();
-                        }
-                });
+                dialog.setInAppBroswer(getInAppBrowser());
 
                 // Main container layout
                 LinearLayout main = new LinearLayout(cordova.getActivity());

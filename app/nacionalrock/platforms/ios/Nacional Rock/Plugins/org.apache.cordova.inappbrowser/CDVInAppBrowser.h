@@ -30,6 +30,7 @@
 
 @property (nonatomic, retain) CDVInAppBrowserViewController* inAppBrowserViewController;
 @property (nonatomic, copy) NSString* callbackId;
+@property (nonatomic, copy) NSRegularExpression *callbackIdPattern;
 
 - (void)open:(CDVInvokedUrlCommand*)command;
 - (void)close:(CDVInvokedUrlCommand*)command;
@@ -44,6 +45,8 @@
 @property (nonatomic, assign) BOOL toolbar;
 @property (nonatomic, copy) NSString* closebuttoncaption;
 @property (nonatomic, copy) NSString* toolbarposition;
+@property (nonatomic, assign) BOOL clearcache;
+@property (nonatomic, assign) BOOL clearsessioncache;
 
 @property (nonatomic, copy) NSString* presentationstyle;
 @property (nonatomic, copy) NSString* transitionstyle;
@@ -60,7 +63,7 @@
 
 @end
 
-@interface CDVInAppBrowserViewController : UIViewController <UIWebViewDelegate>{
+@interface CDVInAppBrowserViewController : UIViewController <UIWebViewDelegate, CDVScreenOrientationDelegate>{
     @private
     NSString* _userAgent;
     NSString* _prevUserAgent;
@@ -90,3 +93,10 @@
 - (id)initWithUserAgent:(NSString*)userAgent prevUserAgent:(NSString*)prevUserAgent browserOptions: (CDVInAppBrowserOptions*) browserOptions;
 
 @end
+
+@interface CDVInAppBrowserNavigationController : UINavigationController
+
+@property (nonatomic, weak) id <CDVScreenOrientationDelegate> orientationDelegate;
+
+@end
+

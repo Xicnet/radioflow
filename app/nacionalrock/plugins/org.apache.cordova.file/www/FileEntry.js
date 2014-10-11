@@ -35,8 +35,8 @@ var utils = require('cordova/utils'),
  * {DOMString} fullPath the absolute full path to the file (readonly)
  * {FileSystem} filesystem on which the file resides (readonly)
  */
-var FileEntry = function(name, fullPath, fileSystem) {
-     FileEntry.__super__.constructor.apply(this, [true, false, name, fullPath, fileSystem]);
+var FileEntry = function(name, fullPath, fileSystem, nativeURL) {
+     FileEntry.__super__.constructor.apply(this, [true, false, name, fullPath, fileSystem, nativeURL]);
 };
 
 utils.extend(FileEntry, Entry);
@@ -66,7 +66,7 @@ FileEntry.prototype.createWriter = function(successCallback, errorCallback) {
  * @param {Function} errorCallback is called with a FileError
  */
 FileEntry.prototype.file = function(successCallback, errorCallback) {
-    var localURL = this.filesystem.__format__(this.fullPath);
+    var localURL = this.toInternalURL();
     var win = successCallback && function(f) {
         var file = new File(f.name, localURL, f.type, f.lastModifiedDate, f.size);
         successCallback(file);
