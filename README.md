@@ -11,7 +11,7 @@ Android and iOS are currently supported.
 ## Installation
 In order to build this project, you must have the latest Apache Cordova installed and working.
 
-Assumining you know how to do that or have it already installed, you could do the following:
+Assuming you know how to do that or have it already installed, you could do the following:
 
 
 ```
@@ -22,6 +22,10 @@ cd radioflow/app/nacionalrock
 cordova run android --emulator
 
 ```
+
+If everything is properly setup on your side, the emulator should open up and run _Nacional Rock_ station app.
+
+_Note that your emulator needs Internet access to properly work_
 
 ## Developers welcome
 
