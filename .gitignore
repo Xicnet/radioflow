@@ -7,9 +7,8 @@ app/radionacionalam870
 app/radiodesalon
 app/lmf
 app/rockandpop
-app/nacionalrock/platforms/android/bin/
-app/nacionalrock/platforms/android/ant-build/
-app/nacionalrock/platforms/android/ant-gen/
-app/nacionalrock/platforms/android/CordovaLib
-app/nacionalrock/platforms/android/gen/
-app/nacionalrock/platforms/android/assets/www/
+bin/
+ant-build/
+ant-gen/
+gen/
+out/
