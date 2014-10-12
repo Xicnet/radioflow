@@ -25,7 +25,9 @@ cordova run android --emulator
 
 If everything is properly setup on your side, the emulator should open up and run _Nacional Rock_ station app.
 
-_Note that your emulator needs Internet access to properly work_
+_Note that your emulator needs Internet access to properly work._
+
+In case you find any trouble or bug, please report it!
 
 ## Developers welcome
 
