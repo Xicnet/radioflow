@@ -404,25 +404,23 @@ font-family: Flaticon;
 font-style: normal;
 margin-left: 20px;
 }
-.flaticon-earth15:before {
-        content: "\e000";
-}
-.flaticon-email26:before {
+
+.flaticon-www:before {
         content: "\e001";
 }
-.flaticon-facebook5:before {
+.flaticon-email:before {
         content: "\e002";
 }
-.flaticon-mute4:before {
+.flaticon-facebook:before {
         content: "\e003";
 }
-.flaticon-small31:before {
+.flaticon-play:before {
         content: "\e004";
 }
-.flaticon-turn4:before {
+.flaticon-pause:before {
         content: "\e005";
 }
-.flaticon-twitter34:before {
+.flaticon-twitter:before {
         content: "\e006";
 }
 
@@ -443,7 +441,7 @@ vertical-align: middle;
         
 }
 /* play */
-.glyph .glyph-icon.flaticon-small31:before {
+.glyph .glyph-icon.flaticon-play:before {
 font-size: 3em;
 color: #eee;
 margin-left: 6px;
@@ -455,8 +453,8 @@ margin-left: 6px;
         color: #eee;
         margin-left: 0;
 }
-/* stop-mute */
-.glyph .glyph-icon.flaticon-mute4:before {
+/* stop-pause */
+.glyph .glyph-icon.flaticon-pause:before {
         font-size: 3em;
         color: #eee;
         margin-left: 0;
