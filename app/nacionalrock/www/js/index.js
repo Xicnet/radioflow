@@ -216,7 +216,6 @@ function getProgramInfo()
 // Check for program info changes
 var checkInterval = 1;
 var timerUnit = 60000;
-var timerUnit = 6000;
 var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
