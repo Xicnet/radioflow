@@ -20,6 +20,8 @@ stationName = "nacionalrock";
 
 var app = {
     // Application Constructor
+    background: "bla"
+    ,
     initialize: function() {
         this.bindEvents();
     },
@@ -35,7 +37,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-
+	app.setup();
 	StatusBar.hide();
 
 	// Override back button
@@ -69,9 +71,12 @@ var app = {
 	            navigator.app.exitApp();
         	}
 	}
+    },
+    setup: function() {
 
 	// Server to fetch config (background image and streamURL) from
 	var url = window.server + "/" + stationName + "/config.json?"+Math.random();
+	var background = "none";
 
 	// Fetch the config
 
@@ -114,7 +119,10 @@ var app = {
 		if (config.email) {
 			window.email = config.email;
 		}
+
+		app.background = config.image;
 		setBackgroundImage(config.image);
+
 		if (config.logourl) {
 			setLogoImage(config.logourl);
 		}
@@ -126,7 +134,7 @@ var app = {
 
 	// Set background image
 	function setBackgroundImage(url) {
-		$("div#wrapper").css({'background-image':"url('"+url+"')"});
+		$("div#wrapper").css({'background-image':"url('http://rnadmin.xicnet.com/media/uploaded_images/fond_2.jpg')"});
 	}
 	function setLogoImage(url) {
 		$(".logo").attr('src', url);
@@ -136,6 +144,9 @@ var app = {
 			window.streamURL = url;
 		}
 	}
+    },
+    getBackgroundImage: function() {
+	    return this.background;
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

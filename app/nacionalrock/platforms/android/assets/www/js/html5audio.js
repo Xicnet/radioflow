@@ -48,14 +48,14 @@ var html5audio = {
 		myaudio.addEventListener("playing", function() {
 			 isPlaying = true;
 			 isWaiting = false;
-			$("#playicon").removeClass("flaticon-small31").addClass("flaticon-mute4");
-			$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-small31").addClass("flaticon-mute4");
+			$("#playicon").removeClass("flaticon-play").addClass("flaticon-pause");
+			$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-play").addClass("flaticon-pause");
 			$("div").removeClass('blink');
 			getProgramInfo();
 		}, false);
 		myaudio.addEventListener("ended", function() {
 			 navigator.notification.alert('Hay problemas con tu conexión a Internet.\nIntentá nuevamente.', this.onEnded, 'Desconectado', 'OK');
-			$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+			$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause").addClass("flaticon-play");
 			$("div").removeClass('blink');
 			$(".program-info").css("visibility", "hidden");
 
@@ -64,11 +64,11 @@ var html5audio = {
 	pause: function() {
 		isPlaying = false;
 		myaudio.pause();
-		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause").addClass("flaticon-play");
 		$("div").removeClass('blink');
 	},
 	stop: function() {
-		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause").addClass("flaticon-play");
 		$("div").removeClass('blink');
 		isPlaying = false;
 		myaudio.pause();

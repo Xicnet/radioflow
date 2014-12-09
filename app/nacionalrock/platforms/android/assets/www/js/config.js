@@ -9,3 +9,4 @@ window.twitter = "nacionalrock937";
 window.web = "http://www.nacionalrock.com/";
 window.email = "contacto@nacionalrock.com";
 window.isPlaying = false;
+window.background = "none";
