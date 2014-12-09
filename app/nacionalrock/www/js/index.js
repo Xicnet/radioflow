@@ -126,7 +126,7 @@ var app = {
 
 	// Set background image
 	function setBackgroundImage(url) {
-		$("div#wrapper").css({'background-image':"url('"+url+"')"});
+		$("html").css({'background-image':"url('"+url+"')"});
 	}
 	function setLogoImage(url) {
 		$(".logo").attr('src', url);
