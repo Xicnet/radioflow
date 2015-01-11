@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="org.devgirl.statusbarnotification"
+           id="com.xicnet.statusbarnotification"
       version="0.1.0">
     <name>StatusBarNotification</name>
     <description>Sample PhoneGap StatusBarNotification Plugin</description>
@@ -17,11 +17,11 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="StatusBarNotification">
-                <param name="android-package" value="org.devgirl.statusbarnotification.StatusBarNotification"/>
+                <param name="android-package" value="com.xicnet.statusbarnotification.StatusBarNotification"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/StatusBarNotification.java" target-dir="src/org/devgirl/statusbarnotification" />
-        <source-file src="src/android/StatusNotificationIntent.java" target-dir="src/org/devgirl/statusbarnotification" />
+	<source-file src="src/android/StatusBarNotification.java" target-dir="src/com/xicnet/statusbarnotification" />
+        <source-file src="src/android/StatusNotificationIntent.java" target-dir="src/com/xicnet/statusbarnotification" />
      </platform>          
 </plugin>

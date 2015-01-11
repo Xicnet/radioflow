@@ -36,13 +36,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.devgirl.statusbarnotification/www/statusbarnotification.js",
-        "id": "org.devgirl.statusbarnotification.StatusBarNotification",
-        "clobbers": [
-            "window.statusbarnotification"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -215,6 +208,13 @@ module.exports = [
         "clobbers": [
             "window.FileTransfer"
         ]
+    },
+    {
+        "file": "plugins/com.xicnet.statusbarnotification/www/statusbarnotification.js",
+        "id": "com.xicnet.statusbarnotification.StatusBarNotification",
+        "clobbers": [
+            "window.statusbarnotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -225,10 +225,10 @@ module.exports.metadata =
     "org.apache.cordova.dialogs": "0.2.10",
     "org.apache.cordova.inappbrowser": "0.5.2",
     "org.apache.cordova.statusbar": "0.1.8",
-    "org.devgirl.statusbarnotification": "0.1.0",
     "org.apache.cordova.file": "1.3.1",
     "org.apache.cordova.media": "0.2.13",
-    "org.apache.cordova.file-transfer": "0.4.6"
+    "org.apache.cordova.file-transfer": "0.4.6",
+    "com.xicnet.statusbarnotification": "0.1.0"
 }
 // BOTTOM OF METADATA
 });

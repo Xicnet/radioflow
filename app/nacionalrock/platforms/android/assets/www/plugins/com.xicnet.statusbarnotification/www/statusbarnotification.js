@@ -1,4 +1,4 @@
-cordova.define("org.devgirl.statusbarnotification.StatusBarNotification", function(require, exports, module) { var statusbarnotification = {
+cordova.define("com.xicnet.statusbarnotification.StatusBarNotification", function(require, exports, module) { var statusbarnotification = {
     createEvent: function(successCallback, errorCallback) {
         cordova.exec(
             successCallback, // success callback function

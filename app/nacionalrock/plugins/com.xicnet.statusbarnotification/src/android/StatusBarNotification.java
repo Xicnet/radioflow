@@ -1,4 +1,4 @@
-package org.devgirl.statusbarnotification;
+package com.xicnet.statusbarnotification;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
