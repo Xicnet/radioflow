@@ -193,10 +193,16 @@ function getProgramInfo()
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
+                                $('#program-name').css("visibility", "visible");
+			} else {
+                                $('#program-name').css("visibility", "hidden");
 			}
-	                if(data.presenter) {
-	                	$('#presenter').html(data.presenter);
-			}
+                        if(data.presenter) {
+                                $('#presenter').html(data.presenter);
+                                $('#program-presenter').css("visibility", "visible");
+                        } else {
+                                $('#program-presenter').css("visibility", "hidden");
+                        }
 	                if(data.show_labels) {
 	                	$('.infopanel-label').css("display", "inline");
 			} else {
@@ -223,7 +229,8 @@ function hideProgramInfo()
                 $(".infopanel-container").css("visibility", "hidden");
                 $(".program-info").css("visibility", "hidden");
 		$(".program-image").css("visibility", "hidden");
-
+		$('#program-name').css("visibility", "hidden");
+		$('#program-presenter').css("visibility", "hidden");
 }
 
 
