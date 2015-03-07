@@ -200,6 +200,22 @@ then
 	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
+if [ "$STATION" == "telam" ]
+then
+
+	BUNDLE_NAME="com.xicnet.telam"
+	APP_NAME="Telam"
+	STREAM_URL="http://icecast01.dcarsat.com.ar:8000/sc_rad1"
+	FB_URL="fb://profile/161243707242002"
+	TW_URL="AgenciaTelam"
+	WEB_URL="http://www.telam.com.ar/"
+	MAIL="contacto@telam.com.ar"
+	PACKAGE_DESCRIPTION="Telam"
+	STATION_NAME="Telam"
+	STATION_NAME_LONG="Telam"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
 if [ "$PLATFORM" == "android" ]
 then
 	cp -pr $TPL_BASEDIR/platforms/android/res/xml/config.xml $TARGET_BASEDIR/platforms/android/res/xml/config.xml
