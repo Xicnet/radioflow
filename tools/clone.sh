@@ -55,14 +55,15 @@ cordova create $TARGET_BASEDIR com.xicnet.$STATION "$STATION_NAME"
 cd $TARGET_BASEDIR
 
 cordova platform add $PLATFORM
-cordova plugin add org.apache.cordova.device
-cordova plugin add org.apache.cordova.dialogs
-cordova plugin add org.apache.cordova.file
-cordova plugin add org.apache.cordova.file-transfer
-cordova plugin add org.apache.cordova.inappbrowser
-cordova plugin add org.apache.cordova.media
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add cordova-plugin-file
+cordova plugin add cordova-plugin-file-transfer
+cordova plugin add cordova-plugin-inappbrowser
+cordova plugin add cordova-plugin-media
+cordova plugin add cordova-plugin-statusbar
+cordova plugin add cordova-plugin-whitelist
 #cordova plugin add org.apache.cordova.splashscreen
-cordova plugin add org.apache.cordova.statusbar
 
 if [ "$PLATFORM" == "android" ]
 then

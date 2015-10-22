@@ -12,4 +12,5 @@
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="portrait" />
+    <allow-navigation href="http://rnadmin.xicnet.com/*" />
 </widget>

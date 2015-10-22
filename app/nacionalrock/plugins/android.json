@@ -5,13 +5,19 @@
     },
     "config_munge": {
         "files": {
-            "res/xml/config.xml": {
+            "config.xml": {
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /></feature>",
+                            "xml": "<preference name=\"AndroidPersistentFileLocation\" value=\"Internal\" />",
                             "count": 1
-                        },
+                        }
+                    ]
+                }
+            },
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
@@ -21,15 +27,15 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.statusbar.StatusBar\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         },
                         {
@@ -37,7 +43,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
@@ -52,7 +62,7 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 9
+                            "count": 3
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
@@ -69,50 +79,31 @@
                     ]
                 }
             }
-        },
-        "res/xml/config.xml": {
-            "/*": {
-                "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>": 0,
-                "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>": 0,
-                "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /></feature>": 0,
-                "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>": 0,
-                "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>": 0,
-                "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>": 0,
-                "<feature name=\"StatusBarNotification\"><param name=\"android-package\" value=\"org.devgirl.statusbarnotification.StatusBarNotification\" /></feature>": 0
-            }
-        },
-        "AndroidManifest.xml": {
-            "/*": {
-                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 0,
-                "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />": 0,
-                "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />": 0,
-                "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />": 0
-            }
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.console": {
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.device": {
+        "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.dialogs": {
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.inappbrowser": {
+        "cordova-plugin-file-transfer": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.statusbar": {
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.file": {
+        "cordova-plugin-media": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.media": {
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
-        "org.apache.cordova.file-transfer": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
         "com.xicnet.statusbarnotification": {

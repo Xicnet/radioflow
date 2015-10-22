@@ -55,6 +55,7 @@ import org.apache.cordova.CordovaResourceApi;
 import org.apache.cordova.CordovaResourceApi.OpenForReadResult;
 import org.apache.cordova.PluginManager;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.Whitelist;
 import org.apache.cordova.file.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -196,13 +197,35 @@ public class FileTransfer extends CordovaPlugin {
     private static void addHeadersToRequest(URLConnection connection, JSONObject headers) {
         try {
             for (Iterator<?> iter = headers.keys(); iter.hasNext(); ) {
+                /* RFC 2616 says that non-ASCII characters and control
+                 * characters are not allowed in header names or values.
+                 * Additionally, spaces are not allowed in header names.
+                 * RFC 2046 Quoted-printable encoding may be used to encode
+                 * arbitrary characters, but we donon- not do that encoding here.
+                 */
                 String headerKey = iter.next().toString();
+                String cleanHeaderKey = headerKey.replaceAll("\\n","")
+                        .replaceAll("\\s+","")
+                        .replaceAll(":", "")
+                        .replaceAll("[^\\x20-\\x7E]+", "");
+
                 JSONArray headerValues = headers.optJSONArray(headerKey);
                 if (headerValues == null) {
                     headerValues = new JSONArray();
-                    headerValues.put(headers.getString(headerKey));
+
+                     /* RFC 2616 also says that any amount of consecutive linear
+                      * whitespace within a header value can be replaced with a
+                      * single space character, without affecting the meaning of
+                      * that value.
+                      */
+
+                    String headerValue = headers.getString(headerKey);
+                    String finalValue = headerValue.replaceAll("\\s+", " ").replaceAll("\\n"," ").replaceAll("[^\\x20-\\x7E]+", " ");
+                    headerValues.put(finalValue);
                 }
-                connection.setRequestProperty(headerKey, headerValues.getString(0));
+
+                //Use the clean header key, not the one that we passed in
+                connection.setRequestProperty(cleanHeaderKey, headerValues.getString(0));
                 for (int i = 1; i < headerValues.length(); ++i) {
                     connection.addRequestProperty(headerKey, headerValues.getString(i));
                 }
@@ -210,6 +233,34 @@ public class FileTransfer extends CordovaPlugin {
         } catch (JSONException e1) {
           // No headers to be manipulated!
         }
+    }
+
+    private String getCookies(final String target) {
+        boolean gotCookie = false;
+        String cookie = null;
+        Class webViewClass = webView.getClass();
+        try {
+            Method gcmMethod = webViewClass.getMethod("getCookieManager");
+            Class iccmClass  = gcmMethod.getReturnType();
+            Method gcMethod  = iccmClass.getMethod("getCookie", String.class);
+
+            cookie = (String)gcMethod.invoke(
+                        iccmClass.cast(
+                            gcmMethod.invoke(webView)
+                        ), target);
+
+            gotCookie = true;
+        } catch (NoSuchMethodException e) {
+        } catch (IllegalAccessException e) {
+        } catch (InvocationTargetException e) {
+        } catch (ClassCastException e) {
+        }
+
+        if (!gotCookie) {
+            cookie = CookieManager.getInstance().getCookie(target);
+        }
+
+        return cookie;
     }
 
     /**
@@ -312,10 +363,16 @@ public class FileTransfer extends CordovaPlugin {
 
                     // Use a post method.
                     conn.setRequestMethod(httpMethod);
-                    conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
-
+                    
+                    // if we specified a Content-Type header, don't do multipart form upload
+                    boolean multipartFormUpload = (headers == null) || !headers.has("Content-Type");
+                    if (multipartFormUpload) {
+                        conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+                    }
+                    
                     // Set the cookies on the response
-                    String cookie = CookieManager.getInstance().getCookie(target);
+                    String cookie = getCookies(target);
+
                     if (cookie != null) {
                         conn.setRequestProperty("Cookie", cookie);
                     }
@@ -359,7 +416,9 @@ public class FileTransfer extends CordovaPlugin {
                     
                     int stringLength = beforeDataBytes.length + tailParamsBytes.length;
                     if (readResult.length >= 0) {
-                        fixedLength = (int)readResult.length + stringLength;
+                        fixedLength = (int)readResult.length;
+                        if (multipartFormUpload)
+                            fixedLength += stringLength;
                         progress.setLengthComputable(true);
                         progress.setTotal(fixedLength);
                     }
@@ -390,10 +449,13 @@ public class FileTransfer extends CordovaPlugin {
                             }
                             context.connection = conn;
                         }
-                        //We don't want to change encoding, we just want this to write for all Unicode.
-                        sendStream.write(beforeDataBytes);
-                        totalBytes += beforeDataBytes.length;
-    
+                        
+                        if (multipartFormUpload) {
+                            //We don't want to change encoding, we just want this to write for all Unicode.
+                            sendStream.write(beforeDataBytes);
+                            totalBytes += beforeDataBytes.length;
+                        }
+                        
                         // create a buffer of maximum size
                         int bytesAvailable = readResult.inputStream.available();
                         int bufferSize = Math.min(bytesAvailable, MAX_BUFFER_SIZE);
@@ -422,9 +484,11 @@ public class FileTransfer extends CordovaPlugin {
                             context.sendPluginResult(progressResult);
                         }
     
-                        // send multipart form data necessary after file data...
-                        sendStream.write(tailParamsBytes);
-                        totalBytes += tailParamsBytes.length;
+                        if (multipartFormUpload) {
+                            // send multipart form data necessary after file data...
+                            sendStream.write(tailParamsBytes);
+                            totalBytes += tailParamsBytes.length;
+                        }
                         sendStream.flush();
                     } finally {
                         safeClose(readResult.inputStream);
@@ -683,13 +747,43 @@ public class FileTransfer extends CordovaPlugin {
         final boolean isLocalTransfer = !useHttps && uriType != CordovaResourceApi.URI_TYPE_HTTP;
         if (uriType == CordovaResourceApi.URI_TYPE_UNKNOWN) {
             JSONObject error = createFileTransferError(INVALID_URL_ERR, source, target, null, 0, null);
-            Log.e(LOG_TAG, "Unsupported URI: " + targetUri);
+            Log.e(LOG_TAG, "Unsupported URI: " + sourceUri);
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION, error));
             return;
         }
-        
-        // TODO: refactor to also allow resources & content:
-        if (!isLocalTransfer && !Config.isUrlWhiteListed(source)) {
+
+        /* This code exists for compatibility between 3.x and 4.x versions of Cordova.
+         * Previously the CordovaWebView class had a method, getWhitelist, which would
+         * return a Whitelist object. Since the fixed whitelist is removed in Cordova 4.x,
+         * the correct call now is to shouldAllowRequest from the plugin manager.
+         */
+        Boolean shouldAllowRequest = null;
+        if (isLocalTransfer) {
+            shouldAllowRequest = true;
+        }
+        if (shouldAllowRequest == null) {
+            try {
+                Method gwl = webView.getClass().getMethod("getWhitelist");
+                Whitelist whitelist = (Whitelist)gwl.invoke(webView);
+                shouldAllowRequest = whitelist.isUrlWhiteListed(source);
+            } catch (NoSuchMethodException e) {
+            } catch (IllegalAccessException e) {
+            } catch (InvocationTargetException e) {
+            }
+        }
+        if (shouldAllowRequest == null) {
+            try {
+                Method gpm = webView.getClass().getMethod("getPluginManager");
+                PluginManager pm = (PluginManager)gpm.invoke(webView);
+                Method san = pm.getClass().getMethod("shouldAllowRequest", String.class);
+                shouldAllowRequest = (Boolean)san.invoke(pm, source);
+            } catch (NoSuchMethodException e) {
+            } catch (IllegalAccessException e) {
+            } catch (InvocationTargetException e) {
+            }
+        }
+
+        if (!Boolean.TRUE.equals(shouldAllowRequest)) {
             Log.w(LOG_TAG, "Source URL is not in white list: '" + source + "'");
             JSONObject error = createFileTransferError(CONNECTION_ERR, source, target, null, 401, null);
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION, error));
@@ -750,7 +844,8 @@ public class FileTransfer extends CordovaPlugin {
                         connection.setRequestMethod("GET");
         
                         // TODO: Make OkHttp use this CookieManager by default.
-                        String cookie = CookieManager.getInstance().getCookie(sourceUri.toString());
+                        String cookie = getCookies(sourceUri.toString());
+
                         if(cookie != null)
                         {
                             connection.setRequestProperty("cookie", cookie);
