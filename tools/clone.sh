@@ -217,6 +217,22 @@ then
 	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
+if [ "$STATION" == "radiorebelde" ]
+then
+
+	BUNDLE_NAME="com.xicnet.radiorebelde"
+	APP_NAME="RadioRebelde"
+	STREAM_URL="http://190.104.217.181:9754/"
+	FB_URL="fb://profile/118404581585464"
+	TW_URL="NacionalClasica"
+	WEB_URL="http://www.radiorebelde.com.ar/"
+	MAIL="radiorebelde@hotmail.com"
+	PACKAGE_DESCRIPTION="Radio Rebelde (Argentina)"
+	STATION_NAME="Radio Rebelde (Argentina)"
+	STATION_NAME_LONG="Radio Rebelde (Argentina)"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
 if [ "$PLATFORM" == "android" ]
 then
 	cp -pr $TPL_BASEDIR/platforms/android/res/xml/config.xml $TARGET_BASEDIR/platforms/android/res/xml/config.xml
