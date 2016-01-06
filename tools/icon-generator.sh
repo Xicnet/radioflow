@@ -10,6 +10,7 @@ mkdir -p $RES_PATH/drawable-hdpi/
 mkdir -p $RES_PATH/drawable-xhdpi/
 mkdir -p $RES_PATH/drawable-xxhdpi/
 mkdir -p $RES_PATH/drawable-xxxhdpi/
+mkdir -p $RES_PATH/drawable/
 
 # Launcher icons
 convert -scale 36x36   $LOGO_PATH $RES_PATH/drawable-ldpi/icon.png
@@ -23,8 +24,8 @@ convert -scale 96x96   $LOGO_PATH $RES_PATH/drawable/icon.png
 # Notification icons
 convert -scale 18x18 $LOGO_PATH $RES_PATH/drawable-ldpi/notification.png
 convert -scale 24x24 $LOGO_PATH $RES_PATH/drawable-mdpi/notification.png
-convert -scale 36x3  $LOGO_PATH $RES_PATH/drawable-hdpi/notification.png
-convert -scale 48x4  $LOGO_PATH $RES_PATH/drawable-xhdpi/notification.png
+convert -scale 36x36 $LOGO_PATH $RES_PATH/drawable-hdpi/notification.png
+convert -scale 48x48 $LOGO_PATH $RES_PATH/drawable-xhdpi/notification.png
 convert -scale 72x72 $LOGO_PATH $RES_PATH/drawable-xxhdpi/notification.png
 convert -scale 96x96 $LOGO_PATH $RES_PATH/drawable-xxxhdpi/notification.png
 

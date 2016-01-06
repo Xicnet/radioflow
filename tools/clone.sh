@@ -3,7 +3,7 @@
 PLATFORM=$1
 STATION=$2
 STATION_NAME=$3
-RELEASE=$4
+MODE=$4
 SHORTNAME=$STATION
 
 BUNDLE_NAME="com.xicnet.$STATION"
@@ -28,17 +28,24 @@ TPL_CONTENT_SERVER="http://rnadmin.xicnet.com"
 function sign_align {
 	if [ "$PLATFORM" == "android" ]
 	then
-		if [ "release" != "$RELEASE" ]
+		if [ "$MODE" == "emulate" ]
+		then
+			cordova emulate android
+			return
+		fi
+
+		if [ "release" != "$MODE" ]
 		then
 			cordova build --debug
 			return
 		fi
 
-		UNSIGNED="$TARGET_BASEDIR/platforms/android/ant-build/$1-release-unsigned.apk"
+		#UNSIGNED="$TARGET_BASEDIR/platforms/android/ant-build/$1-release-unsigned.apk"
+		UNSIGNED="$TARGET_BASEDIR/platforms/android/build/outputs/apk/android-release-unsigned.apk"
 
 		cordova build --release
 		jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /home/rama/keystore/xicnet-release-key.keystore $UNSIGNED Xicnet_Release && \
-		zipalign -v 4 $UNSIGNED platforms/android/ant-build/$1-release.apk
+		zipalign -v 4 $UNSIGNED platforms/android/build/outputs/apk/$1-release.apk
 	fi
 	if [ "$PLATFORM" == "ios" ]
 	then
@@ -223,10 +230,10 @@ then
 	BUNDLE_NAME="com.xicnet.radiorebelde"
 	APP_NAME="RadioRebelde"
 	STREAM_URL="http://190.104.217.181:9754/"
-	FB_URL="fb://profile/118404581585464"
-	TW_URL="NacionalClasica"
+	FB_URL="fb://profile/1528415437449953"
+	TW_URL="RebeldeAM740"
 	WEB_URL="http://www.radiorebelde.com.ar/"
-	MAIL="radiorebelde@hotmail.com"
+	MAIL="740rebelde@gmail.com"
 	PACKAGE_DESCRIPTION="Radio Rebelde (Argentina)"
 	STATION_NAME="Radio Rebelde (Argentina)"
 	STATION_NAME_LONG="Radio Rebelde (Argentina)"
@@ -286,7 +293,7 @@ cp $SRC_BASEDIR/back.jpg $TARGET_BASEDIR/www/img
 if [ "$PLATFORM" == "android" ]
 then
 	rsync -vr $SRC_BASEDIR/res/* $TARGET_BASEDIR/platforms/android/res/
-	sign_align $APP_NAME $STATION_NAME $RELEASE
+	sign_align $APP_NAME $STATION_NAME $MODE
 fi
 
 if [ "$PLATFORM" == "ios" ]
