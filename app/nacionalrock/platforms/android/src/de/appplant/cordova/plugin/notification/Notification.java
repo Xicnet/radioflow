@@ -122,6 +122,7 @@ public class Notification {
         return getOptions().isAutoClear() == false;
     }
 
+
     /**
      * If the notification was in the past.
      */

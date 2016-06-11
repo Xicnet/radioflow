@@ -35,8 +35,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-
-	StatusBar.hide();
+	var id = 1, dialog;
+	//StatusBar.hide();
 
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
@@ -148,17 +148,31 @@ var app = {
 
         console.log('Received Event: ' + id);
     },
-    addToCal: function() {
+    notificationCallback: function () {
+            window.plugins.toast.showShortBottom("Gracias por escucharnos! Volvé pronto ;-)");
+    },
+    showNotification: function() {
 	var success = function() { console.log("Notification successfully added"); };
         var error = function(message) { console.log("Oopsie! " + message); };
         //statusbarnotification.createEvent(success, error);
+        cordova.plugins.notification.local.schedule({
+            id: 1,
+            text: 'Program info here',
+            autoClear: false,
+            ongoing: true,
+            icon: 'http://3.bp.blogspot.com/-Qdsy-GpempY/UU_BN9LTqSI/AAAAAAAAAMA/LkwLW2yNBJ4/s1600/supersu.png',
+            smallIcon: 'res://cordova',
+            sound: null,
+            data: { test: 1 }
+        });
     },
 
-    removeNoti: function() {
+    clearNotification: function() {
 	var success = function() { console.log("Notification successfully added"); };
 	var success = function(message) { console.log("Remove noti"); };
 	var error = function(message) { console.log("Oopsie! " + message); };
        	//statusbarnotification.removeNotification(success, error);
+        cordova.plugins.notification.local.clear(1, this.notificationCallback);
     },
     audioToggle: function() {
 	console.log("............ in audioToggle()");
@@ -180,6 +194,7 @@ var app = {
     }
 
 };
+
 
 
 function getProgramInfo()

@@ -116,6 +116,14 @@ public class Notification {
     }
 
     /**
+     * If it's a sticky notification.
+     */
+    public boolean isSticky () {
+        return getOptions().isAutoClear() == false;
+    }
+
+
+    /**
      * If the notification was in the past.
      */
     public boolean wasInThePast () {

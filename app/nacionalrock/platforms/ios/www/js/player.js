@@ -9,14 +9,16 @@ var mediaAudio = {
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
 		getProgramInfo();
-		// TODO set notification here
+		if(device.platform == "Android") {
+			app.showNotification();
+		}
 	},
 	stop: function() {
 		//$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause flaticon-play").addClass("flaticon-play");
 		//$(".play-button").removeClass("flaticon-pause").removeClass("flaticon-play").addClass("flaticon-play");
 		$("div").removeClass('blink');
 		isPlaying = false;
-		app.removeNoti();
+                app.clearNotification();
 		hideProgramInfo();
 		myMedia.pause();
 		myMedia.release();

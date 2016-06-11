@@ -33,9 +33,6 @@
         <param name="ios-package" onload="true" value="APPLocalNotification" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Toast">
-        <param name="ios-package" value="Toast" />
-    </feature>
     <name>Nacional Rock</name>
     <description>
         FM 93.7 Radio Nacional Rock (Argentina)

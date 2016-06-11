@@ -27,7 +27,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.app.Notification;
+import android.support.v4.app.NotificationCompat;
 
 import org.json.JSONObject;
 
@@ -117,6 +117,7 @@ public class Builder {
     public Notification build() {
         Uri sound     = options.getSoundUri();
         int smallIcon = options.getSmallIcon();
+        int ledColor  = options.getLedColor();
         NotificationCompat.Builder builder;
 
         builder = new NotificationCompat.Builder(context)
@@ -126,10 +127,12 @@ public class Builder {
                 .setNumber(options.getBadgeNumber())
                 .setTicker(options.getText())
                 .setAutoCancel(options.isAutoClear())
-		.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(), 0))
                 .setOngoing(options.isOngoing())
-                .setColor(options.getColor())
-                .setLights(options.getLedColor(), 100, 100);
+                .setColor(options.getColor());
+
+        if (ledColor != 0) {
+            builder.setLights(ledColor, 100, 100);
+        }
 
         if (sound != null) {
             builder.setSound(sound);
