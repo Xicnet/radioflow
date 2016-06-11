@@ -6,5 +6,9 @@
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/icon.png",
         "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable/icon.png"
+    },
+    {
+        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/notification.png",
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable/notification.png"
     }
 ]

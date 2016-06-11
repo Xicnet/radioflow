@@ -31,9 +31,6 @@
     <feature name="LocalNotification">
         <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
     </feature>
-    <feature name="Toast">
-        <param name="android-package" value="nl.xservices.plugins.Toast" />
-    </feature>
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <name>Nacional Rock</name>
     <description>
