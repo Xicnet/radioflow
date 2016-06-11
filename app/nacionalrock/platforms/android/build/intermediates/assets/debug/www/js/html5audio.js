@@ -31,7 +31,7 @@ var html5audio = {
 		myaudio = new Audio(window.streamURL);
 		myaudio.play();
 		if(device.platform == "Android") {
-			app.addToCal();
+			// TODO set notification here
 		}
 
 		myaudio.addEventListener("error", function() {
@@ -75,7 +75,7 @@ var html5audio = {
 		myaudio = null;
 		myaudio = new Audio(window.streamURL);
 		if(device.platform == "Android") {
-			app.removeNoti();
+			// TODO remove notification here
 		}
 		hideProgramInfo();
 	},

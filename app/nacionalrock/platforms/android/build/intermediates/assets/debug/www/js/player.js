@@ -9,7 +9,7 @@ var mediaAudio = {
 		myMedia = new Media(window.streamURL, this.stop, mediaError, mediaStatus);
 		myMedia.play();     
 		getProgramInfo();
-		app.addToCal();
+		// TODO set notification here
 	},
 	stop: function() {
 		//$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause flaticon-play").addClass("flaticon-play");
