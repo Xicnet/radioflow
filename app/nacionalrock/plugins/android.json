@@ -105,7 +105,17 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        }
+    }
 }
