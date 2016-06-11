@@ -1,4 +1,5 @@
 *.swp
+app/nacionalrock/platforms/android/build
 assets/com.xicnet.rockandpop/
 app/nacionalclasica
 app/rae
