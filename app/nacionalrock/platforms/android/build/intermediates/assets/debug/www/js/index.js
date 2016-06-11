@@ -157,8 +157,9 @@ var app = {
         //statusbarnotification.createEvent(success, error);
         cordova.plugins.notification.local.schedule({
             id: 1,
-            text: 'Acá va la program info, y qué pasa si es re larga, scrollea? todavía entra en la pantalla asique vamos a tener que hacerlo más largo',
-            autoClear: false,
+            text: 'Program info here',
+            autoClear: true,
+            ongoing: true,
             icon: 'http://3.bp.blogspot.com/-Qdsy-GpempY/UU_BN9LTqSI/AAAAAAAAAMA/LkwLW2yNBJ4/s1600/supersu.png',
             smallIcon: 'res://cordova',
             sound: null,

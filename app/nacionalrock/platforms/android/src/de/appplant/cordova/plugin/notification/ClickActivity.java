@@ -41,6 +41,9 @@ public class ClickActivity extends AbstractClickActivity {
     public void onClick(Notification notification) {
         launchApp();
 
+        if (notification.isSticky())
+            return;
+
         if (notification.isRepeating()) {
             notification.clear();
         } else {

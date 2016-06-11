@@ -27,7 +27,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.app.NotificationCompat;
+import android.support.app.Notification;
 
 import org.json.JSONObject;
 
@@ -126,6 +126,7 @@ public class Builder {
                 .setNumber(options.getBadgeNumber())
                 .setTicker(options.getText())
                 .setAutoCancel(options.isAutoClear())
+		.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(), 0))
                 .setOngoing(options.isOngoing())
                 .setColor(options.getColor())
                 .setLights(options.getLedColor(), 100, 100);
