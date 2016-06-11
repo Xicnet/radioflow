@@ -39,10 +39,6 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"StatusBarNotification\"><param name=\"android-package\" value=\"com.xicnet.statusbarnotification.StatusBarNotification\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -104,9 +100,6 @@
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.xicnet.nacionalrock"
-        },
-        "com.xicnet.statusbarnotification": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },
@@ -356,13 +349,6 @@
             "file": "plugins/cordova-plugin-whitelist/whitelist.js",
             "id": "cordova-plugin-whitelist.whitelist",
             "runs": true
-        },
-        {
-            "file": "plugins/com.xicnet.statusbarnotification/www/statusbarnotification.js",
-            "id": "com.xicnet.statusbarnotification.StatusBarNotification",
-            "clobbers": [
-                "window.statusbarnotification"
-            ]
         }
     ],
     "plugin_metadata": {
@@ -373,7 +359,6 @@
         "cordova-plugin-inappbrowser": "1.0.1",
         "cordova-plugin-media": "1.0.1",
         "cordova-plugin-statusbar": "1.0.1",
-        "cordova-plugin-whitelist": "1.0.0",
-        "com.xicnet.statusbarnotification": "0.1.0"
+        "cordova-plugin-whitelist": "1.0.0"
     }
 }

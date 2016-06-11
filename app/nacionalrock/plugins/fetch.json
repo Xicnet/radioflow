@@ -62,13 +62,5 @@
         },
         "is_top_level": true,
         "variables": {}
-    },
-    "com.xicnet.statusbarnotification": {
-        "source": {
-            "type": "local",
-            "path": "../../plugins/com.xicnet.statusbarnotification"
-        },
-        "is_top_level": true,
-        "variables": {}
     }
 }

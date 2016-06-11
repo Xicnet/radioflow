@@ -12,8 +12,8 @@ var mediaAudio = {
 		app.addToCal();
 	},
 	stop: function() {
-		//$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4 flaticon-small31").addClass("flaticon-small31");
-		//$(".play-button").removeClass("flaticon-mute4").removeClass("flaticon-small31").addClass("flaticon-small31");
+		//$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause flaticon-play").addClass("flaticon-play");
+		//$(".play-button").removeClass("flaticon-pause").removeClass("flaticon-play").addClass("flaticon-play");
 		$("div").removeClass('blink');
 		isPlaying = false;
 		app.removeNoti();
@@ -37,12 +37,12 @@ function mediaStatus(e){
 		isPlaying = false;
 		isStarting = true;
 		//$(".player-container .triangle i").removeClass("fa-play").addClass("fa-circle-o-notch fa-spin");
-		//$(".play-button .triangle .glyph .glyph-icon").removeClass("glyph-icon flaticon-small31").addClass("glyph-icon flaticon-turn4 fa-spin");
+		//$(".play-button .triangle .glyph .glyph-icon").removeClass("glyph-icon flaticon-play").addClass("glyph-icon flaticon-turn4 fa-spin");
 		return;
 	}
 	if(e==2) {
 		//$(".player-container .triangle i").removeClass("fa-circle-o-notch fa-spin").addClass("fa-pause");
-		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-small31").addClass("flaticon-mute4");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-play").addClass("flaticon-pause");
 		$("div").removeClass('blink');
 		isPlaying = true; 
 		isStarting = false;
@@ -51,7 +51,7 @@ function mediaStatus(e){
 		return;
 	}
 	if(e==4) {
-		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-mute4").addClass("flaticon-small31");
+		$(".play-button .triangle .glyph .glyph-icon").removeClass("flaticon-pause").addClass("flaticon-play");
 		$(".program-info").css("visibility", "hidden");
 	}
 	if(e==undefined) {
@@ -62,7 +62,7 @@ function mediaStatus(e){
 }
 
 function mediaError(error){
-	$(".play-button").removeClass("flaticon-mute4").removeClass("flaticon-small31");
+	$(".play-button").removeClass("flaticon-pause").removeClass("flaticon-play");
 	$("div").removeClass('blink');
 	console.log("RNA Media Error: "+ error.message);
 	window.isPlaying = false;

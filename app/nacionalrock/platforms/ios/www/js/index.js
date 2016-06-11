@@ -126,7 +126,7 @@ var app = {
 
 	// Set background image
 	function setBackgroundImage(url) {
-		$("div#wrapper").css({'background-image':"url('"+url+"')"});
+		$("html").css({'background-image':"url('"+url+"')"});
 	}
 	function setLogoImage(url) {
 		$(".logo").attr('src', url);
@@ -193,10 +193,16 @@ function getProgramInfo()
 	        $.getJSON(url, function(data) {
 	                if(data.name) {
         	        	$('#name').html(data.name);
+                                $('#program-name').css("visibility", "visible");
+			} else {
+                                $('#program-name').css("visibility", "hidden");
 			}
-	                if(data.presenter) {
-	                	$('#presenter').html(data.presenter);
-			}
+                        if(data.presenter) {
+                                $('#presenter').html(data.presenter);
+                                $('#program-presenter').css("visibility", "visible");
+                        } else {
+                                $('#program-presenter').css("visibility", "hidden");
+                        }
 	                if(data.show_labels) {
 	                	$('.infopanel-label').css("display", "inline");
 			} else {
@@ -216,7 +222,6 @@ function getProgramInfo()
 // Check for program info changes
 var checkInterval = 1;
 var timerUnit = 60000;
-var timerUnit = 6000;
 var interval = setInterval(getProgramInfo, timerUnit * checkInterval);
 
 function hideProgramInfo()
@@ -224,7 +229,8 @@ function hideProgramInfo()
                 $(".infopanel-container").css("visibility", "hidden");
                 $(".program-info").css("visibility", "hidden");
 		$(".program-image").css("visibility", "hidden");
-
+		$('#program-name').css("visibility", "hidden");
+		$('#program-presenter').css("visibility", "hidden");
 }
 
 

@@ -105,9 +105,6 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
-        },
-        "com.xicnet.statusbarnotification": {
-            "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },
     "dependent_plugins": {}

@@ -30,7 +30,15 @@ user-select: none!important;
 /*
 @-ms-viewport { width: device-width; height: device-height; }
 */
-html { height: 100%; }
+html {
+height: 100%;
+background: #000 no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
 body {
 -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
 -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -38,7 +46,6 @@ body {
 margin:0;
 padding:0;
 height: 100%;
-background-color: #000;
 }
 
 #wrapper {
@@ -77,12 +84,13 @@ background-color: #000;
 }
 /* end font-face */
 #loading {
-        color: white;
+        color: #fff;
         height: 100%;
         padding-top: 50%;
         text-align: center;
         margin: 0 auto;
         display: block;
+        background-color: #000;
 }
 
 /* Landscape layout (with min-width) */
@@ -115,7 +123,7 @@ background-color: #000;
 /*.ui-page { -webkit-backface-visibility: hidden; } */
 
 
-body div#wrapper {
+#wrapper {
 -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
 -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
 -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -127,17 +135,9 @@ min-height: 100%;
 overflow: hidden;
 top: 0;
 bottom: 0;
-background-position: center bottom;
-background-size: cover;
-/* START Added to fit background in iOS screen */
-background: #000 no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-/* END Added to fit background in iOS screen */
-
 /* background-image: url('http://rnadmin.xicnet.com/media/uploaded_images/back_2.jpg'); */
 }
+
 .relative-dimensions{ 
         display: -webkit-inline-box; 
         display:inline-block;
@@ -404,25 +404,23 @@ font-family: Flaticon;
 font-style: normal;
 margin-left: 20px;
 }
-.flaticon-earth15:before {
-        content: "\e000";
-}
-.flaticon-email26:before {
+
+.flaticon-www:before {
         content: "\e001";
 }
-.flaticon-facebook5:before {
+.flaticon-email:before {
         content: "\e002";
 }
-.flaticon-mute4:before {
+.flaticon-facebook:before {
         content: "\e003";
 }
-.flaticon-small31:before {
+.flaticon-play:before {
         content: "\e004";
 }
-.flaticon-turn4:before {
+.flaticon-pause:before {
         content: "\e005";
 }
-.flaticon-twitter34:before {
+.flaticon-twitter:before {
         content: "\e006";
 }
 
@@ -443,7 +441,7 @@ vertical-align: middle;
         
 }
 /* play */
-.glyph .glyph-icon.flaticon-small31:before {
+.glyph .glyph-icon.flaticon-play:before {
 font-size: 3em;
 color: #eee;
 margin-left: 6px;
@@ -455,8 +453,8 @@ margin-left: 6px;
         color: #eee;
         margin-left: 0;
 }
-/* stop-mute */
-.glyph .glyph-icon.flaticon-mute4:before {
+/* stop-pause */
+.glyph .glyph-icon.flaticon-pause:before {
         font-size: 3em;
         color: #eee;
         margin-left: 0;

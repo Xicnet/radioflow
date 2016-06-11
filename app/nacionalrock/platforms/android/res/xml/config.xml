@@ -29,9 +29,6 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="StatusBarNotification">
-        <param name="android-package" value="com.xicnet.statusbarnotification.StatusBarNotification" />
-    </feature>
     <name>Nacional Rock</name>
     <description>
         FM 93.7 Radio Nacional Rock (Argentina)

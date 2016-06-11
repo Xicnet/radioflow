@@ -244,13 +244,6 @@ module.exports = [
         "file": "plugins/cordova-plugin-whitelist/whitelist.js",
         "id": "cordova-plugin-whitelist.whitelist",
         "runs": true
-    },
-    {
-        "file": "plugins/com.xicnet.statusbarnotification/www/statusbarnotification.js",
-        "id": "com.xicnet.statusbarnotification.StatusBarNotification",
-        "clobbers": [
-            "window.statusbarnotification"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -263,8 +256,7 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.0.1",
     "cordova-plugin-media": "1.0.1",
     "cordova-plugin-statusbar": "1.0.1",
-    "cordova-plugin-whitelist": "1.0.0",
-    "com.xicnet.statusbarnotification": "0.1.0"
+    "cordova-plugin-whitelist": "1.0.0"
 };
 // BOTTOM OF METADATA
 });
