@@ -151,14 +151,14 @@ var app = {
     addToCal: function() {
 	var success = function() { console.log("Notification successfully added"); };
         var error = function(message) { console.log("Oopsie! " + message); };
-        statusbarnotification.createEvent(success, error);
+        //statusbarnotification.createEvent(success, error);
     },
 
     removeNoti: function() {
 	var success = function() { console.log("Notification successfully added"); };
 	var success = function(message) { console.log("Remove noti"); };
 	var error = function(message) { console.log("Oopsie! " + message); };
-       	statusbarnotification.removeNotification(success, error);
+       	//statusbarnotification.removeNotification(success, error);
     },
     audioToggle: function() {
 	console.log("............ in audioToggle()");
