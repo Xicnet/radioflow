@@ -2,6 +2,27 @@
 <items version="2" >
 
     <item
+        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-beta1/jars/libs/internal_impl-24.0.0-beta1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="23d564c059873f398dc5d967f56791a66472ce76">
+        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.0.0-beta1_4457464024bbc2de5b79f5ea1c10571ebb168fc6.jar" />
+    </item>
+    <item
+        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-beta1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f81eecb8d5e9e548f75f277830a94a9b37fbb987">
+        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0-beta1_f8fbca16ba9e4ee640a34aae4c058f1f7fccf8fb.jar" />
+    </item>
+    <item
+        jar="/home/rama/android/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/24.0.0-beta1/support-annotations-24.0.0-beta1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="04705c19cdec60364bc04e2e928c274da1ba301b">
+        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-24.0.0-beta1_e3b262f6136cbd7e11f81e70e7b42af7a5ccef48.jar" />
+    </item>
+    <item
         jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
         jumboMode="false"
         revision="23.0.3"
