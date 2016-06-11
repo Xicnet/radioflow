@@ -1,5 +1,22 @@
-#replace old com.xicnet.statusbarnotification with new one:
+replace old com.xicnet.statusbarnotification with new one:
 
 cordova plugin add de.appplant.cordova.plugin.local-notification
 cordova plugin add https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git
+
+
+notification/Notification.java :
+
+118     /**
+119      * If it's a sticky notification.
+120      */
+121     public boolean isSticky () {
+122         return getOptions().isAutoClear() == false;
+123     }
+124 
+
+
+notification/ClickActivity.java :
+
+44         if (notification.isSticky())
+45             return;
 
