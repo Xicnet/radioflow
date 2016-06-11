@@ -1,0 +1,5 @@
+#replace old com.xicnet.statusbarnotification with new one:
+
+cordova plugin add de.appplant.cordova.plugin.local-notification
+cordova plugin add https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git
+
