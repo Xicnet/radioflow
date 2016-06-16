@@ -240,6 +240,22 @@ then
 	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
+if [ "$STATION" == "radioapp" ]
+then
+
+	BUNDLE_NAME="com.xicnet.radioapp"
+	APP_NAME="RadioApp"
+	STREAM_URL="http://stream.xicnet.com:2323/radiodesalon.mp3"
+	FB_URL="fb://profile/239488842805946"
+	TW_URL="radioappdigital"
+	WEB_URL="http://radio-app.com.ar/"
+	MAIL="contacto@radio-app.com.ar"
+	PACKAGE_DESCRIPTION="Radio App"
+	STATION_NAME="Radio App"
+	STATION_NAME_LONG="Radio App"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
 if [ "$PLATFORM" == "android" ]
 then
 	cp -pr $TPL_BASEDIR/platforms/android/res/xml/config.xml $TARGET_BASEDIR/platforms/android/res/xml/config.xml
