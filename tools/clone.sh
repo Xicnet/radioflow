@@ -74,7 +74,7 @@ cordova plugin add cordova-plugin-whitelist
 
 if [ "$PLATFORM" == "android" ]
 then
-	cordova plugin add ../../plugins/com.xicnet.statusbarnotification/
+	cordova plugin add https://github.com/Xicnet/cordova-plugin-local-notifications.git
 fi
 
 
