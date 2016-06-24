@@ -256,6 +256,22 @@ then
 	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
+if [ "$STATION" == "futurock" ]
+then
+
+	BUNDLE_NAME="com.xicnet.futurock"
+	APP_NAME="Futurock"
+	STREAM_URL=""
+	FB_URL=""
+	TW_URL=""
+	WEB_URL=""
+	MAIL=""
+	PACKAGE_DESCRIPTION="Futurock"
+	STATION_NAME="Futurock"
+	STATION_NAME_LONG="Futurock"
+	CONTENT_SERVER="http://rnadmin.xicnet.com"
+fi
+
 if [ "$PLATFORM" == "android" ]
 then
 	cp -pr $TPL_BASEDIR/platforms/android/res/xml/config.xml $TARGET_BASEDIR/platforms/android/res/xml/config.xml
