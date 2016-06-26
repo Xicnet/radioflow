@@ -82,6 +82,7 @@ fi
 # Global settings for all apps override in specific app settings if required
 LOADING_BG_COLOR="#000"
 LOADING_FONT_COLOR="#fff"
+BG_COLOR="#000"
 CONTENT_SERVER="http://rnadmin.xicnet.com"
 
 
@@ -240,7 +241,7 @@ then
 
 	BUNDLE_NAME="com.xicnet.radioapp"
 	APP_NAME="RadioApp"
-	STREAM_URL="http://stream.xicnet.com:2323/radiodesalon.mp3"
+	STREAM_URL=""
 	FB_URL=""
 	TW_URL=""
 	WEB_URL=""
@@ -265,6 +266,7 @@ then
 	STATION_NAME_LONG="Futurock"
 	LOADING_BG_COLOR="#fff"
 	LOADING_FONT_COLOR="#000"
+	BG_COLOR="#fff"
 fi
 
 if [ "$PLATFORM" == "android" ]
@@ -306,6 +308,7 @@ mv -v $APP_CONFIG.tmp $APP_CONFIG
 
 
 sed -i "s/\(\#loading\) {\(.*\) background-color: #000; color: #fff; }/\1 {\2 background-color: $LOADING_BG_COLOR; color: $LOADING_FONT_COLOR; }/g" www/css/index.css
+sed -i "s/\(html\) {\(.*\) background: #000 \(no-repeat center center fixed\); }/\1 {\2 background: $BG_COLOR \3; }/g" www/css/index.css
 
 #cp $SRC_BASEDIR/res/icon/android/icon-36-ldpi.png $TARGET_BASEDIR/platforms/android/res/drawable-ldpi/icon.png
 #cp $SRC_BASEDIR/res/icon/android/icon-48-mdpi.png $TARGET_BASEDIR/platforms/android/res/drawable-mdpi/icon.png

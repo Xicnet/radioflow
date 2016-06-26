@@ -30,14 +30,7 @@ user-select: none!important;
 /*
 @-ms-viewport { width: device-width; height: device-height; }
 */
-html {
-height: 100%;
-background: #000 no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
+html { height: 100%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background: #000 no-repeat center center fixed; }
 
 body {
 -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
