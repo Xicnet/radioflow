@@ -307,8 +307,8 @@ sed "s#$TPL_STREAM_URL#$STREAM_URL#g" $APP_CONFIG \
 mv -v $APP_CONFIG.tmp $APP_CONFIG
 
 
-sed -i "s/\(\#loading\) {\(.*\) background-color: #000; color: #fff; }/\1 {\2 background-color: $LOADING_BG_COLOR; color: $LOADING_FONT_COLOR; }/g" www/css/index.css
-sed -i "s/\(html\) {\(.*\) background: #000 \(no-repeat center center fixed\); }/\1 {\2 background: $BG_COLOR \3; }/g" www/css/index.css
+sed "s/\(\#loading\) {\(.*\) background-color: #000; color: #fff; }/\1 {\2 background-color: $LOADING_BG_COLOR; color: $LOADING_FONT_COLOR; }/g" www/css/index.css | sed "s/\(html\) {\(.*\) background: #000 \(no-repeat center center fixed\); }/\1 {\2 background: $BG_COLOR \3; }/g" > /tmp/index.css
+mv /tmp/index.css www/css/index.css
 
 #cp $SRC_BASEDIR/res/icon/android/icon-36-ldpi.png $TARGET_BASEDIR/platforms/android/res/drawable-ldpi/icon.png
 #cp $SRC_BASEDIR/res/icon/android/icon-48-mdpi.png $TARGET_BASEDIR/platforms/android/res/drawable-mdpi/icon.png
