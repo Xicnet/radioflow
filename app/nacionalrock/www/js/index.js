@@ -37,7 +37,7 @@ var app = {
     onDeviceReady: function() {
 	var program_name = '';
 	//StatusBar.hide();
-	if(device.platform == "android") {
+	if(device.platform == "Android") {
 	        app.clearNotification();
 	}
 
