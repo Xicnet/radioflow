@@ -37,7 +37,9 @@ var app = {
     onDeviceReady: function() {
 	var program_name = '';
 	//StatusBar.hide();
-        app.clearNotification();
+	if(device.platform == "android") {
+	        app.clearNotification();
+	}
 
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
