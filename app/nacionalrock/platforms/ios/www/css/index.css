@@ -30,14 +30,7 @@ user-select: none!important;
 /*
 @-ms-viewport { width: device-width; height: device-height; }
 */
-html {
-height: 100%;
-background: #000 no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
+html { height: 100%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background: #000 no-repeat center center fixed; }
 
 body {
 -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
@@ -83,15 +76,7 @@ height: 100%;
        url('Montserrat-Bold.svg#Montserrat-Bold') format('svg');
 }
 /* end font-face */
-#loading {
-        color: #fff;
-        height: 100%;
-        padding-top: 50%;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
-        background-color: #000;
-}
+#loading { height: 100%; padding-top: 50%; text-align: center; margin: 0 auto; display: block; background-color: #000; color: #fff; }
 
 /* Landscape layout (with min-width) */
 /*

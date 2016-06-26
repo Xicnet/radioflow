@@ -35,8 +35,9 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-	var id = 1, dialog;
+	var program_name = '';
 	//StatusBar.hide();
+        app.clearNotification();
 
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
@@ -66,6 +67,7 @@ var app = {
 	        if(button=="1" || button==1)
         	{
 	            //device.exitApp();
+	            app.clearNotification();
 	            navigator.app.exitApp();
         	}
 	}
@@ -152,26 +154,26 @@ var app = {
             window.plugins.toast.showShortBottom("Gracias por escucharnos! Volvé pronto ;-)");
     },
     showNotification: function() {
-	var success = function() { console.log("Notification successfully added"); };
-        var error = function(message) { console.log("Oopsie! " + message); };
-        //statusbarnotification.createEvent(success, error);
         cordova.plugins.notification.local.schedule({
             id: 1,
-            text: 'Program info here',
+            text: app.program_name,
             autoClear: false,
             ongoing: true,
-            icon: 'http://3.bp.blogspot.com/-Qdsy-GpempY/UU_BN9LTqSI/AAAAAAAAAMA/LkwLW2yNBJ4/s1600/supersu.png',
-            smallIcon: 'res://cordova',
+            icon: 'res://drawable/icon.png',
             sound: null,
             data: { test: 1 }
         });
     },
+    updateNotification: function(text) {
+        app.program_name = text;
+        cordova.plugins.notification.local.update({
+            id: 1,
+            text: text,
+            json: { updated: true }
+        });
 
+    },
     clearNotification: function() {
-	var success = function() { console.log("Notification successfully added"); };
-	var success = function(message) { console.log("Remove noti"); };
-	var error = function(message) { console.log("Oopsie! " + message); };
-       	//statusbarnotification.removeNotification(success, error);
         cordova.plugins.notification.local.clear(1, this.notificationCallback);
     },
     audioToggle: function() {
@@ -209,6 +211,9 @@ function getProgramInfo()
 	                if(data.name) {
         	        	$('#name').html(data.name);
                                 $('#program-name').css("visibility", "visible");
+				if(app.program_name != data.name) {
+					app.updateNotification(data.name);
+				}
 			} else {
                                 $('#program-name').css("visibility", "hidden");
 			}
