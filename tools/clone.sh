@@ -23,6 +23,7 @@ TPL_MAIL="contacto@nacionalrock.com"
 TPL_PACKAGE_DESCRIPTION="FM 93.7 Radio Nacional Rock (Argentina)"
 TPL_STATION_NAME="Nacional Rock"
 TPL_STATION_NAME_LONG="Nacional Rock 93.7"
+TPL_LOADING_FONT_COLOR="fff"
 TPL_CONTENT_SERVER="http://rnadmin.xicnet.com"
 
 function sign_align {
@@ -78,6 +79,10 @@ then
 fi
 
 
+# Global settings for all apps override in specific app settings if required
+LOADING_BG_COLOR="#000"
+LOADING_FONT_COLOR="#fff"
+CONTENT_SERVER="http://rnadmin.xicnet.com"
 
 
 if [ "$STATION" == "nacionalclasica" ]
@@ -93,7 +98,6 @@ then
 	PACKAGE_DESCRIPTION="Radio Nacional Clásica (Argentina)"
 	STATION_NAME="Nacional Clasica 96.7"
 	STATION_NAME_LONG="Nacional Clasica 96.7"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "radionacionalam870" ]
@@ -109,7 +113,6 @@ then
 	PACKAGE_DESCRIPTION="Radio Nacional AM 870 (Argentina)"
 	STATION_NAME="Radio Nacional AM 870"
 	STATION_NAME_LONG="Radio Nacional AM 870"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "rae" ]
@@ -125,7 +128,6 @@ then
 	PACKAGE_DESCRIPTION="Radiodifusion Argentina al Exterior"
 	STATION_NAME="Radiodifusion Argentina al Exterior"
 	STATION_NAME_LONG="Radiodifusion Argentina al Exterior"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "nacionalfolklorica" ]
@@ -141,7 +143,6 @@ then
 	PACKAGE_DESCRIPTION="Nacional Folklorica FM 98.7 (Argentina)"
 	STATION_NAME="Nacional Folklorica FM 98.7"
 	STATION_NAME_LONG="Nacional Folklorica FM 98.7"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "radiodesalon" ]
@@ -157,7 +158,6 @@ then
 	PACKAGE_DESCRIPTION="Radio de Salon"
 	STATION_NAME="Radio de Salon"
 	STATION_NAME_LONG="Radio de Salon"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "rockandpop" ]
@@ -173,7 +173,6 @@ then
 	PACKAGE_DESCRIPTION="Rock and Pop"
 	STATION_NAME="Rock and Pop"
 	STATION_NAME_LONG="Rock and Pop"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "lmf" ]
@@ -189,7 +188,6 @@ then
 	PACKAGE_DESCRIPTION="Las Manos de Filippi"
 	STATION_NAME="Las Manos de Filippi"
 	STATION_NAME_LONG="Las Manos de Filippi"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "xicnet" ]
@@ -205,7 +203,6 @@ then
 	PACKAGE_DESCRIPTION="Xicnet"
 	STATION_NAME="Xicnet"
 	STATION_NAME_LONG="Xicnet"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "telam" ]
@@ -221,7 +218,6 @@ then
 	PACKAGE_DESCRIPTION="Telam"
 	STATION_NAME="Telam"
 	STATION_NAME_LONG="Telam"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "radiorebelde" ]
@@ -237,7 +233,6 @@ then
 	PACKAGE_DESCRIPTION="Radio Rebelde (Argentina)"
 	STATION_NAME="Radio Rebelde (Argentina)"
 	STATION_NAME_LONG="Radio Rebelde (Argentina)"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "radioapp" ]
@@ -246,14 +241,13 @@ then
 	BUNDLE_NAME="com.xicnet.radioapp"
 	APP_NAME="RadioApp"
 	STREAM_URL="http://stream.xicnet.com:2323/radiodesalon.mp3"
-	FB_URL="fb://profile/239488842805946"
-	TW_URL="radioappdigital"
-	WEB_URL="http://radio-app.com.ar/"
-	MAIL="contacto@radio-app.com.ar"
+	FB_URL=""
+	TW_URL=""
+	WEB_URL=""
+	MAIL=""
 	PACKAGE_DESCRIPTION="Radio App"
 	STATION_NAME="Radio App"
 	STATION_NAME_LONG="Radio App"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
 fi
 
 if [ "$STATION" == "futurock" ]
@@ -269,7 +263,8 @@ then
 	PACKAGE_DESCRIPTION="Futurock"
 	STATION_NAME="Futurock"
 	STATION_NAME_LONG="Futurock"
-	CONTENT_SERVER="http://rnadmin.xicnet.com"
+	LOADING_BG_COLOR="#fff"
+	LOADING_FONT_COLOR="#000"
 fi
 
 if [ "$PLATFORM" == "android" ]
@@ -309,6 +304,8 @@ sed "s#$TPL_STREAM_URL#$STREAM_URL#g" $APP_CONFIG \
 | sed "s#$TPL_CONTENT_SERVER#$CONTENT_SERVER#g" > $APP_CONFIG.tmp
 mv -v $APP_CONFIG.tmp $APP_CONFIG
 
+
+sed -i "s/\(\#loading\) {\(.*\) background-color: #000; color: #fff; }/\1 {\2 background-color: $LOADING_BG_COLOR; color: $LOADING_FONT_COLOR; }/g" www/css/index.css
 
 #cp $SRC_BASEDIR/res/icon/android/icon-36-ldpi.png $TARGET_BASEDIR/platforms/android/res/drawable-ldpi/icon.png
 #cp $SRC_BASEDIR/res/icon/android/icon-48-mdpi.png $TARGET_BASEDIR/platforms/android/res/drawable-mdpi/icon.png
