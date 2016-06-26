@@ -83,15 +83,7 @@ height: 100%;
        url('Montserrat-Bold.svg#Montserrat-Bold') format('svg');
 }
 /* end font-face */
-#loading {
-        color: #fff;
-        height: 100%;
-        padding-top: 50%;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
-        background-color: #000;
-}
+#loading { height: 100%; padding-top: 50%; text-align: center; margin: 0 auto; display: block; background-color: #000; color: #fff; }
 
 /* Landscape layout (with min-width) */
 /*
