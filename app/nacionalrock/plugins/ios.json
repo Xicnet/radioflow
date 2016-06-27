@@ -108,6 +108,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
+        "nl.x-services.plugins.backgroundaudio": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },
     "dependent_plugins": {

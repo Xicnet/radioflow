@@ -18,7 +18,9 @@ var mediaAudio = {
 		//$(".play-button").removeClass("flaticon-pause").removeClass("flaticon-play").addClass("flaticon-play");
 		$("div").removeClass('blink');
 		isPlaying = false;
-                app.clearNotification();
+		if(device.platform == "Android") {
+                	app.clearNotification();
+		}
 		hideProgramInfo();
 		myMedia.pause();
 		myMedia.release();
