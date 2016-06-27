@@ -78,6 +78,11 @@ then
 	cordova plugin add https://github.com/Xicnet/cordova-plugin-local-notifications.git
 fi
 
+if [ "$PLATFORM" == "ios" ]
+then
+	cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-backgroundaudio
+fi
+
 
 # Global settings for all apps override in specific app settings if required
 LOADING_BG_COLOR="#000"
@@ -336,7 +341,7 @@ then
 	#cp -v $SRC_BASEDIR/res/drawable-hdpi/icon.png "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/icons/icon.png"
 	cp -v "$TPL_BASEDIR/platforms/ios/Nacional Rock/Classes/AppDelegate.m" "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Classes/AppDelegate.m"
 	cp -v "$TPL_BASEDIR/platforms/ios/Nacional Rock/Nacional Rock-Info.plist" "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/$STATION_NAME-Info.plist"
-	rsync -vr $SRC_BASEDIR/ios/* "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Resources/"
+	rsync -vr $SRC_BASEDIR/ios/* "$TARGET_BASEDIR/platforms/ios/$STATION_NAME/Images.xcassets/"
 	cordova prepare ios
 fi
 
