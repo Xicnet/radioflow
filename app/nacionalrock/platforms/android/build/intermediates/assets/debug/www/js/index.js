@@ -37,7 +37,9 @@ var app = {
     onDeviceReady: function() {
 	var program_name = '';
 	//StatusBar.hide();
-        app.clearNotification();
+	if(device.platform == "Android") {
+	        app.clearNotification();
+	}
 
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
@@ -182,7 +184,8 @@ var app = {
 		player = html5audio;
 		console.log("html5audio PLAYER: " + window.streamURL);
 	} else {
-		player = mediaAudio;
+		//player = mediaAudio;
+		player = html5audio;
 		console.log("mediaPlugin PLAYER: " + window.streamURL);
 	}
 	if (isPlaying || isStarting) {

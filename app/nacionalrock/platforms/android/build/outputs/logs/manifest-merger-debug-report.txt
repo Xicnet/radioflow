@@ -2,23 +2,23 @@
 manifest
 ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:1-31:12
 	package
-		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:142-175
+		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:140-173
 		INJECTED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml
 		INJECTED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:74-101
+		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:74-99
 		INJECTED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml
 		INJECTED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml
 	android:hardwareAccelerated
 		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:11-45
 	android:windowSoftInputMode
-		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:102-141
+		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:100-139
 	android:versionCode
 		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:46-73
 		INJECTED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml
 		INJECTED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:176-234
+		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:2:174-232
 supports-screens
 ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:3:5-191
 	android:largeScreens

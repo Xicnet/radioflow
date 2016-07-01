@@ -30,16 +30,22 @@ var html5audio = {
 		myaudio = null;
 		myaudio = new Audio(window.streamURL);
 		myaudio.play();
-		if(device.platform == "Android") {
-			// TODO set notification here
-			app.showNotification();
-		}
 
 		myaudio.addEventListener("error", function() {
-			 console.log('myaudio ERROR');
+			console.log('myaudio ERROR');
+			$("div").removeClass('blink');
+			navigator.notification.alert(
+				'Error intentado conectar al stream',  // message
+				false,         // callback
+				'Stream no disponible',            // title
+				'Aceptar'                  // buttonName
+			);
 		}, false);
 		myaudio.addEventListener("canplay", function() {
 			 console.log('myaudio CAN PLAY');
+			if(device.platform == "Android") {
+				app.showNotification();
+			}
 		}, false);
 		myaudio.addEventListener("waiting", function() {
 			 //console.log('myaudio WAITING');

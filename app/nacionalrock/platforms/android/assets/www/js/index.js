@@ -184,7 +184,8 @@ var app = {
 		player = html5audio;
 		console.log("html5audio PLAYER: " + window.streamURL);
 	} else {
-		player = mediaAudio;
+		//player = mediaAudio;
+		player = html5audio;
 		console.log("mediaPlugin PLAYER: " + window.streamURL);
 	}
 	if (isPlaying || isStarting) {
