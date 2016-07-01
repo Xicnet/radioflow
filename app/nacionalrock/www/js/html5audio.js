@@ -35,9 +35,9 @@ var html5audio = {
 			console.log('myaudio ERROR');
 			$("div").removeClass('blink');
 			navigator.notification.alert(
-				'Error intentado conectar al stream',
+				'Error intentado conectar al stream de audio',
 				false,
-				'Stream no disponible',
+				'Stream de audio no disponible',
 				'Aceptar'
 			);
 		}, false);
