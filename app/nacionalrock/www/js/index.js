@@ -153,7 +153,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
     notificationCallback: function () {
-            window.plugins.toast.showShortBottom("Gracias por escucharnos! Volvé pronto ;-)");
+            //window.plugins.toast.showShortBottom("Gracias por escucharnos! Volvé pronto ;-)");
     },
     showNotification: function() {
         cordova.plugins.notification.local.schedule({
