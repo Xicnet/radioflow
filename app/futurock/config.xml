@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.xicnet.futurock" version="5.0" versionCode="50" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Futurock</name>
+    <description>
+        Futurock
+    </description>
+    <author email="mobile@xicnet.com" href="http://xicnet.com/">
+        devs @ Xicnet
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <allow-navigation href="http://rnadmin.xicnet.com/*" />
+    <engine name="android" spec="~5.1.1" />
+</widget>

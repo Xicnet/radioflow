@@ -1,0 +1,49 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.xicnet.radioapp"
+        }
+    }
+}

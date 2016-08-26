@@ -71,6 +71,7 @@ cordova plugin add cordova-plugin-inappbrowser
 cordova plugin add cordova-plugin-media
 cordova plugin add cordova-plugin-statusbar
 cordova plugin add cordova-plugin-whitelist
+cordova plugin add cordova-plugin-x-toast
 #cordova plugin add org.apache.cordova.splashscreen
 
 if [ "$PLATFORM" == "android" ]
@@ -322,7 +323,6 @@ mv /tmp/index.css www/css/index.css
 #cp /home/rama/dev/nacionalrock/platforms/android/res/drawable-hdpi/notification.png $TARGET_BASEDIR/platforms/android/res/drawable-hdpi/notification.png
 #cp /home/rama/dev/nacionalrock/platforms/android/res/drawable-xhdpi/notification.png $TARGET_BASEDIR/platforms/android/res/drawable-xhdpi/notification.png
 #cp /home/rama/dev/nacionalrock/platforms/android/res/drawable-mdpi/notification.png $TARGET_BASEDIR/platforms/android/res/drawable-mdpi/notification.png
-
 
 cp $SRC_BASEDIR/logo.png $TARGET_BASEDIR/www/img
 cp $SRC_BASEDIR/back.jpg $TARGET_BASEDIR/www/img
