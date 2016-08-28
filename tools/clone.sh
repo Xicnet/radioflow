@@ -72,6 +72,8 @@ cordova plugin add cordova-plugin-media
 cordova plugin add cordova-plugin-statusbar
 cordova plugin add cordova-plugin-whitelist
 cordova plugin add cordova-plugin-x-toast
+cordova plugin add cordova-plugin-console
+
 #cordova plugin add org.apache.cordova.splashscreen
 
 if [ "$PLATFORM" == "android" ]
