@@ -1,3 +1,4 @@
+* install background audio for android : https://github.com/katzer/cordova-plugin-background-mode
 
 !!! - implement info-panel 'hijack' feature. ie: broadcast a specific message to every device playing our stream in place of 'program name & presenters'
 ---> same thing for the program pic
