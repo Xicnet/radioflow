@@ -227,6 +227,14 @@ module.exports = [
         "id": "cordova-plugin-x-toast.tests"
     },
     {
+        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+        "id": "cordova-plugin-background-mode.BackgroundMode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
+        ]
+    },
+    {
         "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
         "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
         "clobbers": [
@@ -254,16 +262,18 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-device": "1.1.2",
-    "cordova-plugin-dialogs": "1.2.1",
+    "cordova-plugin-whitelist": "1.3.0",
+    "cordova-plugin-device": "1.1.3",
+    "cordova-plugin-dialogs": "1.3.0",
     "cordova-plugin-compat": "1.0.0",
-    "cordova-plugin-file": "4.2.0",
-    "cordova-plugin-file-transfer": "1.5.1",
-    "cordova-plugin-inappbrowser": "1.4.0",
-    "cordova-plugin-media": "2.3.0",
-    "cordova-plugin-statusbar": "2.1.3",
+    "cordova-plugin-file": "4.3.0",
+    "cordova-plugin-file-transfer": "1.6.0",
+    "cordova-plugin-inappbrowser": "1.5.0",
+    "cordova-plugin-media": "2.4.0",
+    "cordova-plugin-statusbar": "2.2.0",
     "cordova-plugin-x-toast": "2.5.2",
+    "cordova-plugin-console": "1.0.4",
+    "cordova-plugin-background-mode": "0.6.5",
     "cordova-plugin-app-event": "1.2.0",
     "de.appplant.cordova.plugin.local-notification": "0.8.4"
 };

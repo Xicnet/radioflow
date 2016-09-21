@@ -34,6 +34,12 @@
         "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.xicnet.futurock"
         },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.xicnet.futurock"
+        },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "com.xicnet.futurock"
+        },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.xicnet.futurock"
         }

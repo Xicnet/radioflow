@@ -10,7 +10,8 @@ var mediaAudio = {
 		myMedia.play();     
 		getProgramInfo();
 		if(device.platform == "Android") {
-			app.showNotification();
+			// Disable in favour of background plugin
+			//app.showNotification();
 		}
 	},
 	stop: function() {
@@ -19,6 +20,7 @@ var mediaAudio = {
 		$("div").removeClass('blink');
 		isPlaying = false;
 		if(device.platform == "Android") {
+			// Disable in favour of background plugin
                 	app.clearNotification();
 		}
 		hideProgramInfo();
