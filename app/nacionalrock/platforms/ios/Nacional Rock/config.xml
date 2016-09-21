@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.xicnet.nacionalrock" version="5.1" versionCode="51" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.xicnet.nacionalrock" version="6.0" versionCode="60" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
@@ -17,6 +17,12 @@
     </feature>
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="BackgroundMode">
+        <param name="ios-package" value="APPBackgroundMode" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
     </feature>
     <feature name="Notification">
         <param name="ios-package" value="CDVNotification" />
@@ -38,6 +44,9 @@
         <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Toast">
+        <param name="ios-package" value="Toast" />
+    </feature>
     <feature name="LocalNotification">
         <param name="ios-package" onload="true" value="APPLocalNotification" />
         <param name="onload" value="true" />
@@ -45,9 +54,6 @@
     <feature name="BackgroundAudio">
         <param name="ios-package" value="BackgroundAudio" />
         <param name="onload" value="true" />
-    </feature>
-    <feature name="BackgroundMode">
-        <param name="ios-package" value="APPBackgroundMode" />
     </feature>
     <name>Nacional Rock</name>
     <description>
@@ -81,9 +87,8 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <preference name="AndroidPersistentFileLocation" value="Internal" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarBackgroundColor" value="#ffffff" />
     <preference name="AutoHideSplashScreen" value="true" />

@@ -44,9 +44,9 @@ var app = {
 	if(device.platform == "Android") {
 	// Android customization
 		cordova.plugins.backgroundMode.setDefaults({
-			title  : 'Radio App',
-			ticker : 'Radio App',
-			text   : ''
+			title  : 'Nacional Rock',
+			ticker : 'Nacional Rock',
+			text   : '',
 			isPublic: true,
 		});
 
@@ -73,7 +73,7 @@ var app = {
 		navigator.notification.confirm(
 			("Desea salir?"), // message
 			alertexit, // callback
-			'Radio App', // title
+			'Nacional Rock', // title
 			['Sí', 'No'] // buttonName
 		);
 	}

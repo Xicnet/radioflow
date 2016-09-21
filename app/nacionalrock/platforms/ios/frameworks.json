@@ -1,4 +1,4 @@
 {
-    "AudioToolbox.framework": 1,
-    "QuartzCore.framework": 1
+    "AudioToolbox.framework": 2,
+    "QuartzCore.framework": 2
 }
