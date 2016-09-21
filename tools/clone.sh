@@ -8,8 +8,9 @@ SHORTNAME=$STATION
 
 BUNDLE_NAME="com.xicnet.$STATION"
 SRC_BASEDIR="`pwd`/../assets/$BUNDLE_NAME"
-TARGET_BASEDIR="`pwd`/../app/$STATION"
+TARGET_BASEDIR="`pwd`/../clones/$STATION"
 
+mkdir -p $TARGET_BASEDIR
 
 TPL_SHORTNAME="nacionalrock"
 TPL_BASEDIR="`pwd`/../app/$TPL_SHORTNAME"
