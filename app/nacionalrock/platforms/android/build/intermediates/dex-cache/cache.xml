@@ -2,25 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.0_58408e79ad7beec219966e9be34e648b5827f98f.jar" />
+        revision="23.0.2"
+        sha1="2699ee27fc10f9be3b0e9cad765833c921210d7c">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_829d1d357b995e727b37097697cd9e6b18a8fd40.jar" />
+    </item>
+    <item
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.0_af72f4e2404c25ccddf98501721d898e0554bcaa.jar" />
+    </item>
+    <item
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_b85a85903acf1b78f3e5c1945909bd3ef8d66aa0.jar" />
     </item>
     <item
         jar="/home/rama/android/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
         jumboMode="false"
-        revision="24.0.2"
+        revision="23.0.2"
         sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-24.2.0_86f0eb485a9581173b5fcefc4e5fc7ec4dd5961d.jar" />
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-24.2.0_86f0eb485a9581173b5fcefc4e5fc7ec4dd5961d.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.0_75412b3296d19fb86724e0a475576a5d85b46402.jar" />
+        revision="23.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_bf5afc1390c89f90013a81b44db1359d974226c2.jar" />
     </item>
     <item
         jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
@@ -30,46 +44,25 @@
         <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_32664bc6d65a6338ca92185dbeea0ae8dfea3cdc.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_40c6cb5651fe4c32fd0e53d1cd9218b7b415bb35.jar" />
-    </item>
-    <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_7c22adc1c18fdee790a9f958bf4b13cf361acb76.jar" />
-    </item>
-    <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
+        revision="23.0.2"
         sha1="045be695d968dd707691cc55d23746dbf8cf569a">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_801c66aee4a066de0e713b3ec03b0f30bfc45750.jar" />
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_0be1ac835b7b7c5e8b86eb72422629d9aeab131d.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_c19395e6900f4d91158be853e21542a6468b229e.jar" />
+        revision="23.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.0_156de4fd44770fe3080f151d90f005f119ef381e.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.0_fc5c656f9926cb47df0b131d7b405d75a65c5ca6.jar" />
-    </item>
-    <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.0_84f7c6a691129adebab7090f3df109c32a13031c.jar" />
+        revision="23.0.2"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.0_2d4df97be5fcc6adc75ffece565fd593ecc47328.jar" />
     </item>
     <item
         jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
@@ -79,25 +72,39 @@
         <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_32664bc6d65a6338ca92185dbeea0ae8dfea3cdc.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.0_ff61fc104c8b84f7d061926d7e592ab5fdbfa226.jar" />
+        revision="23.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.0_ffa14e7f46247d3f6ba2c3342b82b198fc54d565.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
         jumboMode="false"
-        revision="24.0.2"
+        revision="23.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.0_db1e297bb6f2ca8eb4a9c70888a093e232bcc4a8.jar" />
+    </item>
+    <item
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.0_f0b94034caadafbcea1b44dc8f62f902889865a5.jar" />
+    </item>
+    <item
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
         sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_339799ae215b4fa28b19ad15dd250fe5ded8a953.jar" />
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_ab1b16a7e62012d8d96851346a450246d948f74e.jar" />
     </item>
     <item
-        jar="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jar="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
         jumboMode="false"
-        revision="24.0.2"
-        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
-        <dex dex="/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.0_f800db02c657e97ddd21d0ff9590168bc7e36e41.jar" />
+        revision="23.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_7fddedcffe86bfd66393051a890d335396e160f7.jar" />
     </item>
 
 </items>

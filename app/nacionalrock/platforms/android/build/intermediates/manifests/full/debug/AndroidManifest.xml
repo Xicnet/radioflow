@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xicnet.nacionalrock"
     android:hardwareAccelerated="true"
-    android:versionCode="501008"
-    android:versionName="5.1"
+    android:versionCode="600008"
+    android:versionName="6.0"
     android:windowSoftInputMode="adjustPan" >
 
     <uses-sdk
@@ -20,10 +20,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -43,6 +43,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
 
         <receiver
             android:name="de.appplant.cordova.plugin.localnotification.TriggerReceiver"
@@ -76,8 +78,6 @@
             android:exported="false"
             android:launchMode="singleInstance"
             android:theme="@android:style/Theme.NoDisplay" />
-
-        <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
     </application>
 
 </manifest>

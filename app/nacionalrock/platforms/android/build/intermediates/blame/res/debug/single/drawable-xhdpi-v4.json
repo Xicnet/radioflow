@@ -1,30 +1,58 @@
 [
     {
-        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/icon.png",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/icon.png"
-    },
-    {
-        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_remove.png",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_remove.png"
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_remove.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_remove.png"
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification.png",
         "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/notification.png"
     },
     {
-        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_next_item.png",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_next_item.png"
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/splash.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/splash.png"
+    },
+    {
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/notification.png"
+    },
+    {
+        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/splash.png",
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/splash.png"
+    },
+    {
+        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_remove.png",
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_remove.png"
+    },
+    {
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/icon.png",
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/icon.png"
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_previous_item.png",
         "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_previous_item.png"
     },
     {
-        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/splash.png",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/splash.png"
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_previous_item.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_previous_item.png"
+    },
+    {
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/icon.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/icon.png"
+    },
+    {
+        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_next_item.png",
+        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_next_item.png"
+    },
+    {
+        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_next_item.png",
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_action_next_item.png"
+    },
+    {
+        "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/drawable-xhdpi/ic_launcher.png"
     }
 ]
