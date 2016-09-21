@@ -41,6 +41,20 @@ var app = {
 	        app.clearNotification();
 	}
 
+	if(device.platform == "Android") {
+	// Android customization
+		cordova.plugins.backgroundMode.setDefaults({
+			title  : 'Radio App',
+			ticker : 'Radio App',
+			text   : '',
+			isPublic: true,
+		});
+
+	        app.clearNotification();
+		// Enable background mode
+		cordova.plugins.backgroundMode.enable();
+	}
+
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
 	$('.play-button').on('tap', onTapPlayHandler);
@@ -59,7 +73,7 @@ var app = {
 		navigator.notification.confirm(
 			("Desea salir?"), // message
 			alertexit, // callback
-			'Nacional Rock', // title
+			'Radio App', // title
 			['Sí', 'No'] // buttonName
 		);
 	}
@@ -153,7 +167,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
     notificationCallback: function () {
-            window.plugins.toast.showShortBottom("Gracias por escucharnos! Volvé pronto ;-)");
+            //window.plugins.toast.showShortBottom("Gracias por escucharnos! Volvé pronto ;-)");
     },
     showNotification: function() {
         cordova.plugins.notification.local.schedule({
@@ -184,8 +198,7 @@ var app = {
 		player = html5audio;
 		console.log("html5audio PLAYER: " + window.streamURL);
 	} else {
-		//player = mediaAudio;
-		player = html5audio;
+		player = mediaAudio;
 		console.log("mediaPlugin PLAYER: " + window.streamURL);
 	}
 	if (isPlaying || isStarting) {
@@ -215,6 +228,9 @@ function getProgramInfo()
         	        	$('#name').html(data.name);
                                 $('#program-name').css("visibility", "visible");
 				if(app.program_name != data.name) {
+					cordova.plugins.backgroundMode.configure({
+					    text: data.name,
+					})
 					app.updateNotification(data.name);
 				}
 			} else {

@@ -16,6 +16,8 @@
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
 		64DA5A05A48F4036B9BE957A /* BackgroundAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 1215DDC6880F4C08B6740799 /* BackgroundAudio.m */; };
+		4311873E912248E897304017 /* APPBackgroundMode.m in Sources */ = {isa = PBXBuildFile; fileRef = A255067F3FD64D77820D5DC8 /* APPBackgroundMode.m */; };
+		9CC1FB78ED394777AE3F514F /* appbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 39BFC38C1A13496C980B96A0 /* appbeep.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		1215DDC6880F4C08B6740799 /* BackgroundAudio.m */ = {isa = PBXFileReference; name = "BackgroundAudio.m"; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		EB0DE09BD81F4F23AC0DEC78 /* BackgroundAudio.h */ = {isa = PBXFileReference; name = "BackgroundAudio.h"; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A255067F3FD64D77820D5DC8 /* APPBackgroundMode.m */ = {isa = PBXFileReference; name = "APPBackgroundMode.m"; path = "cordova-plugin-background-mode/APPBackgroundMode.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FAF4F8441BDF40B0ABC9A74F /* APPBackgroundMode.h */ = {isa = PBXFileReference; name = "APPBackgroundMode.h"; path = "cordova-plugin-background-mode/APPBackgroundMode.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		39BFC38C1A13496C980B96A0 /* appbeep.wav */ = {isa = PBXFileReference; name = "appbeep.wav"; path = "appbeep.wav"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +131,7 @@
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* Nacional Rock-Info.plist */,
+				39BFC38C1A13496C980B96A0 /* appbeep.wav */,
 			);
 			name = Resources;
 			path = "Nacional Rock/Resources";
@@ -161,6 +167,8 @@
 			children = (
 				1215DDC6880F4C08B6740799 /* BackgroundAudio.m */,
 				EB0DE09BD81F4F23AC0DEC78 /* BackgroundAudio.h */,
+				A255067F3FD64D77820D5DC8 /* APPBackgroundMode.m */,
+				FAF4F8441BDF40B0ABC9A74F /* APPBackgroundMode.h */,
 			);
 			name = Plugins;
 			path = "Nacional Rock/Plugins";
@@ -244,6 +252,7 @@
 				3047A5141AB8059700498E2A /* build.xcconfig in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
+				9CC1FB78ED394777AE3F514F /* appbeep.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +285,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				64DA5A05A48F4036B9BE957A /* BackgroundAudio.m in Sources */,
+				4311873E912248E897304017 /* APPBackgroundMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +319,7 @@
 				INFOPLIST_FILE = "Nacional Rock/Nacional Rock-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "Nacional Rock";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -328,6 +339,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Nacional Rock/Nacional Rock-Info.plist";
 				PRODUCT_NAME = "Nacional Rock";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -354,6 +366,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -379,6 +392,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};

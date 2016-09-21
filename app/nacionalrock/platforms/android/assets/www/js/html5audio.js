@@ -35,16 +35,17 @@ var html5audio = {
 			console.log('myaudio ERROR');
 			$("div").removeClass('blink');
 			navigator.notification.alert(
-				'Error intentado conectar al stream',  // message
-				false,         // callback
-				'Stream no disponible',            // title
-				'Aceptar'                  // buttonName
+				'Error intentado conectar al stream de audio',
+				false,
+				'Stream de audio no disponible',
+				'Aceptar'
 			);
 		}, false);
 		myaudio.addEventListener("canplay", function() {
 			 console.log('myaudio CAN PLAY');
 			if(device.platform == "Android") {
-				app.showNotification();
+				// Disable in favour of background plugin
+				//app.showNotification();
 			}
 		}, false);
 		myaudio.addEventListener("waiting", function() {
@@ -82,7 +83,8 @@ var html5audio = {
 		myaudio = null;
 		myaudio = new Audio(window.streamURL);
 		if(device.platform == "Android") {
-			app.clearNotification();
+			// Disable in favour of background plugin
+			//app.clearNotification();
 		}
 		hideProgramInfo();
 	},

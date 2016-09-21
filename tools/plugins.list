@@ -1,0 +1,18 @@
+cordova plugin add cordova-plugin-app-event
+cordova plugin add cordova-plugin-background-mode
+cordova plugin add cordova-plugin-compat
+cordova plugin add cordova-plugin-console
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add cordova-plugin-file
+cordova plugin add cordova-plugin-file-transfer
+cordova plugin add cordova-plugin-inappbrowser
+cordova plugin add cordova-plugin-media
+cordova plugin add cordova-plugin-statusbar
+cordova plugin add cordova-plugin-whitelist
+cordova plugin add cordova-plugin-x-toast
+
+#de.appplant.cordova.plugin.local-notification 0.8.4 "LocalNotification"
+cordova plugin add https://github.com/Xicnet/cordova-plugin-local-notifications.git
+
+cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-backgroundaudio

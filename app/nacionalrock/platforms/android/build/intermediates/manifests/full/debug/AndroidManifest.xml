@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xicnet.nacionalrock"
     android:hardwareAccelerated="true"
-    android:versionCode="500008"
-    android:versionName="5.0"
+    android:versionCode="501008"
+    android:versionName="5.1"
     android:windowSoftInputMode="adjustPan" >
 
     <uses-sdk
@@ -76,6 +76,8 @@
             android:exported="false"
             android:launchMode="singleInstance"
             android:theme="@android:style/Theme.NoDisplay" />
+
+        <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
     </application>
 
 </manifest>

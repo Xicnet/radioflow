@@ -88,5 +88,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-background-mode": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-background-mode"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

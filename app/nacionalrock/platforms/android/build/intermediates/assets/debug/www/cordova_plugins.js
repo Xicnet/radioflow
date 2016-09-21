@@ -268,6 +268,14 @@ module.exports = [
             "cordova.plugins.notification.local.core",
             "plugin.notification.local.core"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+        "id": "cordova-plugin-background-mode.BackgroundMode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -283,7 +291,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.0.0",
     "cordova-plugin-app-event": "1.2.0",
     "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "nl.x-services.plugins.backgroundaudio": "1.0.1"
+    "nl.x-services.plugins.backgroundaudio": "1.0.1",
+    "cordova-plugin-background-mode": "0.6.5"
 };
 // BOTTOM OF METADATA
 });

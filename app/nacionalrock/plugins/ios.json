@@ -111,6 +111,9 @@
         },
         "nl.x-services.plugins.backgroundaudio": {
             "PACKAGE_NAME": "com.xicnet.nacionalrock"
+        },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "com.xicnet.nacionalrock"
         }
     },
     "dependent_plugins": {

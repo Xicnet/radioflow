@@ -46,6 +46,9 @@
         <param name="ios-package" value="BackgroundAudio" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="BackgroundMode">
+        <param name="ios-package" value="APPBackgroundMode" />
+    </feature>
     <name>Nacional Rock</name>
     <description>
         FM 93.7 Radio Nacional Rock (Argentina)
@@ -55,10 +58,19 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
+    <allow-navigation href="https://*/*" />
     <allow-navigation href="http://rnadmin.xicnet.com/*" />
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
-    <preference name="DisallowOverscroll" value="true" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
@@ -70,8 +82,16 @@
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="AndroidPersistentFileLocation" value="Internal" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="webviewbounce" value="false" />
     <preference name="Orientation" value="portrait" />
+    <preference name="StatusBarBackgroundColor" value="#ffffff" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="FadeSplashScreenDuration" value="0" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="SplashScreen" value="none" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="deployment-target" value="7.0" />
 </widget>

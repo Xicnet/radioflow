@@ -41,6 +41,20 @@ var app = {
 	        app.clearNotification();
 	}
 
+	if(device.platform == "Android") {
+	// Android customization
+		cordova.plugins.backgroundMode.setDefaults({
+			title  : 'Nacional Rock',
+			ticker : 'Nacional Rock',
+			text   : '',
+			isPublic: true,
+		});
+
+	        app.clearNotification();
+		// Enable background mode
+		cordova.plugins.backgroundMode.enable();
+	}
+
 	// Override back button
 	document.addEventListener("backbutton", ShowExitDialog, false);
 	$('.play-button').on('tap', onTapPlayHandler);
@@ -214,6 +228,9 @@ function getProgramInfo()
         	        	$('#name').html(data.name);
                                 $('#program-name').css("visibility", "visible");
 				if(app.program_name != data.name) {
+					cordova.plugins.backgroundMode.configure({
+					    text: data.name,
+					})
 					app.updateNotification(data.name);
 				}
 			} else {
