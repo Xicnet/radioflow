@@ -1,0 +1,47 @@
+{
+  "name": "com.xicnet.nacionalrock",
+  "version": "6.0",
+  "displayName": "Nacional Rock",
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "cordova-plugin-app-event": {},
+      "cordova-plugin-background-mode": {},
+      "cordova-plugin-compat": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-media": {
+        "MICROPHONE_USAGE_DESCRIPTION": " "
+      },
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-x-toast": {},
+      "nl.x-services.plugins.backgroundaudio": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "^6.3.0",
+    "cordova-ios": "~4.1.1",
+    "cordova-plugin-app-event": "^1.2.1",
+    "cordova-plugin-background-mode": "^0.7.2",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-console": "^1.1.0",
+    "cordova-plugin-device": "^1.1.6",
+    "cordova-plugin-dialogs": "^1.3.3",
+    "cordova-plugin-file": "^4.3.3",
+    "cordova-plugin-file-transfer": "^1.6.3",
+    "cordova-plugin-inappbrowser": "^1.7.1",
+    "cordova-plugin-media": "^3.0.1",
+    "cordova-plugin-statusbar": "^2.2.3",
+    "cordova-plugin-whitelist": "^1.3.2",
+    "cordova-plugin-x-toast": "^2.6.0",
+    "nl.x-services.plugins.backgroundaudio": "^1.0.1"
+  }
+}

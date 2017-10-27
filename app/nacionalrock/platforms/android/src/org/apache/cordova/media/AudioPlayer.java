@@ -151,8 +151,8 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
             this.audioFile = file;
             this.recorder = new MediaRecorder();
             this.recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            this.recorder.setOutputFormat(MediaRecorder.OutputFormat.RAW_AMR); // THREE_GPP);
-            this.recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB); //AMR_NB);
+            this.recorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS); // RAW_AMR);
+            this.recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC); //AMR_NB);
             this.tempFile = generateTempFile();
             this.recorder.setOutputFile(this.tempFile);
             try {
@@ -264,13 +264,16 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
                     this.recorder.stop();
                 }
                 this.recorder.reset();
-                this.tempFiles.add(this.tempFile);
+                if (!this.tempFiles.contains(this.tempFile)) {
+                    this.tempFiles.add(this.tempFile);
+                }
                 if (stop) {
                     LOG.d(LOG_TAG, "stopping recording");
                     this.setState(STATE.MEDIA_STOPPED);
                     this.moveFile(this.audioFile);
                 } else {
                     LOG.d(LOG_TAG, "pause recording");
+                    this.setState(STATE.MEDIA_PAUSED);
                 }
             }
             catch (Exception e) {
@@ -351,6 +354,13 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
             LOG.d(LOG_TAG, "AudioPlayer Error: stopPlaying() called during invalid state: " + this.state.ordinal());
             sendErrorStatus(MEDIA_ERR_NONE_ACTIVE);
         }
+    }
+
+    /**
+     * Resume playing.
+     */
+    public void resumePlaying() {
+    	this.startPlaying(this.audioFile);
     }
 
     /**
@@ -580,9 +590,9 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
                     return true;
                 case MEDIA_STOPPED:
                     //if we are readying the same file
-                    if (this.audioFile.compareTo(file) == 0) {
+                    if (file!=null && this.audioFile.compareTo(file) == 0) {
                         //maybe it was recording?
-                        if(this.recorder!=null && player==null) {
+                        if (player == null) {
                             this.player = new MediaPlayer();
                             this.player.setOnErrorListener(this);
                             this.prepareOnly = false;

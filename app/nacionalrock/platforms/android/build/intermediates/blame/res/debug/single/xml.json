@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
-        "source": "/home/rama/dev/xin/radioflow/app/nacionalrock/platforms/android/res/xml/config.xml"
-    },
-    {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
         "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/res/xml/config.xml"
     }

@@ -1,2 +1,0 @@
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/classes/debug
-/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/pre-dexed/debug/classes-760b4b25799116fe8f2e5a0faf8daf1954ffb579.jar

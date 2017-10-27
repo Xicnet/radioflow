@@ -1,0 +1,76 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "nl.x-services.plugins.backgroundaudio",
+        "scope": null,
+        "escapedName": "nl.x-services.plugins.backgroundaudio",
+        "name": "nl.x-services.plugins.backgroundaudio",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/rama/dev/radioflow/app/nacionalrock"
+    ]
+  ],
+  "_from": "nl.x-services.plugins.backgroundaudio@latest",
+  "_id": "nl.x-services.plugins.backgroundaudio@1.0.1",
+  "_inCache": true,
+  "_location": "/nl.x-services.plugins.backgroundaudio",
+  "_nodeVersion": "6.10.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/nl.x-services.plugins.backgroundaudio-1.0.1.tgz_1497968545985_0.7755611387547106"
+  },
+  "_npmUser": {
+    "name": "eddyverbruggen",
+    "email": "eddyverbruggen@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "nl.x-services.plugins.backgroundaudio",
+    "scope": null,
+    "escapedName": "nl.x-services.plugins.backgroundaudio",
+    "name": "nl.x-services.plugins.backgroundaudio",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nl.x-services.plugins.backgroundaudio/-/nl.x-services.plugins.backgroundaudio-1.0.1.tgz",
+  "_shasum": "3d6b59861fcf64a7c2aef23846cf8f524d742daa",
+  "_shrinkwrap": null,
+  "_spec": "nl.x-services.plugins.backgroundaudio",
+  "_where": "/home/rama/dev/radioflow/app/nacionalrock",
+  "author": {
+    "name": "Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com",
+    "url": "https://github.com/EddyVerbruggen"
+  },
+  "cordova_name": "BackgroundAudio",
+  "dependencies": {},
+  "description": "Allows your app to keep on playing audio when it's in the background.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "3d6b59861fcf64a7c2aef23846cf8f524d742daa",
+    "tarball": "https://registry.npmjs.org/nl.x-services.plugins.backgroundaudio/-/nl.x-services.plugins.backgroundaudio-1.0.1.tgz"
+  },
+  "gitHead": "73a1443beec14d6570fd927a2747ef994f8186db",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "eddyverbruggen",
+      "email": "eddyverbruggen@gmail.com"
+    }
+  ],
+  "name": "nl.x-services.plugins.backgroundaudio",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {},
+  "version": "1.0.1"
+}
