@@ -53,6 +53,7 @@ var app = {
 	        app.clearNotification();
 		// Enable background mode
 		cordova.plugins.backgroundMode.enable();
+		console.log("ENABLED BACKGROUND MODE");
 	}
 
 	// Override back button

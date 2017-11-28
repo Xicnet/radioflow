@@ -132,12 +132,12 @@ ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidMa
 		ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:23:18-88
 uses-sdk
 ADDED from /home/rama/dev/radioflow/app/nacionalrock/platforms/android/AndroidManifest.xml:25:5-74
-MERGED from [com.android.support:support-v4:27.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/27.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/27.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/27.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/27.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/27.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.1] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/27.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.1] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/27.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.1] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/27.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/27.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/27.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.1/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/android.arch.lifecycle/runtime/1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [org.apache.cordova:CordovaLib:6.3.0:debug] /home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/org.apache.cordova/CordovaLib/6.3.0/debug/AndroidManifest.xml:25:5-44
 	android:targetSdkVersion

@@ -69,4 +69,5 @@
     <preference name="SplashScreen" value="none" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="Fullscreen" value="true" />
 </widget>

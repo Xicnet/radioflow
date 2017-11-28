@@ -1,15 +1,15 @@
 [
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.0/res/drawable/notification_tile_bg.xml"
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.1/res/drawable/notification_tile_bg.xml"
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.0/res/drawable/notification_bg_low.xml"
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.1/res/drawable/notification_bg_low.xml"
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.0/res/drawable/notification_bg.xml"
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.1/res/drawable/notification_bg.xml"
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/ic_launcher.png",
@@ -17,7 +17,7 @@
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
-        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.0/res/drawable/notification_icon_background.xml"
+        "source": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/27.0.1/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/home/rama/dev/radioflow/app/nacionalrock/platforms/android/build/intermediates/res/merged/debug/drawable/icon.png",
