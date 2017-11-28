@@ -35,6 +35,7 @@
     <preference name="SplashScreen" value="none" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="Fullscreen" value="true" />
     <allow-navigation href="http://rnadmin.xicnet.com/*" />
     <engine name="android" spec="^6.3.0" />
     <engine name="ios" spec="~4.1.1" />
