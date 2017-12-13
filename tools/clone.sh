@@ -6,6 +6,8 @@ STATION_NAME=$3
 MODE=$4
 SHORTNAME=$STATION
 
+BUILD_TOOLS_PATH="/home/rama/Android/Sdk/build-tools/27.0.2"
+
 BUNDLE_NAME="com.xicnet.$STATION"
 SRC_BASEDIR="`pwd`/../assets/$BUNDLE_NAME"
 TARGET_BASEDIR="`pwd`/../clones/$STATION"
@@ -47,7 +49,7 @@ function sign_align {
 
 		cordova build --release
 		jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /home/rama/keystore/xicnet-release-key.keystore $UNSIGNED Xicnet_Release && \
-		zipalign -v 4 $UNSIGNED platforms/android/build/outputs/apk/$1-release.apk
+		$BUILD_TOOLS_PATH/zipalign -v 4 $UNSIGNED platforms/android/build/outputs/apk/$1-release.apk
 	fi
 	if [ "$PLATFORM" == "ios" ]
 	then
